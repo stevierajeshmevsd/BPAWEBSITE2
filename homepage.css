@@ -4,26 +4,57 @@
   }
 
   h1{
-    color: black;
+    /* color: black; */
     align-content: center;
     font-size: 100px;
     margin-top: 50%;
 }
-
-  #myVideoDiv {
-    /* position: fixed; */
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    /* height: 100%; */
-    margin-left: 0%;
-    margin-bottom: 3%;
-    /* box-shadow: 20px 20px 20px 20px black; */
-    background-color: darkblue;
-    zoom: 200%;
-  }
+html
+{
+  background: url(images/traffic_convert.gif) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 3000px;
   
-  #myVideo {
-    position: fixed;
-    object-fit: contain;
+}
+body
+{
+  /* opacity: 0; */
+  /* background-color: blue; */
+  background: red;
+}
+.vidCont{
+  height: 500px;
+  /* background-color: blue; */
+}
+
+input#query{
+  background-image: url(Images/);
+    background-repeat: no-repeat;
+    text-indent: 20px;
+}
+
+.container{
+  bottom: 0;
+}
+.sample{
+  height: 1000px;
+}
+
+
+/* Search bar */
+#query {
+  width: 30%;
+  border-radius: 5px;
+  text-align: center;
+  margin-top: 2%;
+
   }
+form {
+  display: flex;
+  justify-content: center;
+  opacity: 1;
+  height: 17%;
+}

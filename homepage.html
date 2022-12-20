@@ -61,21 +61,42 @@
   </nav>
   </head>
   <!-- THIS IS THE CHANGE BLAH BLAH BLAH -->
-  <body>
-    <video  class="video-background-holder, w-100" autoplay loop muted >
-      <source src="video.mp4" type="video/mp4" />
-    </video>
-    <p class="text-center">We Only Sell The Best Cars</p>
+  
+  <body class="bg-transparent">
+    <div class="vidCont">
+      
+      <p class="text-center" id="Header">We Only Sell The Best Cars</p>
+      <!-- Search bar -->
+      <form id="form"> 
+        <input type="search" id="query" name="q" placeholder="Search Cars Here">
+      </form>
+      
+    </div>
+    <div class="searchbar">
+      <h1>Welcome...</h1>
+      <div id="sb-search" class="sb-search">
+          <div class="search-wrapper">
+              <input class="search-input" placeholder="Search..." type="text" value="" name="search" id="search"/>
+              <img class="search-pic"src="img/search-icon.png"/>
+          </div>
+      </div>
+  </div>
+    
+    <!-- <div class="sample"></div> -->
+    
     <style type="text/css">
-      p {
-        margin-top: 7%;
+      #Header {
+        margin-top: 4%;
         align-self: center;
         margin-left: auto;
         margin-right: auto;
         font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
         font-style: normal;
-        font-size: 60px;
+        font-size: 90px;
+        color: white;
       }
+    </style>
+ 
     </style>
 
   </body>
