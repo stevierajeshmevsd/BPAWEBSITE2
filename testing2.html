@@ -1,6 +1,8 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <link rel="stylesheet" href="styles.css
+    ">
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -10,29 +12,31 @@
     <!-- Bootstrap CSS () -->
     <!-- jQuery -->
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-    <script>$(function() { alert('Test message, ignore.') });</script>
-    <!-- jQuery ()-->
-    <title>Invent to Prevent</title>
+    <title>HIGH-FIVE | Homepage</title>
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&display=swap');
-      @import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
       .navhead{
         /* font-family: 'Inconsolata', monospace; */
-        font-family: 'Cedarville Cursive', cursive;
+        font-family: 'Michroma', sans-serif;
       }
 
+      #navbarMenu{
+        transition: height 0.5s ease;
+      }
+
+
+
     </style>
-  </head>
-  <body>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">
-        <img src="Images/high_five_logo_white.png" width="30" height="30" class="d-inline-block align-top" alt="HighFive Logo">
-        <span class="navhead">High Five</span>
+    <nav class="navbar navbar-expand-sm navbar-dark fixed-top" style="background-color: black;">
+      <a class="navbar-brand" href="index.html">
+        <img src="Images/clipart-car-shape-4.png" width="90" height="30" class="d-inline-block align-top" alt="HighFive Logo">
+        <span class="navhead">Dealership</span>
       </a> 
       <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarMenu">
           <span class="navbar-toggler-icon"></span>
@@ -40,13 +44,13 @@
       <div class="collapse navbar-collapse" id="navbarMenu">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-              <a class="nav-link" href="#">
-                Info
+              <a class="nav-link" href="homepage.html">
+                Finance
               </a>
           </li>
           <li class="nav-item">
               <a class="nav-link" href="#">
-                Shop
+                Cars
               </a>
           </li>
           <li class="nav-item">
@@ -58,5 +62,56 @@
       </div>
 
   </nav>
+  </head>
+  <!-- THIS IS THE CHANGE BLAH BLAH BLAH -->
+  
+  <body class="bg-transparent">
+    <div class="vidCont">
+      
+      <p class="text-center" id="Header">We Only Sell The Best Cars</p>
+      <!-- Search bar -->
+      <form id="form"> 
+        <input type="search" id="query" name="q" placeholder="Search Cars Here">
+      </form>
+      
+    </div>
+    <!-- <div class="searchbar">
+      <h1>Welcome...</h1>
+      <div id="sb-search" class="sb-search">
+          <div class="search-wrapper">
+              <input class="search-input" placeholder="Search..." type="text" value="" name="search" id="search"/>
+              <img class="search-pic"src="img/search-icon.png"/>
+          </div>
+      </div>
+    </div> -->
+  
+  
+
+  <div class="container">
+    <form class="sampleform">
+    <input type="search" placeholder="Search..." class="sampleform">
+    <button type="submit">Search</button>
+  </form>
+  <form class="nosubmit">
+    <input class="nosubmit" type="search" placeholder="Search..." class="sampleform">
+  </form>
+  </div>
+
+    
+    <!-- <div class="sample"></div> -->
+    
+    <style type="text/css">
+      #Header {
+        margin-top: 4%;
+        align-self: center;
+        margin-left: auto;
+        margin-right: auto;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-style: normal;
+        font-size: 90px;
+        color: white;
+      }
+    </style>
+
   </body>
 </html>

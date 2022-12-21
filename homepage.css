@@ -27,6 +27,7 @@ body
 }
 .vidCont{
   height: 500px;
+  margin-top: 12%;
   /* background-color: blue; */
 }
 
@@ -45,16 +46,79 @@ input#query{
 
 
 /* Search bar */
-#query {
-  width: 30%;
-  border-radius: 5px;
-  text-align: center;
-  margin-top: 2%;
 
-  }
-form {
+
+
+
+
+
+
+
+
+
+
+
+.formContainer {
+  /* width: fit-content; */
+  width: 40%;
+  background-color: white;
+  border-radius: 6px;
+  margin-top: 2%;
+  align-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+form.sampleFrom {
+  color: black;
   display: flex;
-  justify-content: center;
+  padding: 2px;
+  border: 1px solid currentColor;
+  border-radius: 5px;
+  margin: 0 0 30px;
+  width: 100%;
+}
+
+input[type="search"] {
+  border: none;
+  /* background: transparent; */
+  width: 100%;
+  padding: 7px 8px;
+  font-size: 14px;
+  border: 1px solid transparent;
+  display:flex;
+}
+
+
+
+button[type="submit"] {
+  text-indent: -999px;
+  overflow: hidden;
+  width: 5%;
+  padding: 2px;
+  margin-left: auto;
+  align-content: right;
+  margin-right: 0;
+  border: 1px solid transparent;
+  border-radius: inherit;
+  background:  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E") no-repeat center;
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+button[type="submit"]:hover {
   opacity: 1;
-  height: 17%;
+}
+
+button[type="submit"]:focus,
+input[type="search"]:focus {
+  box-shadow: 0 0 3px 0 #1183d6;
+  border-color: #1183d6;
+  outline: none;
+}
+
+.Infobegin {
+  background-color:  rgb(16, 16, 17);
+  height: 5000px;
+  margin-top: 5%;
 }

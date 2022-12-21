@@ -2,6 +2,9 @@
 <html lang="en">
   <head>
     <link rel="stylesheet" href="homepage.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -18,10 +21,12 @@
       .navhead{
         /* font-family: 'Inconsolata', monospace; */
         font-family: 'Michroma', sans-serif;
+        background-color: rgb(16, 16, 17);
       }
 
       #navbarMenu{
         transition: height 0.5s ease;
+        background-color: rgb(16, 16, 17);
       }
 
     </style>
@@ -30,7 +35,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <nav class="navbar navbar-expand-sm navbar-dark fixed-top" style="background-color: black;">
+    <nav class="navbar navbar-expand-sm navbar-dark fixed-top" style="background-color:  rgb(16, 16, 17);">
       <a class="navbar-brand" href="index.html">
         <img src="Images/clipart-car-shape-4.png" width="90" height="30" class="d-inline-block align-top" alt="HighFive Logo">
         <span class="navhead">Dealership</span>
@@ -41,12 +46,12 @@
       <div class="collapse navbar-collapse" id="navbarMenu">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-              <a class="nav-link" href="#">
+              <a class="nav-link" href="sampleTesting.html">
                 Finance
               </a>
           </li>
           <li class="nav-item">
-              <a class="nav-link" href="#">
+              <a class="nav-link" href="3d example/index.html">
                 Cars
               </a>
           </li>
@@ -66,23 +71,27 @@
     <div class="vidCont">
       
       <p class="text-center" id="Header">We Only Sell The Best Cars</p>
-      <!-- Search bar -->
-      <form id="form"> 
-        <input type="search" id="query" name="q" placeholder="Search Cars Here">
+      <div class="formContainer">
+        <form class="sampleFrom">
+          <input type="search" placeholder="Search..." id = "search-input">
+          <button type="submit" onclick="storeSearch()">Search</button>
+          <script>
+            function storeSearch() {
+              var searchInput = document.getElementById("search-input").value;
+
+              console.log(searchInput);
+              // fetch("serverside/query.php");
+            }
+          </script>
       </form>
+      </div>
+    </div>
+    
+
+    <!-- New Div Break -->
+    <div class="Infobegin">
       
     </div>
-    <div class="searchbar">
-      <h1>Welcome...</h1>
-      <div id="sb-search" class="sb-search">
-          <div class="search-wrapper">
-              <input class="search-input" placeholder="Search..." type="text" value="" name="search" id="search"/>
-              <img class="search-pic"src="img/search-icon.png"/>
-          </div>
-      </div>
-  </div>
-    
-    <!-- <div class="sample"></div> -->
     
     <style type="text/css">
       #Header {
@@ -90,13 +99,10 @@
         align-self: center;
         margin-left: auto;
         margin-right: auto;
-        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-        font-style: normal;
-        font-size: 90px;
+        font-family: 'Michroma', sans-serif;
+        font-size: 70px;
         color: white;
       }
-    </style>
- 
     </style>
 
   </body>
