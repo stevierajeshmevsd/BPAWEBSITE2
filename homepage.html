@@ -1,10 +1,12 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" id = "mainpage">
   <head>
     <link rel="stylesheet" href="homepage.css">
+    <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -65,10 +67,9 @@
 
   </nav>
   </head>
-  <!-- THIS IS THE CHANGE BLAH BLAH BLAH -->
-  
   <body class="bg-transparent">
-    <div class="vidCont">
+    <div id ="preloader"></div>
+    <div class="vidCont" id="vidCont">
       
       <p class="text-center" id="Header">We Only Sell The Best Cars</p>
       <div class="formContainer">
@@ -89,29 +90,62 @@
     
 
     <!-- New Div Break -->
-    <div class="Infobegin">
-      <!-- <div class="InfoSquares">
-        <div class="row">
-          <div class="col">col</div>
-          <div class="col">col</div>
-          <div class="w-100"></div>
-          <div class="col">col</div>
-          <div class="col">col</div>
-        </div>
-      </div> -->
-    </div>
-    
-    <style type="text/css">
-      #Header {
-        margin-top: 4%;
-        align-self: center;
-        margin-left: auto;
-        margin-right: auto;
-        font-family: 'Michroma', sans-serif;
-        font-size: 70px;
-        color: white;
-      }
-    </style>
 
+    <div class="container" id="squares">
+      <div class="row">
+        <div class="col-md-6" id = "sq1">
+          Hey Guys
+        </div>  
+        <div class="col-md-6" id = "sq2">
+          Hey Guys
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6" id = "sq3">
+          Hey Guys
+        </div>
+        <div class="col-md-6" id = "sq4">
+          Hey Guys
+        </div>
+      </div>
+    </div>
+
+    <!-- -------------------------Script for changing images------------------------- -->
+    <script>
+       // Declare an array of image URLs to use as the background
+    const images = ['Images/tesla.gif', 'Images/rolly.gif', 'Images/electric.gif', 'Images/road.gif', 'Images/AC.gif'];
+
+// Declare a counter to keep track of the current image
+    let imageIndex = 0;
+
+// Declare a function to update the background image of the div
+    function updateDivImage() {
+      // Get the div element
+      const div = document.getElementById('vidCont');
+
+      // Update the div's background image
+      div.style.backgroundImage = `url(${images[imageIndex]})`;
+
+      // Increment the counter
+      imageIndex = (imageIndex + 1) % images.length;
+    }
+
+    // Call the updateDivImage function every 1000 milliseconds (one second)
+    setInterval(updateDivImage, 3300); //change the interval back to 4000
+    </script>
+    <!-- -------------------------Script for changing images------------------------- -->
+    
+     
+
+
+    <!-- This is the reload animation code -->
+    
+    <script>
+      var loader = document.getElementById("preloader");
+      
+      window.addEventListener("load", function(){
+        loader.style.display = "none";
+      })
+    </script>
   </body>
 </html>

@@ -1,35 +1,48 @@
-* {
-    box-sizing: border-box;
-
-  }
-
-  h1{
-    /* color: black; */
-    align-content: center;
-    font-size: 100px;
-    margin-top: 50%;
-}
+/* ----------------------------Html------------------------------------ */
 html
 {
-  background: url(images/smokeycar.gif) no-repeat center fixed;
+  /* background: url(images/smokeycar.gif) no-repeat center fixed; */
+  /* background-color: #eee;
   background-position: 0% 85%;  
   -webkit-background-size: cover;
   -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  height: 3000px;
-  
+  -o-background-size: cover; */
+  background-color: rgb(16, 16, 17);
+  height: 3300px;
+}
+::-webkit-scrollbar {
+  width: 7px;
+  height: auto;
+  opacity: 0;
+  background-color: rgb(16, 16, 17);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(75, 74, 74, 0.3);
+  border-radius: 4px;
+}
+#Header {
+  padding-top: 16%;
+  align-self: center;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'Michroma', sans-serif;
+  font-size: 70px;
+  color: white;
 }
 body
 {
   /* opacity: 0; */
   /* background-color: blue; */
-  background: red;
+  background: black;
 }
 .vidCont{
-  height: 500px;
-  margin-top: 12%;
+  /* height: 500px; */
+  /* margin-top: 12%; */
   /* background-color: blue; */
+  background-size: cover;
+  height: 800px;
+  background-image: url(Images/audi.gif);
 }
 
 input#query{
@@ -46,12 +59,7 @@ input#query{
 }
 
 
-/* Search bar */
-
-
-
-
-
+/* ----------------------------Search Bar------------------------------------ */
 
 
 
@@ -76,7 +84,7 @@ form.sampleFrom {
   padding: 2px;
   border: 1px solid currentColor;
   border-radius: 5px;
-  margin: 0 0 30px;
+  margin: 0 0 0px;
   width: 100%;
 }
 
@@ -118,11 +126,46 @@ input[type="search"]:focus {
   outline: none;
 }
 
-.Infobegin {
-  background-color:  rgb(16, 16, 17);
-  height: 5000px;
+/* ----------------------------Squares info------------------------------------ */
+
+
+
+#squares {
+  margin-top: 2%; 
+}
+
+#sq1, #sq2, #sq3, #sq4 {
+  background-color: blue;
+  border-color: white;
+}
+
+#sq1 .col-md-6{
+  margin-right: 5%;
+}
+
+#sq2 .col-md-6{
+  margin-left: 5%;
+}
+
+#sq3 .col-md-6{
   margin-top: 5%;
+  margin-right: 5%;
 }
-.InfoSquares {
-  background-color: white;
+
+#sq4 .col-md-6{
+  margin-top: 5%;
+  margin-left: 5%;
 }
+
+
+.animation{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
