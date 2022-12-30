@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en" id = "mainpage">
   <head>
-    <link rel="stylesheet" href="homepage.css">
+    <link rel="stylesheet" href="finance.css">
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -59,7 +59,7 @@
               </a>
           </li>
           <li class="nav-item">
-              <a class="nav-link" href="#">
+              <a class="nav-link" href="contact.html">
                 Contact
               </a>
           </li>
@@ -70,52 +70,14 @@
   </head>
   <body class="bg-transparent">
     <div id ="preloader"></div>
-    <div class="vidCont" id="vidCont">
-      
-      <h1 class="text-center" id="Header">We Only Sell The Best Cars.</h1>
-      <div class="formContainer">
-        <form class="sampleFrom">
-          <input type="search" placeholder="Start Your Search..." id = "search-input" autocomplete="off">
-          <button type="submit" onclick="storeSearch()">Search</button>
-          <script>
-            function storeSearch() {
-              var searchInput = document.getElementById("search-input").value;
-
-              console.log(searchInput);
-              // fetch("serverside/query.php");
-            }
-          </script>
-      </form>
-      </div>
-    </div>
-    
-
-    <!-- New Div Break -->
-
-    <div class="container" id="squares">
-      <div class="row">
-        <div class="col-md-6" id = "sq1">
-          Square 1
-        </div>  
-        <div class="col-md-6" id = "sq2">
-          Square 2
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-6" id = "sq3">
-          Square 3
-        </div>
-        <div class="col-md-6" id = "sq4">
-          Square 4
-        </div>
-      </div>
-    </div>
     <br>
     <br>
     <br>
     <br>
     <br>
     <br>
+    <br>
+    <h1 class="bi-type-h1" style="color: white; margin-left: 5%;">Finance</h1>
     <br>
     <br>
     <br>
@@ -126,37 +88,28 @@
     <br>
     <br>
 
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
 
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
 
-    <!-- -------------------------Script for changing images------------------------- -->
-    <script>
-       // Declare an array of image URLs to use as the background
-    const images = ['Images/tesla.gif', 'Images/rolly.gif', 'Images/electric.gif', 'Images/road.gif', 'Images/AC.gif'];
-
-// Declare a counter to keep track of the current image
-    let imageIndex = 0;
-
-// Declare a function to update the background image of the div
-    function updateDivImage() {
-      // Get the div element
-      const div = document.getElementById('vidCont');
-
-      // Update the div's background image
-      div.style.backgroundImage = `url(${images[imageIndex]})`;
-
-      // Increment the counter
-      imageIndex = (imageIndex + 1) % images.length;
-    }
-
-    // Call the updateDivImage function every 1000 milliseconds (one second)
-    setInterval(updateDivImage, 3300); //change the interval back to 4000
-    </script>
-    <!-- ---------------------------------------------------------------------------- -->
-  
-
-
-
-    <!-- This is the reload animation code -->
+    <br>
+    <br>
     
     <script>
       var loader = document.getElementById("preloader");
@@ -222,5 +175,4 @@
       </div>
     </div>
   </footer>
- 
 </html>
