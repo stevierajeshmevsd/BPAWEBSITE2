@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en" id = "mainpage">
+  <head>
+    <link rel="stylesheet" href="cars.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="Images/wheelpng.png">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Bootstrap CSS () -->
+    <!-- jQuery -->
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <title>Jarson Moters</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
+      .navhead{
+        /* font-family: 'Inconsolata', monospace; */
+        font-family: 'Michroma', sans-serif;
+        background-color: rgb(16, 16, 17);
+        font-size: medium;
+      }
+
+      #navbarMenu{
+        transition: height 0.5s ease;
+        background-color: rgb(16, 16, 17);
+      }
+
+    </style>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <nav class="navbar navbar-expand-sm navbar-dark fixed-top" style="background-color:  rgb(16, 16, 17);">
+      <a class="navbar-brand" href="index.html">
+        <img src="Images/clipart-car-shape-4.png" width="90" height="30" class="d-inline-block align-top" alt="HighFive Logo">
+        <span class="navhead">Jarson Moters</span>
+      </a> 
+      <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarMenu">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarMenu">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+              <a class="nav-link" href="sell.html">
+                Sell
+              </a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="Cars.html">
+                Cars
+              </a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="contact.html">
+                Contact
+              </a>
+          </li>
+      </ul>
+      </div>
+
+  </nav>
+  </head>
+  <body class="bg-transparent">
+    <div id ="preloader"></div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h1 class="bi-type-h1" style="color: white; margin-left: 5%;">Cars</h1>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h1 style="color: white">Car price is: $40,000</h1>
+    <br>
+    <br>
+    <input type="range" style="margin-left: 4%;" min="0" max="40000" value="20000" step="100" onchange="sliderChange(this.value)">
+    <div class="row" style="margin-left: .1%;">
+      <p style="color: white;">Slider value =  </p>
+      <span id="sliderStatus" style="color: white">20000</span>    
+    </div>
+    
+    <br>
+    <br>
+
+    <!-- Financing logic -->
+    <p style="color: white">Please select your credit score: </p>
+    <form>
+      <select id="ddlViewBy">
+        <option value="0">Excellent Credit: (720-850)</option>
+        <option value="1">Great: (690-719)</option>
+        <option value="2">Very good: (670-689)</option>
+        <option value="3">Good: (650-669)</option>
+        <option value="4">Average: (630-649)</option>
+        <option value="5">Below Average: (620-629)</option>
+        <option value="6">Poor: (580-609)</option>
+        <option value="7">Very Poor: (580 less)</option>
+      </select>
+    </form>
+    <br><br>
+    <p style="color: white">Your Interest rate based on your credit score is: </p>
+    <input type="text" id="myText" value="Interest Rate..."> <br>
+    <button onclick="myFunction()">Click me</button>
+    <br>
+    <br>
+
+
+    <div class="row" style="color: white">
+      <p>&ensp;&ensp;Monthly interest rate for 36 months:&ensp; </p>
+      <span id="36month" style="color: white">0</span>
+    </div>
+    <div class="row">
+      <p style="color: white">&ensp;&ensp;Monthly interest rate for 48 months:&ensp; </p>
+      <span id="48month" style="color: white">0</span>
+    </div>
+    <div class="row">
+      <p style="color: white">&ensp;&ensp;Monthly interset rate for 60 months:&ensp; </p>
+      <span id="60month" style="color: white">0</span>
+    </div>
+    
+    <script>
+      function calculateMonthlyPayment(principle, interestRate, term) {
+        const monthlyInterestRate = interestRate / 12;
+        const monthlyPayment = (principle * monthlyInterestRate) / (1 - Math.pow(1 + monthlyInterestRate, -term));
+        return monthlyPayment;
+      }
+      function sliderChange(val){
+        document.getElementById('sliderStatus').innerHTML = val;
+        return val;
+      }
+      function myFunction(){       
+        // var monthlyPayment;
+        const interest = [5.57, 6.34, 8.62, 9.37, 10.48, 12.38, 14.54, 18.87]
+        var price = document.getElementById("sliderStatus").innerHTML;
+        var downPayment = 40000 - price;
+        var interestRate;
+        var e = document.getElementById("ddlViewBy");
+        var value = e.value;
+        var text = e.options[e.selectedIndex].text;
+
+
+        
+        console.log(downPayment);
+        interestRate = interest[value] / 100; 
+        document.getElementById("myText").value = interestRate * 100 + "%";
+        document.getElementById("36month").innerHTML = "$" + Number(Math.round(calculateMonthlyPayment(downPayment, interestRate, 36)+'e'+2)+'e-'+2);
+        document.getElementById("48month").innerHTML = "$" + Number(Math.round(calculateMonthlyPayment(downPayment, interestRate, 48)+'e'+2)+'e-'+2);
+        document.getElementById("60month").innerHTML = "$" + Number(Math.round(calculateMonthlyPayment(downPayment, interestRate, 60)+'e'+2)+'e-'+2);
+        // console.log(monthlyPayment);
+      }
+
+      
+    </script>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <br>
+    <br>
+    
+    <script>
+      var loader = document.getElementById("preloader");
+      
+      window.addEventListener("load", function(){
+        loader.style.display = "none";
+      })
+    </script>
+  </body>
+  <footer>
+    <div class="container pt-5 border-bottom">
+      <div class="row">
+        <div class="col-md-4 col-sm-12 mb-3 text-center">
+          <a class="footerbar-brand" href="index.html">
+            <img src="Images/wheelpng.png" class="d-inline-block align-top"
+              alt="HighFive Logo">
+            <span style="color: white;">Jarson</span>
+          </a>
+        </div>
+        <div class="col-md-8 col-sm-12">
+  
+          <div class="col-md-3 col-sm-6 col-6 p-0 float-left mb-3">
+            <h5 class="mb-4 font-weight-bold text-uppercase"style="color: white;">Pages</h5>
+          <ul class="list-group">
+            <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="index.html">Home</a></li>
+            <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="finance.html">Finance</a></li>
+            <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="cars.html">Inventory</a></li>
+            <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="contact.html">Contact Us!</a></li>
+          </ul>
+          </div>
+          <div class="col-md-3 col-sm-6 col-6 p-0 mb-3 float-left">
+            <h5 class="mb-4 font-weight-bold text-uppercase" style="color: white;" >Money</h5>
+          <ul class="list-group">
+            <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="https://www.moneyunder30.com/car-affordability-calculator" target="_blank">Income Calculator</a></li>
+            <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="finance.html">Finance Calculator</a></li>
+            <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="https://stackshare.io/naologic">Car Guide</a></li>
+          </ul>
+          </div>
+  
+          <div class="col-md-3 col-sm-6 col-6 mb-3 p-0 float-left">
+            <h5 class="mb-4 font-weight-bold text-uppercase"style="color: white;">What we are</h5>
+          <ul class="list-group">
+            <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="#"></i>About</a></li>
+          </ul>
+          </div>
+          <div class="col-md-3 col-sm-6 col-6 mb-3 p-0 float-left">
+            <h5 class="mb-4 font-weight-bold text-uppercase"style="color: white;">Connect</h5>
+          <ul class="list-group">
+            <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+              <a href="https://github.com/stevierajeshmevsd/BPAWEBSITE2"target="_blank" ><i class="fa fa-linkedin mr-1"></i>Github</a>
+            </li>
+            <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+              <a href="#"><i class="fa fa-linkedin mr-1"></i>Documentation</a>
+            </li>
+          </ul>
+          </div>
+        </div>
+          <div class="col-md-12">
+            <div class="py-4 d-flex justify-content-center align-items-center">
+              <a class="mr-4" href="index.html"> © Jarson Moters</a>
+            </div>
+          </div>
+      </div>
+    </div>
+  </footer>
+</html>

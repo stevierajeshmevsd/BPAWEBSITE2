@@ -47,8 +47,8 @@
       <div class="collapse navbar-collapse" id="navbarMenu">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-              <a class="nav-link" href="finance.html">
-                Finance
+              <a class="nav-link" href="sell.html">
+                Sell
               </a>
           </li>
           <li class="nav-item">
@@ -70,7 +70,26 @@
     <div id ="preloader"></div>
     <div class="vidCont" id="vidCont">
       
-      <h1 class="text-center" id="Header">We Only Sell The Best Cars.</h1>
+      <h1 class="text-center" id="Header">FIND YOUR DREAM CAR</h1>
+      <script>
+          const slogans = [
+          "Luxury rides for the refined driver.",
+          "Indulge in the finer things on the road.",
+          "Expect the extraordinary at our dealership.",
+          "Drive the best, at our dealership.",
+          "Where luxury meets performance.",
+          "Life is too short to drive anything but the best.",
+          "Elevate your daily drive.",
+          "Expect nothing but the best at our dealership.",
+          "Discover a world of luxury on wheels.",
+          "Experience the ultimate in automotive luxury.",
+          "Indulge in the ultimate driving machine.",
+          "Experience the thrill of driving a work of art.",
+          "Find your dream car at our dealership."
+        ];
+        const sloganEl = document.getElementById("Header");
+        sloganEl.textContent = slogans[Math.floor(Math.random() * slogans.length)];
+      </script>
       <div class="formContainer">
         <form class="sampleFrom">
           <input type="search" placeholder="Start Your Search..." id = "search-input" autocomplete="off">
@@ -108,10 +127,23 @@
         </div>
       </div>
     </div> -->
-    <div class="sq1">1</div>
-    <div class="sq2">2</div>
-    <div class="sq3">3</div>
-    <div class="sq4">4</div>
+    <div class="servicebox">
+      <h1 class="text-center" id="services">Our Services</h1>
+    </div>
+    <div class="cont">
+      <div class="sq1">
+        <div class="sqtext">BROWSE</div>
+      </div>
+      <div class="sq2">
+        <div class="sqtext">SELL</div>
+      </div>
+      <div class="sq3">
+        <div class="sqtext">CONTACT US</div>
+      </div>
+      <div class="sq4">
+        <div class="sqtext">MAINTENANCE</div>
+      </div>
+    </div>
     <br>
     <br>
     <br>
@@ -151,10 +183,6 @@
     <br>
     <br>
     <br>
-    
-
-
-
     <!-- -------------------------Script for changing images------------------------- -->
     <script>
        // Declare an array of image URLs to use as the background
@@ -176,7 +204,7 @@
     }
 
     // Call the updateDivImage function every 1000 milliseconds (one second)
-    setInterval(updateDivImage, 3300); //change the interval back to 4000
+    setInterval(updateDivImage, 4000); //change the interval back to 4000
     </script>
     <!-- ---------------------------------------------------------------------------- -->
   
