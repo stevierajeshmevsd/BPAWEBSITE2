@@ -87,91 +87,16 @@
     <br>
     <br>
     <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <h1 style="color: white">Car price is: $40,000</h1>
-    <br>
-    <br>
-    <input type="range" style="margin-left: 4%;" min="0" max="40000" value="20000" step="100" onchange="sliderChange(this.value)">
-    <div class="row" style="margin-left: .1%;">
-      <p style="color: white;">Slider value =  </p>
-      <span id="sliderStatus" style="color: white">20000</span>    
-    </div>
-    
-    <br>
-    <br>
 
-    <!-- Financing logic -->
-    <p style="color: white">Please select your credit score: </p>
-    <form>
-      <select id="ddlViewBy">
-        <option value="0">Excellent Credit: (720-850)</option>
-        <option value="1">Great: (690-719)</option>
-        <option value="2">Very good: (670-689)</option>
-        <option value="3">Good: (650-669)</option>
-        <option value="4">Average: (630-649)</option>
-        <option value="5">Below Average: (620-629)</option>
-        <option value="6">Poor: (580-609)</option>
-        <option value="7">Very Poor: (580 less)</option>
-      </select>
-    </form>
-    <br><br>
-    <p style="color: white">Your Interest rate based on your credit score is: </p>
-    <input type="text" id="myText" value="Interest Rate..."> <br>
-    <button onclick="myFunction()">Click me</button>
     <br>
     <br>
-
-
-    <div class="row" style="color: white">
-      <p>&ensp;&ensp;Monthly interest rate for 36 months:&ensp; </p>
-      <span id="36month" style="color: white">0</span>
-    </div>
-    <div class="row">
-      <p style="color: white">&ensp;&ensp;Monthly interest rate for 48 months:&ensp; </p>
-      <span id="48month" style="color: white">0</span>
-    </div>
-    <div class="row">
-      <p style="color: white">&ensp;&ensp;Monthly interset rate for 60 months:&ensp; </p>
-      <span id="60month" style="color: white">0</span>
-    </div>
-    
-    <script>
-      function calculateMonthlyPayment(principle, interestRate, term) {
-        const monthlyInterestRate = interestRate / 12;
-        const monthlyPayment = (principle * monthlyInterestRate) / (1 - Math.pow(1 + monthlyInterestRate, -term));
-        return monthlyPayment;
-      }
-      function sliderChange(val){
-        document.getElementById('sliderStatus').innerHTML = val;
-        return val;
-      }
-      function myFunction(){       
-        // var monthlyPayment;
-        const interest = [5.57, 6.34, 8.62, 9.37, 10.48, 12.38, 14.54, 18.87]
-        var price = document.getElementById("sliderStatus").innerHTML;
-        var downPayment = 40000 - price;
-        var interestRate;
-        var e = document.getElementById("ddlViewBy");
-        var value = e.value;
-        var text = e.options[e.selectedIndex].text;
-
-
-        
-        console.log(downPayment);
-        interestRate = interest[value] / 100; 
-        document.getElementById("myText").value = interestRate * 100 + "%";
-        document.getElementById("36month").innerHTML = "$" + Number(Math.round(calculateMonthlyPayment(downPayment, interestRate, 36)+'e'+2)+'e-'+2);
-        document.getElementById("48month").innerHTML = "$" + Number(Math.round(calculateMonthlyPayment(downPayment, interestRate, 48)+'e'+2)+'e-'+2);
-        document.getElementById("60month").innerHTML = "$" + Number(Math.round(calculateMonthlyPayment(downPayment, interestRate, 60)+'e'+2)+'e-'+2);
-        // console.log(monthlyPayment);
-      }
-
-      
-    </script>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
 
     <br>
     <br>
