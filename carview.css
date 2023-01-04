@@ -1,0 +1,49 @@
+html{
+    background-color: #2d3436;
+    background-image: linear-gradient(0deg, #2d3436 0%, #000000 74%);
+}
+
+
+.carimg {
+    background: url('Images/Showroom/imgnotavaliable.png') no-repeat;
+    background-size: cover;
+    width: 40%;
+    height: auto;
+    border-radius: 6px;
+    aspect-ratio: 4/2;
+    margin-top: 1.5%;
+    margin-left: 1%;
+    float: left;
+}
+.info{
+    float: right;
+    margin-right: 0.5%;
+    margin-top: 1.6%;
+    width:  58%;
+    aspect-ratio: 5.85/2;
+}
+
+#CarName{
+    margin-top: 1%;
+    color: white;
+}
+
+@media only screen and (max-width: 600px) {
+    .carimg {
+        width: 80%;
+        height: auto;
+        border-radius: 6px;
+        aspect-ratio: 4/2;
+        margin-top: 5%;
+        margin-left: 10%;
+    }
+    .info{
+        float: left;
+        margin-left: 10%;
+        margin-top: 1.6%;
+        background-color: red;
+        width:  80%;
+        aspect-ratio: 5.85/2;
+    }
+    
+}
