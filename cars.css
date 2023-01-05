@@ -2,3 +2,37 @@ html{
     background-color: #2d3436;
     background-image: linear-gradient(0deg, #2d3436 0%, #000000 74%);
 }
+
+
+/* This is for the grid setup */
+.grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .grid-item{
+        /* border: solid white 3px; */
+        padding: 15px;
+      }
+      .grid-content{
+        border: 3px solid red;
+        background-color: rgba(119, 0, 0, 0.24);
+        aspect-ratio: 2;
+        color: white;
+        border-radius: 10px;
+      }
+
+      .new-div{
+        color: white;
+        background-color: lightblue;
+        width: 100px;
+        height: 100px;
+      }
+
+      @media (max-width: 768px) {
+        .grid {
+          grid-template-columns: repeat(1, 1fr);
+        }
+        .grid-item{
+            padding: 30px;
+        }
+      }
