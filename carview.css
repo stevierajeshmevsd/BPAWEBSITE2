@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Play&display=swap');
+
 html{
     background-color: #2d3436;
     background-image: linear-gradient(0deg, #2d3436 0%, #000000 74%);
@@ -11,7 +13,7 @@ html{
     height: auto;
     border-radius: 6px;
     aspect-ratio: 4/2;
-    margin-top: 1.5%;
+    margin-top: 2.1%;
     margin-left: 1%;
     float: left;
 }
@@ -26,6 +28,59 @@ html{
 #CarName{
     margin-top: 1%;
     color: white;
+    font-family: 'Play', sans-serif;
+    letter-spacing: 3px;
+}
+
+#price{
+    color: white;
+    font-family: 'Play', sans-serif;
+}
+#lux {
+    width: 30%;
+    height: auto;
+    aspect-ratio: 2.7/2;
+    background-color: rgb(23, 23, 23);
+    border-radius: 7px;
+    margin-left: 19%;
+    margin-top: 3%;
+    float: left;
+}
+#specs {
+    width: 30%;
+    height: auto;
+    aspect-ratio: 2.7/2;
+    background-color: rgb(23, 23, 23);
+    border-radius: 7px;
+    margin-right: 19%;
+    margin-top: 3%;
+    float: right;
+}
+
+#luxh{
+    font-family: 'Play', sans-serif;
+    color: white;
+    font-size: medium;
+    margin-left: 2%;
+    margin-top: 2%;
+}
+.imglux {
+    width: 99%;
+    margin-left: 0%;
+}
+.items{
+    float: left;
+    color: white;
+    font-family: 'Play', sans-serif;
+    margin-left: 2%;
+    font-size: 0.9vw;
+}
+.items1{
+    float: right;
+    margin-right: 5%;
+    color: white;
+    font-family: 'Play', sans-serif;
+    font-size: 0.9vw;
 }
 
 @media only screen and (max-width: 600px) {
@@ -41,9 +96,48 @@ html{
         float: left;
         margin-left: 10%;
         margin-top: 1.6%;
-        background-color: red;
         width:  80%;
         aspect-ratio: 5.85/2;
     }
-    
+    #lux {
+        width: 90%;
+        height: auto;
+        aspect-ratio: 3/2;
+        border-radius: 7px;
+        margin-left: 5%;
+        margin-top: 72%;
+        float: left;
+    }
+    #specs {
+        width: 90%;
+        height: auto;
+        aspect-ratio: 3/2;
+        border-radius: 7px;
+        margin-left: 5%;
+        margin-top: -137%;
+        float: left;
+    }
+    #luxh{
+        font-family: 'Play', sans-serif;
+        color: white;
+        font-size: smaller;
+        margin-left: 2%;
+        margin-top: 3%;
+    }
+    .imglux {
+        width: 90%;
+        margin-left: 5%;
+        margin-top: -2%;
+    }
+    .items1{
+        float: right;
+        margin-left: 7%;
+        margin-top: 1%;
+        font-weight: 600;
+        font-size: 4vw;
+    }
+    .items{
+        margin-left: 3%;
+        font-size: 4vw;
+    }
 }
