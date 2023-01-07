@@ -1,4 +1,3 @@
-// this functino does the actual math for the loan estimator. 
 function calculateMonthlyPayment(principle, interestRate, term) {
     const monthlyInterestRate = interestRate / 12;
     const monthlyPayment = (principle * monthlyInterestRate) / (1 - Math.pow(1 + monthlyInterestRate, -term));
@@ -53,46 +52,172 @@ const resultsContainer = document.getElementById('results');
 
 const data = [
   {
-    make:'toyota', 
+    make:'toyata', 
     model: 'camry', 
-    year: '2021',
+    year: '2012',
+    trim: 'le'
+  },
+  {
+    make:'lexus', 
+    model: 'ls', 
+    year: '2010',
+    trim: 'base'
+  },
+  {
+    make:'subaru', 
+    model: 'legacy', 
+    year: '2017',
+    trim: 'base'
+  },
+  {
+    make:'audi', 
+    model: 'a6', 
+    year: '2015',
+    trim: 'premium'
+  },
+  {
+    make:'chrysler', 
+    model: '300', 
+    year: '2016',
+    trim: 'base'
+  },
+  {
+    make:'chevrolet', 
+    model: 'sonic', 
+    year: '2015',
+    trim: 'base'
+  },
+  {
+    make:'bmw', 
+    model: 'series 3', 
+    year: '2018',
+    trim: '300i'
+  },
+  {
+    make:'dodge', 
+    model: 'charger', 
+    year: '2018',
+    trim: 'sxt'
+  },
+  {
+    make:'toyota', 
+    model: 'corolla', 
+    year: '2017',
+    trim: 'se'
+  },
+  {
+    make:'volkswagen', 
+    model: 'passat', 
+    year: '2014',
     trim: 'se'
   },
   {
     make:'honda', 
-    model: 'accord', 
-    year: '2021',
-    trim: 'touring'
+    model: 'cr-v', 
+    year: '2016',
+    trim: 'ex'
+  },
+  {
+    make:'hyundai', 
+    model: 'sonata', 
+    year: '2018',
+    trim: 'sel'
+  },
+  {
+    make:'nissan', 
+    model: 'versa', 
+    year: '2019',
+    trim: 'sv'
+  },
+  {
+    make:'acura', 
+    model: 'rdx', 
+    year: '2019',
+    trim: 'sh'
+  },
+  {
+    make:'kia', 
+    model: 'sportage', 
+    year: '2020',
+    trim: 'lx'
   },
   {
     make:'honda', 
-    model: 'accord', 
+    model: 'odyssey', 
+    year: '2014',
+    trim: 'ex-l'
+  },
+  {
+    make:'toyota', 
+    model: 'corolla', 
+    year: '2017',
+    trim: 'se'
+  },
+  {
+    make:'jeep', 
+    model: 'compass', 
+    year: '2017',
+    trim: 'latitude'
+  },
+  {
+    make:'subaru', 
+    model: 'brz', 
+    year: '2013',
+    trim: 'primium'
+  },
+  {
+    make:'nissan', 
+    model: 'rogue', 
     year: '2021',
+    trim: 's'
+  },
+  {
+    make:'volkswagen', 
+    model: 'jetta', 
+    year: '2014',
+    trim: 'se'
+  },
+  {
+    make:'chrysler', 
+    model: 'pacifica', 
+    year: '2017',
     trim: 'touring'
+  },
+  {
+    make:'ford', 
+    model: 'escape', 
+    year: '2018',
+    trim: 'sel'
+  },
+  {
+    make:'cherolet', 
+    model: 'malibu', 
+    year: '2020',
+    trim: 'lt'
   },
   {
     make:'toyota', 
     model: 'highlander', 
-    year: '2020',
-    trim: 'xle'
-  },
-  {
-    make:'toyota', 
-    model: 'rav4', 
-    year: '2020',
+    year: '2022',
     trim: 'xle'
   },
   {
     make:'honda', 
     model: 'accord', 
-    year: '2020',
+    year: '2013',
+    trim: 'sports'
+  },
+  {
+    make:'toyota', 
+    model: 'rav4', 
+    year: '2016',
     trim: 'xle'
   },
   {
-    make:'honda', 
-    model: 'pilot', 
-    year: '2019',
-    trim: 'ex'
+    make:'gmc', 
+    model: 'Gmc', 
+    year: '2017',
+    trim: 'se'
   }
 ];
 
@@ -180,6 +305,16 @@ function search() {
   if(matches != -1){
     for(var i = 0; i < matches.length; i++){
       matchData.push(data[matches[i]]);
+    }
+  }
+
+  console.log(matches);
+
+  for(var i = 0; i < data.length; i++){
+    for(var j = 0; j < matches.length; j++){
+      if(i != matches[j]){
+        document.getElementById('item' + i).style.display = "none";
+      }
     }
   }
 
