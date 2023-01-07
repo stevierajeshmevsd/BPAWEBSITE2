@@ -1,9 +1,8 @@
 <!doctype html>
 <html lang="en" id = "mainpage">
   <head>
-    <link rel="stylesheet" href="finance.css">
-    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="cars.css">
+    <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
@@ -52,8 +51,8 @@
       <div class="collapse navbar-collapse" id="navbarMenu">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-              <a class="nav-link" href="finance.html">
-                Finance
+              <a class="nav-link" href="Sell.html">
+                Sell
               </a>
           </li>
           <li class="nav-item">
@@ -72,113 +71,161 @@
   </nav>
 
 
-  <script>
-    // this functino does the actual math for the loan estimator. 
-    function calculateMonthlyPayment(principle, interestRate, term) {
-      const monthlyInterestRate = interestRate / 12;
-      const monthlyPayment = (principle * monthlyInterestRate) / (1 - Math.pow(1 + monthlyInterestRate, -term));
-      return monthlyPayment;
-    }
-
-    // Updated the slider value of the downpayment slider.
-    function sliderChange(val){
-      document.getElementById('sliderStatus').innerHTML = val;
-      return val;
-    }
-
-    // This function takes care of the loan estimator's calculation.
-    function myFunction(){       
-      // var monthlyPayment;
-      const interest = [5.57, 6.34, 8.62, 9.37, 10.48, 12.38, 14.54, 18.87]
-      var price = document.getElementById("sliderStatus").innerHTML;
-      var downPayment = 40000 - price;
-      var interestRate;
-      var e = document.getElementById("ddlViewBy");
-      var value = e.value;
-      var text = e.options[e.selectedIndex].text;
-
-
-      
-      console.log(downPayment);
-      interestRate = interest[value] / 100; 
-      document.getElementById("myText").value = interestRate * 100 + "%";
-      document.getElementById("36month").innerHTML = "$" + Number(Math.round(calculateMonthlyPayment(downPayment, interestRate, 36)+'e'+2)+'e-'+2);
-      document.getElementById("48month").innerHTML = "$" + Number(Math.round(calculateMonthlyPayment(downPayment, interestRate, 48)+'e'+2)+'e-'+2);
-      document.getElementById("60month").innerHTML = "$" + Number(Math.round(calculateMonthlyPayment(downPayment, interestRate, 60)+'e'+2)+'e-'+2);
-      // console.log(monthlyPayment);
-    }
-
-
-  
-
-    function createDivElement(){
-      var parentDiv = document.getElementById("body-wrapper");
-      var div = document.createElement("div");
-      div.classList.add("new-div");
-      parentDiv.appendChild(div);
-    }
-    
-  </script>
+ 
 
 
   </head>
   <body class="bg-transparent">
+    <div id ="preloader"></div>
     <div id ="body-wrapper">
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <h1 class="bi-type-h1" style="color: white; margin-left: 5%;">Cars</h1>
+      <h1 class="head" id="testing">Browse Our Avalable Cars:</h1>
+
+
+
+      <div class="formContainer">
+        <form class="sampleFrom" id="search-form">
+          <input type="search" placeholder="Search..." id="search-input" autocomplete="off">
+          <button type="submit" id="button">Search</button>
+        </form>
+      </div>
+      <div id="results" style="color: white;"></div>
       <br>
       <br>
       <br>
       <div class="grid">
-        <div class="grid-item">
+        <div class="grid-item" id="item0">
           <div class="grid-content"  ontouchstart="createDivElement()" onclick="createDivElement()">
-            This is the grid content
+            Toyota	Camry	2012	Base	10,995	2.5L 4 Cylinder	FWD	Automatic	Black																	
           </div>
         </div>
-        <div class="grid-item">
+        <div class="grid-item" id="item1">
           <div class="grid-content"  ontouchstart="createDivElement()" onclick="createDivElement()">
-            This is the grid content
+            Lexus	Lexus LS	2010	base	23,237	4.6L V8	AWD	Automatic	Starfire Pearl	16-23																
           </div>
         </div>
-        <div class="grid-item">
+        <div class="grid-item" id="item2">
           <div class="grid-content"  ontouchstart="createDivElement()" onclick="createDivElement()">
-            This is the grid content
+            subaru	legacy	2017	base	18890	175 hp 2.5L H4	AWD	Continuously Variable Transmission	Slate Black 																	
           </div>
         </div>
-        <div class="grid-item">
+        <div class="grid-item" id="item3">
           <div class="grid-content"  ontouchstart="createDivElement()" onclick="createDivElement()">
-            This is the grid content
+            Audi	a6	2015	base	9,500	220 hp 2L I4	AWD	Automatic	Black																	
           </div>
         </div>
-        <div class="grid-item">
+        <div class="grid-item" id="item4">
           <div class="grid-content"  ontouchstart="createDivElement()" onclick="createDivElement()">
-            This is the grid content
+            Chrysler	300	2016	base 	14,585	292 hp 3.6L V6	RWD	Automatic	White	24																
           </div>
         </div>
-        <div class="grid-item">
+        <div class="grid-item" id="item5">
           <div class="grid-content"  ontouchstart="createDivElement()" onclick="createDivElement()">
-            This is the grid content
+            Chevrolet	sonic	2015	LT	8,499	138 hp 1.8L I4	FWD	Automatic	Sliver	30																
           </div>
         </div>
-        <div class="grid-item">
+        <div class="grid-item" id="item6">
           <div class="grid-content"  ontouchstart="createDivElement()" onclick="createDivElement()">
-            This is the grid content
+            BMW	Series 3	2018	320i	18,482	180 hp 2L I4	AWD	Automatic	Brown	28																
           </div>
         </div>
-        <div class="grid-item">
+        <div class="grid-item" id="item7">
           <div class="grid-content"  ontouchstart="createDivElement()" onclick="createDivElement()">
-            This is the grid content
+            Dodge	Charger	2018	SXT	20,800	292 hp 3.6L V6	RWD	Automatic	Black	24																
           </div>
         </div>
-        <div class="grid-item">
+        <div class="grid-item" id="item8">
           <div class="grid-content"  ontouchstart="createDivElement()" onclick="createDivElement()">
-            This is the grid content
+            Toyota	Corolla	2017	SE	16,757	132 hp 1.8L I4	FWD	Continuously Variable Transmission	Black	32																
+          </div>
+        </div>
+        <div class="grid-item" id="item9">
+          <div class="grid-content"  ontouchstart="createDivElement()" onclick="createDivElement()">
+            Volkswagen	Passat	2014	Base	11,967	140 hp 2L I4 Diesel	FWD	6-Speed Dual Clutch	Candy White																	
+          </div>
+        </div>
+        <div class="grid-item" id="item10">
+          <div class="grid-content"  ontouchstart="createDivElement()" onclick="createDivElement()">
+            Hyundai	Sonata	2018	SEL	17,999	185 hp 2.4L I4	FWD	Automatic	Silver	30																
+          </div>
+        </div>
+        <div class="grid-item" id="item11">
+          <div class="grid-content"  ontouchstart="createDivElement()" onclick="createDivElement()">
+            Honda 	CR-V	2016	EX	21,000	185 hp 2.4L I4	AWD	Continuously Variable Transmission	White	28																
+          </div>
+        </div>
+        <div class="grid-item" id="item12">
+          <div class="grid-content"  ontouchstart="createDivElement()" onclick="createDivElement()">
+            Nissan	Versa	2019	SV	14,995	109 hp 1.6L I4	FWD	Continuously Variable Transmission	Red																	
+          </div>
+        </div>
+        <div class="grid-item" id="item13">
+          <div class="grid-content"  ontouchstart="createDivElement()" onclick="createDivElement()">
+            Acura	RDX	2019	SH	30,395	272 hp 2L I4	AWD	Automatic	Gray	24																
+          </div>
+        </div>
+        <div class="grid-item" id="item14">
+          <div class="grid-content"  ontouchstart="createDivElement()" onclick="createDivElement()">
+            Kia	Sportage	2020	Base	22,891	181 hp 2.4L I4	AWD	Automatic	Red	24																
+          </div>
+        </div>
+        <div class="grid-item" id="item15">
+          <div class="grid-content"  ontouchstart="createDivElement()" onclick="createDivElement()">
+            Honda 	Odyssey	2014	EX-L	16,955	248 hp 3.5L V6	FWD	Automatic	Black	23																
+          </div>
+        </div>
+        <div class="grid-item" id="item16">
+          <div class="grid-content"  ontouchstart="createDivElement()" onclick="createDivElement()">
+            Jeep	Compass	2017	Latitude	19,997	180 hp 2.4L I4	4WD	Automatic	Olive Green	26																
+          </div>
+        </div>
+        <div class="grid-item" id="item17">
+          <div class="grid-content"  ontouchstart="createDivElement()" onclick="createDivElement()">
+            Subaru	BRZ	2013	Primium	15,118	2L H4	RWD	6-Speed Manual	Blue	26																
+          </div>
+        </div>
+        <div class="grid-item" id="item18">
+          <div class="grid-content"  ontouchstart="createDivElement()" onclick="createDivElement()">
+            Nissan	Rogue	2021	S	26,310	181 hp 2.5L I4	AWD	Continuously Variable Transmission	Black	29																
+          </div>
+        </div>
+        <div class="grid-item" id="item19">
+          <div class="grid-content"  ontouchstart="createDivElement()" onclick="createDivElement()">
+            Volkswagen	Jetta	2014	SE	13,000	170 hp 1.8L I4	FWD	Automatic	Gray	30																
+          </div>
+        </div>
+        <div class="grid-item" id="item20">
+          <div class="grid-content"  ontouchstart="createDivElement()" onclick="createDivElement()">
+            Chrysler 	Pacifica	2017	Touring	18,990	287 hp 3.6L V6	FWD	Automatic	Gray	23																
+          </div>
+        </div>
+        <div class="grid-item" id="item21">
+          <div class="grid-content"  ontouchstart="createDivElement()" onclick="createDivElement()">
+            Ford	Escape	2018	SEL	17,652	179 hp 1.5L I4	AWD	Automatic	Red	25																
+          </div>
+        </div>
+        <div class="grid-item" id="item22">
+          <div class="grid-content"  ontouchstart="createDivElement()" onclick="createDivElement()">
+            Chevrolet	Malibu	2020	LT	20,795	160 hp 1.5L I4	FWD	Continuously Variable Transmission	Black	32																
+          </div>
+        </div>
+        <div class="grid-item" id="item23">
+          <div class="grid-content"  ontouchstart="createDivElement()" onclick="createDivElement()">
+            Toyota	Highlander	2022	XLE	40,200	295 hp 3.5L V6	AWD	Automatic	Blue	23																
+          </div>
+        </div>
+        <div class="grid-item" id="item24">
+          <div class="grid-content"  ontouchstart="createDivElement()" onclick="createDivElement()">
+            GMC	Acadia																								
+          </div>
+        </div>
+        <div class="grid-item" id="item25">
+          <div class="grid-content"  ontouchstart="createDivElement()" onclick="createDivElement()">
+            Honda 	Accord	2013	Sports	14,733	189 hp 2.4L I4	FWD	Automatic	White	30																
+          </div>
+        </div>
+        <div class="grid-item" id="item26">
+          <div class="grid-content"  ontouchstart="createDivElement()" onclick="createDivElement()">
+            Toyota	Rav	2016	xle	19,496	176 hp 2.5L I4	AWD	Automatic																		
           </div>
         </div>
       </div>
@@ -268,6 +315,7 @@
         })
       </script>
     </div>
+    <script src="js/cars.js"></script>
   </body>
   <footer>
     <div class="container pt-5 border-bottom">
