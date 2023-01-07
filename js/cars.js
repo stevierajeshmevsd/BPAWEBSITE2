@@ -1,4 +1,3 @@
-// this functino does the actual math for the loan estimator. 
 function calculateMonthlyPayment(principle, interestRate, term) {
     const monthlyInterestRate = interestRate / 12;
     const monthlyPayment = (principle * monthlyInterestRate) / (1 - Math.pow(1 + monthlyInterestRate, -term));
