@@ -74,6 +74,9 @@ html{
     font-family: 'Play', sans-serif;
     margin-left: 2%;
     font-size: 0.9vw;
+    padding: 0px;
+    background-color: red;
+    margin-bottom: 0px;
 }
 .items1{
     float: right;
@@ -81,6 +84,16 @@ html{
     color: white;
     font-family: 'Play', sans-serif;
     font-size: 0.9vw;
+    margin-bottom: 0px;
+}
+.Engine{
+    padding: 0px;
+}
+.DT{
+    margin-top: 15%;
+}
+.Trans{
+    margin-top: 15%;
 }
 
 @media only screen and (max-width: 600px) {

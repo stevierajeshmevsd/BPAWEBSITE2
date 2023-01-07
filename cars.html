@@ -71,59 +71,7 @@
   </nav>
 
 
-  <script>
-    // this functino does the actual math for the loan estimator. 
-    function calculateMonthlyPayment(principle, interestRate, term) {
-      const monthlyInterestRate = interestRate / 12;
-      const monthlyPayment = (principle * monthlyInterestRate) / (1 - Math.pow(1 + monthlyInterestRate, -term));
-      return monthlyPayment;
-    }
-
-    // Updated the slider value of the downpayment slider.
-    function sliderChange(val){
-      document.getElementById('sliderStatus').innerHTML = val;
-      return val;
-    }
-
-    // This function takes care of the loan estimator's calculation.
-    function myFunction(){       
-      // var monthlyPayment;
-      const interest = [5.57, 6.34, 8.62, 9.37, 10.48, 12.38, 14.54, 18.87]
-      var price = document.getElementById("sliderStatus").innerHTML;
-      var downPayment = 40000 - price;
-      var interestRate;
-      var e = document.getElementById("ddlViewBy");
-      var value = e.value;
-      var text = e.options[e.selectedIndex].text;
-
-
-      
-      console.log(downPayment);
-      interestRate = interest[value] / 100; 
-      document.getElementById("myText").value = interestRate * 100 + "%";
-      document.getElementById("36month").innerHTML = "$" + Number(Math.round(calculateMonthlyPayment(downPayment, interestRate, 36)+'e'+2)+'e-'+2);
-      document.getElementById("48month").innerHTML = "$" + Number(Math.round(calculateMonthlyPayment(downPayment, interestRate, 48)+'e'+2)+'e-'+2);
-      document.getElementById("60month").innerHTML = "$" + Number(Math.round(calculateMonthlyPayment(downPayment, interestRate, 60)+'e'+2)+'e-'+2);
-      // console.log(monthlyPayment);
-    }
-
-    function searchInformation(){
-      const searchInput = document.getElementById('search-input');
-      const searchQuery = searchInput.value;
-      document.getElementById('testing').innerHTML = searchQuery;
-    }
-
-
-  
-
-    // function createDivElement(){
-    //   var parentDiv = document.getElementById("body-wrapper");
-    //   var div = document.createElement("div");
-    //   div.classList.add("new-div");
-    //   parentDiv.appendChild(div);
-    // }
-    
-  </script>
+ 
 
 
   </head>
@@ -131,20 +79,37 @@
     <div id ="preloader"></div>
     <div id ="body-wrapper">
       <h1 class="head" id="testing">Browse Our Avalable Cars:</h1>
+
+
+
       <div class="formContainer">
-        <form class="sampleFrom">
-          <input type="search" placeholder="Search..." id = "search-input" autocomplete="off">
-          <button type="submit" onclick="storeSearch()" data-target="carsview.html">Search</button>
-          <script>
-            function storeSearch() {
-              event.preventDefault();
-              var searchInput = document.getElementById("search-input").value;
-              // console.log(searchInput);
-              // fetch("serverside/query.php");
-            }
-          </script>
-      </form>
+        <form class="sampleFrom" id="search-form">
+          <input type="search" placeholder="Search..." id="search-input" autocomplete="off">
+          <button type="submit" id="button">Search</button>
+        </form>
       </div>
+  
+      
+
+
+
+
+      
+      <div id="results"></div>
+      
+      
+      
+      <script>
+      
+      
+      </script>
+      
+
+
+
+
+
+
       <br>
       <br>
       <br>
@@ -371,6 +336,7 @@
         })
       </script>
     </div>
+    <script src="js/cars.js"></script>
   </body>
   <footer>
     <div class="container pt-5 border-bottom">
