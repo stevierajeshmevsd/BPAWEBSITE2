@@ -1,4 +1,3 @@
-// this functino does the actual math for the loan estimator. 
 function calculateMonthlyPayment(principle, interestRate, term) {
   const monthlyInterestRate = interestRate / 12;
   const monthlyPayment = (principle * monthlyInterestRate) / (1 - Math.pow(1 + monthlyInterestRate, -term));
@@ -295,10 +294,26 @@ for(var i = 0; i < data.length; i++){
 }
 
 
-//This sets all the grid value in the table to none. 
-for(var i = 0; i < properdiv.length; i++){
-  document.getElementById(properdiv[i]).style.display = "none";
-}
+  
+
+  if(matches != -1){
+    for(var i = 0; i < matches.length; i++){
+      matchData.push(data[matches[i]]);
+    }
+  }
+
+  console.log(matches);
+
+  for(var i = 0; i < data.length; i++){
+    for(var j = 0; j < matches.length; j++){
+      if(i != matches[j]){
+        document.getElementById('item' + i).style.display = "none";
+      }
+    }
+  }
+
+  // console.log("Matches: " + matches);
+  // console.log(matchData);
 
 
 //this pushes the car information on the data array to the dataValue array.
