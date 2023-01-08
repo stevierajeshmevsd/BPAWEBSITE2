@@ -68,6 +68,9 @@
 
   </nav>
   </head>
+  <script>
+    
+  </script>
   <body class="bg-transparent">
     <div id ="preloader"></div>
     <br>
@@ -94,11 +97,52 @@
             </div>
             <div class="Trans">
               <p class="items">Transmission:</p>
-              <p class="items1" id="Drivetrain">Manual</p>
+              <p class="items1" id="Transmission">Manual</p>
+            </div>
+            <div class="Color">
+              <p class="items">Color:</p>
+              <p class="items1" id="Color">Black</p>
+            </div>
+            <div class="MPG">
+              <p class="items">Avg MPG:</p>
+              <p class="items1" id="AvgMPG">35 mpg</p>
             </div>
           </div>
         </div>
       </div>
+    </div>
+    <div class="moreinfo">
+      <!-- <h1 class="text-center" id="descri">Description</h1> -->
+      <p id="miles" class="text-center">xxx,xxx miles</p>
+      <p id="desc">This vehicle is the best vehicle of the 21st century, we can't guarantee it will run but it's rustic looking heated seats and stuff makes your bum feel so good.</p>
+    </div>
+    <div class="finance">
+      <h1 class="text-center" id="descrip">Finance</h1>
+      <!-- <div class="row" id="i36month">
+        <p>&ensp;&ensp;Monthly interest rate for 36 months:&ensp; </p>
+        <span id="36month" style="color: white">0</span>
+      </div> -->
+      <div class="row" style="margin-left: .1%;">
+        <p class="downpay"> Downpayment: </p>
+        <span id="sliderStatus" style="color: white">$1000</span>    
+        <input type="range" class="pay" min="1000" max="20000" value="1000" step="100" onchange="sliderChange(this.value)">
+      </div>
+      <form class="credit">
+        <p class="prompt">Please select your credit score </p>
+        <select id="ddlViewBy">
+          <option value="0">Excellent Credit: (720-850)</option>
+          <option value="1">Great: (690-719)</option>
+          <option value="2">Very good: (670-689)</option>
+          <option value="3">Good: (650-669)</option>
+          <option value="4">Average: (630-649)</option>
+          <option value="5">Below Average: (620-629)</option>
+          <option value="6">Poor: (580-609)</option>
+          <option value="7">Very Poor: (580 less)</option>
+        </select>
+        <button onclick="myFunction()" id="btn">Submit</button>
+      </form>
+      <p class="prompt1">Your Interest rate is </p>
+      <p id="myText">0%</p>
     </div>
 
 
@@ -113,31 +157,11 @@
     <br>
     <br>
     <br>
-    <br>
-    <br>
-
-    <br>
+    <br>  
     <br>
     <br>
     <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-
-    <br>
-    <br>
+  
     
     <script>
       var loader = document.getElementById("preloader");
@@ -146,6 +170,7 @@
         loader.style.display = "none";
       })
     </script>
+    <script src="js/cars.js"></script>
   </body>
   <footer>
     <div class="container pt-5 border-bottom">

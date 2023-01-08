@@ -92,6 +92,7 @@ input[type="search"]:focus {
       .grid-item{
         /* border: solid white 3px; */
         padding: 15px;
+        /* display: none; */
       }
       .grid-content{
         border: 3px solid red;
@@ -99,6 +100,9 @@ input[type="search"]:focus {
         aspect-ratio: 2;
         color: white;
         border-radius: 10px;
+      }
+      #item1{
+        /* display: none; */
       }
 
       .new-div{
@@ -116,6 +120,7 @@ input[type="search"]:focus {
             padding: 30px;
         }
       }
+
 
 
 
