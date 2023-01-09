@@ -482,45 +482,35 @@ const data = [
 //I am still working on this please don't change it.
 
 
-function divNumber(divName){
-  var contaienrNumber;
-  const letters = divName.split('').filter((char) => !isNaN(char));
-  contaienrNumber = parseInt(letters.join(''), 10);
-  console.log(contaienrNumber);
-  return contaienrNumber;
-}
+// function divNumber(divName){
+//   var contaienrNumber;
+//   const letters = divName.split('').filter((char) => !isNaN(char));
+//   contaienrNumber = parseInt(letters.join(''), 10);
+//   console.log(contaienrNumber);
+//   return contaienrNumber;
+// }
 
 
-function descChange(){
-  var fileName = location.pathname.split("/").pop();
+// function descChange(divIndexValue){
+//   document.getElementById('desc').innerHTML = data[divIndexValue].description;
+//   // console.log(data)
+// }
 
-  if(fileName == "carview.html"){
-    document.getElementById('desc').innerHTML = "This is stevie!"
-  }
-}
+// //This var contains the div's name.
+// var divItem;
+// var idNumber;
+// function createDivElement(varItemId){
+//   divItem = varItemId;
+//   console.log(divItem);
+//   idNumber = divNumber(divItem);
+//   console.log(idNumber);
+//   // window.location.replace('carview.html');
+//   // document.getElementById('desc').innerHTML = "HI there this is Raghav/";
 
-//This var contains the div's name.
-var pageBool = false;
-var divItem;
-var idNumber;
-function createDivElement(varItemId){
-  divItem = varItemId;
-  console.log(divItem);
-  idNumber = divNumber(divItem);
-  console.log(idNumber);
-  window.location.replace('carview.html');
-  pageBool = true;
-  console.log(pageBool);
-  document.getElementById('desc').innerHTML = "HI there this is Raghav";
-  descChange()
+// }
 
-
-}
-
-// document.getElementById('desc').innerHTML = "HI there this is Raghav/";
-
-
-
+// if (window.location.pathname.endsWith('carsview.html')) {
+// }
 
 // descChange(idNumber);
 
@@ -596,7 +586,7 @@ var properdiv = [];
 for(var i = 0; i < data.length; i++){
   var placeholder = "item" + i;
   properdiv.push(placeholder);
-  // divNumber(placeholder);
+  divNumber(placeholder);
 }
 
 
