@@ -60,165 +60,450 @@ const data = [
   make:'toyota', 
   model: 'camry', 
   year: '2012',
-  trim: 'le'
+  trim: 'le',
+  miles: '89345',
+  description: 'This works good',
+  price: '34,000',
+  luxuryScore: '4',
+  Engine: ' hybrid',
+  driveTrain: 'FWD',
+  transmission: 'CVT',
+  color: 'blue',
+  mpg: '40mpg'
 },
 {
   make:'lexus', 
   model: 'ls', 
   year: '2010',
-  trim: 'base'
+  trim: 'base',
+  Miles: ' 23432',
+  description: '',
+  price: '3,000',
+  luxuryScore: '5',
+  Engine: 'v6 turbo',
+  driveTrain: 'AWD',
+  transmission: 'Automatic',
+  color: 'white',
+  mpg: '23mpg'
 },
 {
   make:'subaru', 
   model: 'legacy', 
   year: '2017',
-  trim: 'base'
+  trim: 'base',
+  Miles: '45434',
+  description: '',
+  price: '20,000',
+  luxuryScore: '2',
+  Engine: 'Boxter 6-Cyl',
+  driveTrain: 'Awd',
+  transmission: 'Automatic',
+  color: 'Blue',
+  mpg: '20mpg'
 },
 {
   make:'audi', 
   model: 'a6', 
   year: '2015',
-  trim: 'premium'
+  trim: 'premium',
+  Miles: ' ',
+  description: '',
+  price: '',
+  luxuryScore: '',
+  Engine: '',
+  driveTrain: '',
+  transmission: '',
+  color: '',
+  mpg: ''
 },
 {
   make:'chrysler', 
   model: '300', 
   year: '2016',
-  trim: 'base'
+  trim: 'base',
+  Miles: ' ',
+  description: '',
+  price: '',
+  luxuryScore: '',
+  Engine: '',
+  driveTrain: '',
+  transmission: '',
+  color: '',
+  mpg: ''
 },
 {
   make:'chevrolet', 
   model: 'sonic', 
   year: '2015',
-  trim: 'base'
+  trim: 'base',
+  Miles: ' ',
+  description: '',
+  price: '',
+  luxuryScore: '',
+  Engine: '',
+  driveTrain: '',
+  transmission: '',
+  color: '',
+  mpg: ''
 },
 {
   make:'bmw', 
   model: 'series 3', 
   year: '2018',
-  trim: '300i'
+  trim: '300i',
+  Miles: ' ',
+  description: '',
+  price: '',
+  luxuryScore: '',
+  Engine: '',
+  driveTrain: '',
+  transmission: '',
+  color: '',
+  mpg: ''
 },
 {
   make:'dodge', 
   model: 'charger', 
   year: '2018',
-  trim: 'sxt'
+  trim: 'sxt',
+  Miles: ' ',
+  description: '',
+  price: '',
+  luxuryScore: '',
+  Engine: '',
+  driveTrain: '',
+  transmission: '',
+  color: '',
+  mpg: ''
 },
 {
   make:'toyota', 
   model: 'corolla', 
   year: '2017',
-  trim: 'se'
+  trim: 'se',
+  Miles: ' ',
+  description: '',
+  price: '',
+  luxuryScore: '',
+  Engine: '',
+  driveTrain: '',
+  transmission: '',
+  color: '',
+  mpg: ''
 },
 {
   make:'volkswagen', 
   model: 'passat', 
   year: '2014',
-  trim: 'se'
+  trim: 'se',
+  Miles: ' ',
+  description: '',
+  price: '',
+  luxuryScore: '',
+  Engine: '',
+  driveTrain: '',
+  transmission: '',
+  color: '',
+  mpg: ''
 },
 {
   make:'hyundai', 
   model: 'sonata', 
   year: '2018',
-  trim: 'sel'
+  trim: 'sel',
+  Miles: ' ',
+  description: '',
+  price: '',
+  luxuryScore: '',
+  Engine: '',
+  driveTrain: '',
+  transmission: '',
+  color: '',
+  mpg: ''
 },
 {
   make:'honda', 
   model: 'cr-v', 
   year: '2016',
-  trim: 'ex'
+  trim: 'ex',
+  Miles: ' ',
+  description: '',
+  price: '',
+  luxuryScore: '',
+  Engine: '',
+  driveTrain: '',
+  transmission: '',
+  color: '',
+  mpg: ''
 },
 {
   make:'nissan', 
   model: 'versa', 
   year: '2019',
-  trim: 'sv'
+  trim: 'sv',
+  Miles: ' ',
+  description: '',
+  price: '',
+  luxuryScore: '',
+  Engine: '',
+  driveTrain: '',
+  transmission: '',
+  color: '',
+  mpg: ''
 },
 {
   make:'acura', 
   model: 'rdx', 
   year: '2019',
-  trim: 'sh'
+  trim: 'sh',
+  Miles: ' ',
+  description: '',
+  price: '',
+  luxuryScore: '',
+  Engine: '',
+  driveTrain: '',
+  transmission: '',
+  color: '',
+  mpg: ''
 },
 {
   make:'kia', 
   model: 'sportage', 
   year: '2020',
-  trim: 'lx'
+  trim: 'lx',
+  Miles: ' ',
+  description: '',
+  price: '',
+  luxuryScore: '',
+  Engine: '',
+  driveTrain: '',
+  transmission: '',
+  color: '',
+  mpg: ''
 },
 {
   make:'honda', 
   model: 'odyssey', 
   year: '2014',
-  trim: 'ex-l'
+  trim: 'ex-l',
+  Miles: ' ',
+  description: '',
+  price: '',
+  luxuryScore: '',
+  Engine: '',
+  driveTrain: '',
+  transmission: '',
+  color: '',
+  mpg: ''
 },
 {
   make:'jeep', 
   model: 'compass', 
   year: '2017',
-  trim: 'latitude'
+  trim: 'latitude',
+  Miles: ' ',
+  description: '',
+  price: '',
+  luxuryScore: '',
+  Engine: '',
+  driveTrain: '',
+  transmission: '',
+  color: '',
+  mpg: ''
 },
 {
   make:'subaru', 
   model: 'brz', 
   year: '2013',
-  trim: 'primium'
+  trim: 'primium',
+  Miles: ' ',
+  description: '',
+  price: '',
+  luxuryScore: '',
+  Engine: '',
+  driveTrain: '',
+  transmission: '',
+  color: '',
+  mpg: ''
 },
 {
   make:'nissan', 
   model: 'rogue', 
   year: '2021',
-  trim: 's'
+  trim: 's',
+  Miles: ' ',
+  description: '',
+  price: '',
+  luxuryScore: '',
+  Engine: '',
+  driveTrain: '',
+  transmission: '',
+  color: '',
+  mpg: ''
 },
 {
   make:'volkswagen', 
   model: 'jetta', 
   year: '2014',
-  trim: 'se'
+  trim: 'se',
+  Miles: ' ',
+  description: '',
+  price: '',
+  luxuryScore: '',
+  Engine: '',
+  driveTrain: '',
+  transmission: '',
+  color: '',
+  mpg: ''
 },
 {
   make:'chrysler', 
   model: 'pacifica', 
   year: '2017',
-  trim: 'touring'
+  trim: 'touring',
+  Miles: ' ',
+  description: '',
+  price: '',
+  luxuryScore: '',
+  Engine: '',
+  driveTrain: '',
+  transmission: '',
+  color: '',
+  mpg: ''
 },
 {
   make:'ford', 
   model: 'escape', 
   year: '2018',
-  trim: 'sel'
+  trim: 'sel',
+  Miles: ' ',
+  description: '',
+  price: '',
+  luxuryScore: '',
+  Engine: '',
+  driveTrain: '',
+  transmission: '',
+  color: '',
+  mpg: ''
 },
 {
   make:'cherolet', 
   model: 'malibu', 
   year: '2020',
-  trim: 'lt'
+  trim: 'lt',
+  Miles: ' ',
+  description: '',
+  price: '',
+  luxuryScore: '',
+  Engine: '',
+  driveTrain: '',
+  transmission: '',
+  color: '',
+  mpg: ''
 },
 {
   make:'toyota', 
   model: 'highlander', 
   year: '2022',
-  trim: 'xle'
+  trim: 'xle',
+  Miles: ' ',
+  description: '',
+  price: '',
+  luxuryScore: '',
+  Engine: '',
+  driveTrain: '',
+  transmission: '',
+  color: '',
+  mpg: ''
 },
 {
   make:'gmc', 
   model: 'acadia', 
   year: '2017',
-  trim: 'se'
+  trim: 'se',
+  Miles: ' ',
+  description: '',
+  price: '',
+  luxuryScore: '',
+  Engine: '',
+  driveTrain: '',
+  transmission: '',
+  color: '',
+  mpg: ''
 },
 {
   make:'honda', 
   model: 'accord', 
   year: '2013',
-  trim: 'sports'
+  trim: 'sports',
+  Miles: ' ',
+  description: '',
+  price: '',
+  luxuryScore: '',
+  Engine: '',
+  driveTrain: '',
+  transmission: '',
+  color: '',
+  mpg: ''
 },
 {
   make:'toyota', 
   model: 'rav4', 
   year: '2016',
-  trim: 'xle'
+  trim: 'xle',
+  Miles: ' ',
+  description: '',
+  price: '',
+  luxuryScore: '',
+  Engine: '',
+  driveTrain: '',
+  transmission: '',
+  color: '',
+  mpg: ''
 }
 ]
+
+
+
+
+
+
+
+//I am still working on this please don't change it.
+
+
+// function divNumber(divName){
+//   var contaienrNumber;
+//   const letters = divName.split('').filter((char) => !isNaN(char));
+//   contaienrNumber = parseInt(letters.join(''), 10);
+//   console.log(contaienrNumber);
+//   return contaienrNumber;
+// }
+
+
+// function descChange(divIndexValue){
+//   document.getElementById('desc').innerHTML = data[divIndexValue].description;
+//   // console.log(data)
+// }
+
+// //This var contains the div's name.
+// var divItem;
+// var idNumber;
+// function createDivElement(varItemId){
+//   divItem = varItemId;
+//   console.log(divItem);
+//   idNumber = divNumber(divItem);
+//   console.log(idNumber);
+//   // window.location.replace('carview.html');
+//   // document.getElementById('desc').innerHTML = "HI there this is Raghav/";
+
+// }
+
+// if (window.location.pathname.endsWith('carsview.html')) {
+// }
+
+// descChange(idNumber);
+
 
 
 function search() {
@@ -291,6 +576,7 @@ var properdiv = [];
 for(var i = 0; i < data.length; i++){
   var placeholder = "item" + i;
   properdiv.push(placeholder);
+  divNumber(placeholder);
 }
 
 
@@ -356,19 +642,8 @@ search();
 
 
 
-
 // this is for the carsview page 
 
 
-// Add a click handler to each div element that you want to track
-const divElements = document.querySelectorAll('');
 
-divElements.forEach((div) => {
-  div.addEventListener('click', () => {
-    // Get the value of the unique identifier for the div element
-    const identifier = div.getAttribute('data-identifier');
 
-    // Redirect to the new page and pass the identifier as a query parameter
-    window.location.href = `/newpage?identifier=${identifier}`;
-  });
-});
