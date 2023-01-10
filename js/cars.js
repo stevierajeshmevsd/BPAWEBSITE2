@@ -8,12 +8,9 @@ function calculateMonthlyPayment(principle, interestRate, term) {
 function sliderChange(val){
   var vehicleCost = localStorage.getItem("price");
   var carPrice =  parseInt(vehicleCost.replace(/[^0-9]/g, ''), 10);
-  console.log(carPrice);
   var slider = document.getElementById('sliderStatus');
   slider.innerHTML = val; 
-  slider.min = 1000;
-  document.getElementById('sliderStatus').max = carPrice;
-  
+  document.getElementById('divRange').max = carPrice
 }
 
 
@@ -25,9 +22,9 @@ function myFunction(){
   event.preventDefault();
   const interest = [5.57, 6.34, 8.62, 9.37, 10.48, 12.38, 14.54, 18.87]
   var price = document.getElementById("sliderStatus").innerHTML;
-  var vehiclecost = document.getElementById('price').innerHTML;
-  var vehiclePrice = parseInt(vehiclecost.match(/\d+/), 10);
-  var downPayment = localStorage.getItem("price") - price;
+  var vehicleCost = localStorage.getItem("price");
+  var carPrice =  parseInt(vehicleCost.replace(/[^0-9]/g, ''), 10);
+  var downPayment = carPrice - price;
   var interestRate;
   var newinterest;
   var roundedinterest;
@@ -74,9 +71,8 @@ const data = [
   trim: 'le',
   miles: '89345',
   description: 'The Toyota Camry SE is a reliable daily normal sedan. It comes with Heated seats, ventilation, 4 seats, 2 keys, and a whole lotta storage. The best use for this car is hauling around your family and it will last for 300,000 miles.',
-  price: '34,000',
-  luxuryScore: '4',
-  Engine: ' hybrid',
+  price: '$34,000',
+   Engine: ' hybrid',
   driveTrain: 'FWD',
   transmission: 'CVT',
   color: 'Red',
@@ -91,13 +87,12 @@ const data = [
   Miles: '23,432 miles',
   description: 'The Lexus LS is a full-size luxury sedan that offers advanced features and a comfortable, spacious interior. The base model comes equipped with a range of amenities, including a premium audio system and a power moonroof. It also offers advanced safety technologies and a refined driving experience.',
   price: '$3,000',
-  luxuryScore: '5',
-  Engine: 'V6 turbo',
+   Engine: 'V6 turbo',
   driveTrain: 'AWD',
   transmission: 'Automatic',
   color: 'Sliver',
   mpg: '20mpg',
-  luxury: '3'
+  luxury: '2'
 },
 {
   make:'suburu', 
@@ -105,10 +100,9 @@ const data = [
   year: '2017',
   trim: 'Base',
   Miles: '45,434 miles',
-  description: '',
+  description: 'The Subaru Legacy is a mid-size sedan that offers a spacious and comfortable interior, as well as standard all-wheel drive and a range of advanced safety features. The base model is equipped with a 2.5-liter four-cylinder engine that produces 175 horsepower, as well as features such as a 6.5-inch touchscreen display.',
   price: '$20,000',
-  luxuryScore: '2',
-  Engine: 'Boxter 6-Cyl',
+   Engine: 'Boxter 6-Cyl',
   driveTrain: 'Awd',
   transmission: 'Automatic',
   color: 'Black',
@@ -120,15 +114,14 @@ const data = [
   model: 'A6', 
   year: '2015',
   trim: 'Premium',
-  Miles: ' ',
-  description: '',
-  price: '',
-  luxuryScore: '',
-  Engine: '',
-  driveTrain: '',
-  transmission: '',
+  Miles: '107,976 miles',
+  description: 'The Audi A6 is a mid-size luxury sedan that offers a sophisticated and refined driving experience. It comes equipped with a range of advanced features, including a potent engine, a spacious and comfortable interior, and a variety of high-tech amenities.',
+  price: '$9,500',
+  Engine: '220 hp 2L I4',
+  driveTrain: 'AWD',
+  transmission: 'Automatic',
   color: 'Blue',
-  mpg: '',
+  mpg: '20 mpg',
   luxury: '4'
 },
 {
@@ -137,9 +130,8 @@ const data = [
   year: '2016',
   trim: 'base',
   Miles: ' ',
-  description: '',
+  description: 'The Chrysler 300 is a full-size sedan that offers a spacious and comfortable interior, as well as a range of advanced features and powerful engine options. The base model of the 2016 Chrysler 300 is equipped with a 3.6-liter V6 engine that produces 292 horsepower and 260 lb-ft of torque.',
   price: '',
-  luxuryScore: '',
   Engine: '',
   driveTrain: '',
   transmission: '',
@@ -153,9 +145,8 @@ const data = [
   year: '2015',
   trim: 'base',
   Miles: ' ',
-  description: '',
+  description: 'The Chevrolet Sonic LT is a subcompact car with additional features and amenities compared to the base model. It has a 1.8-liter four-cylinder engine, front-wheel drive, and may come with a power sunroof, touchscreen display, and rearview camera. The Sonic is known for its fuel efficiency, agile handling, and spacious interior.',
   price: '',
-  luxuryScore: '',
   Engine: '',
   driveTrain: '',
   transmission: '',
@@ -169,15 +160,14 @@ const data = [
   year: '2018',
   trim: '300i',
   Miles: ' ',
-  description: '',
+  description: 'The BMW 3 Series is a compact luxury sedan that offers a balance of sporty performance and comfort. The 2018 BMW 320i is equipped with a 2.0-liter four-cylinder engine. It comes with features such as a six-speaker audio system, Bluetooth connectivity, and a rearview camera. The 3 Series is known for its dynamic handling, premium interior, and advanced safety features.',
   price: '',
-  luxuryScore: '',
   Engine: '',
   driveTrain: '',
   transmission: '',
   color: 'Grey',
   mpg: '',
-  luxury: '4'
+  luxury: '3'
 },
 {
   make:'dodge', 
@@ -185,9 +175,8 @@ const data = [
   year: '2018',
   trim: 'sxt',
   Miles: ' ',
-  description: '',
+  description: 'The 2018 Dodge Charger SXT is a full-size sedan that offers a potent engine and a range of advanced features. It has a spacious and comfortable interior, and is known for its bold styling and powerful performance.',
   price: '',
-  luxuryScore: '',
   Engine: '',
   driveTrain: '',
   transmission: '',
@@ -203,13 +192,12 @@ const data = [
   Miles: ' 65,714', 
   description: 'The Toyota Corolla is a compact car, The 2017 model year of the Corolla features a sleek exterior design, a spacious and comfortable interior, and a reliable and fuel-efficient engine. It comes equipped with a variety of advanced safety features and is available in a range of trims to suit different driving needs and preferences.',
   price: '16,757',
-  luxuryScore: '',
   Engine: '132 hp 1.8L I4',
   driveTrain: 'Fwd',
   transmission: 'Continuously Variable Transmission',
   color: 'white',
   mpg: '32',
-  luxury: '4'
+  luxury: '3'
 },
 {
   make:'volkswagen', 
@@ -219,29 +207,27 @@ const data = [
   Miles: '58,675 ',
   description: 'The Volkswagen Passat is a mid-size sedan, the 2014 model year of the Passat features a spacious and stylish interior, a powerful and fuel-efficient engine, and a variety of advanced safety and technology features. It is a practical and reliable choice for families and commuters alike.',
   price: '$11,967',
-  luxuryScore: '4',
-  Engine: '140 hp 2L I4 Diesel',
+   Engine: '140 hp 2L I4 Diesel',
   driveTrain: 'Fwd',
   transmission: '6-Speed Dual Clutch',
   color: 'white',
   mpg: '22',
-  luxury: '4'
+  luxury: '1'
 },
 {
-  make:'Hyundai', 
-  model: 'Sonata', 
+  make:'hyundai', 
+  model: 'sonata', 
   year: '2018',
   trim: 'SEL',
   Miles: '37,981 miles',
   description: 'The 2018 model year of the Sonata features a sleek and modern exterior design, a spacious and well-equipped interior, and a range of advanced safety features. The SEL trim of the 2018 Sonata includes additional comfort and convenience features such as a power drivers seat and a 7-inch touchscreen display.',
   price: '$17,999',
-  luxuryScore: '3',
-  Engine: '185 hp 2.4L I4',
+   Engine: '185 hp 2.4L I4',
   driveTrain: 'FWD',
   transmission: 'Automatic',
   color: 'Sliver',
   mpg: '30 miles',
-  luxury: '4'
+  luxury: '2'
 },
 {
   make:'honda', 
@@ -249,57 +235,53 @@ const data = [
   year: '2016',
   trim: 'ex',
   Miles: ' ',
-  description: '',
+  description: 'The 2016 model year of the CR-V features a spacious and stylish interior, a fuel-efficient engine, and a range of advanced safety and technology features. The EX-L trim of the 2016 CR-V adds luxury features such as a power moonroof and leather-trimmed seats. It is a reliable and practical choice for families and outdoor enthusiasts.',
   price: '',
-  luxuryScore: '',
   Engine: '',
   driveTrain: '',
   transmission: '',
   color: 'Red',
   mpg: '',
-  luxury: '4'
+  luxury: '2'
 },
 {
-  make:'Nissan', 
-  model: 'Versa', 
+  make:'nissan', 
+  model: 'versa', 
   year: '2019',
   trim: 'SV',
   Miles: ' ',
-  description: '',
+  description: 'The 2019 Nissan Versa is a fuel-efficient compact car with a comfortable interior and advanced safety features. It is a practical and affordable choice for daily commuting or long-distance travel.',
   price: '',
-  luxuryScore: '',
   Engine: '',
   driveTrain: '',
   transmission: '',
   color: 'Sliver',
   mpg: '',
-  luxury: '4'
+  luxury: '0'
 },
 {
-  make:'Acura', 
-  model: 'RDX', 
+  make:'acura', 
+  model: 'rDX', 
   year: '2019',
   trim: 'SH',
   Miles: ' ',
-  description: '',
+  description: 'The Acura RDX is a compact luxury crossover SUV, the 2013 model year of the RDX features a sleek and stylish exterior design, a spacious and well-equipped interior, and a powerful and fuel-efficient engine. The SH-AWD trim of the 2013 RDX adds advanced safety features such as all-wheel drive and traction control.',
   price: '',
-  luxuryScore: '',
   Engine: '',
   driveTrain: '',
   transmission: '',
   color: 'Grey',
   mpg: '',
-  luxury: '0'
+  luxury: '3'
 },
 {
-  make:'Kia', 
-  model: 'Sportage', 
+  make:'kia', 
+  model: 'sportage', 
   year: '2020',
   trim: 'LX',
   Miles: ' ',
-  description: '',
+  description: 'The Kia Sportage is a compact crossover SUV, the 2020 model year of the Sportage features a sleek and modern exterior design, a spacious and well-equipped interior, and a range of advanced safety features. The base model of the 2020 Sportage comes equipped with a variety of comfort.',
   price: '',
-  luxuryScore: '',
   Engine: '',
   driveTrain: '',
   transmission: '',
@@ -308,30 +290,28 @@ const data = [
   luxury: '4'
 },
 {
-  make:'Honda', 
-  model: 'Odyssey', 
+  make:'honda', 
+  model: 'odyssey', 
   year: '2014',
   trim: 'EX-L',
   Miles: ' ',
-  description: '',
+  description: 'The 2014 Honda Odyssey EX-L is a top-of-the-line minivan that offers comfortable leather seats, a convenient sunroof, and a variety of advanced safety features. It is known for its reliability and spacious interior, making it a great choice for families.',
   price: '',
-  luxuryScore: '',
   Engine: '',
   driveTrain: '',
   transmission: '',
   color: 'Blue',
   mpg: '',
-  luxury: '4'
+  luxury: '3'
 },
 {
-  make:'Jeep', 
-  model: 'Compass', 
+  make:'jeep', 
+  model: 'compass', 
   year: '2017',
   trim: 'Latitude',
   Miles: ' ',
-  description: '',
+  description: 'The Jeep Compass Latitude is a compact SUV that offers a comfortable ride and advanced safety features. Its rugged good looks and excellent off-road capabilities make it a great choice for those who love to explore the outdoors. The Latitude trim level adds even more convenience and comfort features.',
   price: '',
-  luxuryScore: '',
   Engine: '',
   driveTrain: '',
   transmission: '',
@@ -345,9 +325,8 @@ const data = [
   year: '2013',
   trim: 'primium',
   Miles: ' ',
-  description: '',
+  description: 'The 2013 Subaru BRZ Premium is a sporty rear-wheel drive coupe with a 2.0-liter four-cylinder engine that produces 200 horsepower. It has a sleek and aerodynamic exterior design, and comes equipped with features such as a touchscreen display, Bluetooth connectivity, and a six-speaker audio system.',
   price: '',
-  luxuryScore: '',
   Engine: '',
   driveTrain: '',
   transmission: '',
@@ -361,15 +340,14 @@ const data = [
   year: '2021',
   trim: 's',
   Miles: ' ',
-  description: '',
+  description: 'The Nissan Rogue 2021 S trim is a compact SUV that seats up to five people. It is powered by a 2.5-liter four-cylinder engine that is paired with a continuously variable transmission (CVT). Standard features include a seven-inch touch screen display, Bluetooth connectivity, and automatic emergency braking.',
   price: '',
-  luxuryScore: '',
   Engine: '',
   driveTrain: '',
   transmission: '',
   color: '',
   mpg: '',
-  luxury: '4'
+  luxury: '3'
 },
 {
   make:'volkswagen', 
@@ -377,15 +355,14 @@ const data = [
   year: '2014',
   trim: 'se',
   Miles: ' ',
-  description: '',
+  description: 'The Volkswagen Jetta SE is a compact sedan with seating for up to five people. It is powered by a 2.0-liter four-cylinder engine that is paired with a six-speed automatic transmission. Standard features include a six-speaker audio system, Bluetooth connectivity, and a multi-function steering wheel.',
   price: '',
-  luxuryScore: '',
   Engine: '',
   driveTrain: '',
   transmission: '',
   color: '',
   mpg: '',
-  luxury: '4'
+  luxury: '1'
 },
 {
   make:'chrysler', 
@@ -393,9 +370,8 @@ const data = [
   year: '2017',
   trim: 'touring',
   Miles: ' ',
-  description: '',
+  description: 'The Chrysler Pacifica Touring is a minivan that seats up to eight people. It is powered by a 3.6-liter V6 engine that is paired with a nine-speed automatic transmission. Standard features include a six-speaker audio system, Bluetooth connectivity, and a rearview camera.',
   price: '',
-  luxuryScore: '',
   Engine: '',
   driveTrain: '',
   transmission: '',
@@ -409,9 +385,23 @@ const data = [
   year: '2018',
   trim: 'sel',
   Miles: ' ',
-  description: '',
+  description: 'The Ford Escape SEL is a compact SUV that seats up to five people. It is powered by a 2.0-liter four-cylinder engine that is paired with an eight-speed automatic transmission. Standard features include a six-speaker audio system, Bluetooth connectivity, and a rearview camera. ',
   price: '',
-  luxuryScore: '',
+  Engine: '',
+  driveTrain: '',
+  transmission: '',
+  color: '',
+  mpg: '',
+  luxury: '2'
+},
+{
+  make:'cherolet', 
+  model: 'malibu', 
+  year: '2020',
+  trim: 'lt',
+  Miles: ' ',
+  description: 'The Chevrolet Malibu LT is a mid-size sedan that seats up to five people. It is powered by a 1.5-liter four-cylinder engine that is paired with a six-speed automatic transmission. Standard features include a seven-inch touch screen display, Bluetooth connectivity, and a rearview camera.',
+  price: '',
   Engine: '',
   driveTrain: '',
   transmission: '',
@@ -420,30 +410,13 @@ const data = [
   luxury: '4'
 },
 {
-  make:'cherolet', 
-  model: 'malibu', 
-  year: '2020',
-  trim: 'lt',
-  Miles: ' ',
-  description: '',
-  price: '',
-  luxuryScore: '',
-  Engine: '',
-  driveTrain: '',
-  transmission: '',
-  color: '',
-  mpg: '',
-  luxury: '3'
-},
-{
   make:'toyota', 
   model: 'highlander', 
   year: '2022',
   trim: 'xle',
   Miles: ' ',
-  description: '',
+  description: 'The Toyota Highlander XLE is a mid-size SUV that seats up to eight people. It is powered by a 3.5-liter V6 engine that is paired with an eight-speed automatic transmission. Standard features include a seven-inch touch screen display, Bluetooth connectivity, and a rearview camera.',
   price: '',
-  luxuryScore: '',
   Engine: '',
   driveTrain: '',
   transmission: '',
@@ -457,15 +430,14 @@ const data = [
   year: '2017',
   trim: 'se',
   Miles: ' ',
-  description: '',
+  description: 'The GMC Acadia SLE-1 is a mid-size SUV that seats up to seven people. It is powered by a 2.5-liter four-cylinder engine that is paired with a six-speed automatic transmission. Standard features include a six-speaker audio system, Bluetooth connectivity, and a rearview camera',
   price: '',
-  luxuryScore: '',
   Engine: '',
   driveTrain: '',
   transmission: '',
   color: '',
   mpg: '',
-  luxury: '4'
+  luxury: '2'
 },
 {
   make:'honda', 
@@ -473,15 +445,14 @@ const data = [
   year: '2013',
   trim: 'sports',
   Miles: ' ',
-  description: '',
+  description: 'The Honda Accord Sport is a mid-size sedan that seats up to five people. It is powered by a 2.4-liter four-cylinder engine that is paired with a six-speed manual transmission. Standard features include a six-speaker audio system, Bluetooth connectivity, and a rearview camera. ',
   price: '',
-  luxuryScore: '',
   Engine: '',
   driveTrain: '',
   transmission: '',
   color: '',
   mpg: '',
-  luxury: '4'
+  luxury: '1'
 },
 {
   make:'toyota', 
@@ -489,17 +460,17 @@ const data = [
   year: '2016',
   trim: 'xle',
   Miles: ' ',
-  description: '',
+  description: 'The Toyota RAV4 XLE is a compact SUV that seats up to five people. It is powered by a 2.5-liter four-cylinder engine that is paired with a six-speed automatic transmission. Standard features include a six-speaker audio system, Bluetooth connectivity, and a rearview camera.',
   price: '',
-  luxuryScore: '',
   Engine: '',
   driveTrain: '',
   transmission: '',
   color: '',
   mpg: '',
-  luxury: '4'
+  luxury: '3'
 }
 ]
+
 
 
 
@@ -540,6 +511,7 @@ function createDivElement(varItemId){
   idNumber = divNumber(divItem);
   console.log(idNumber);
   var dataObj = data[idNumber];
+  localStorage.setItem("idNumber", idNumber);
   localStorage.setItem("description", dataObj.description);
   localStorage.setItem("engine", dataObj.Engine);
   localStorage.setItem("drive", dataObj.driveTrain);
@@ -566,14 +538,15 @@ event.preventDefault();
 
   // window.location.replace('cars.html');
   var value;
-  var userValueChecking = localStorage.getItem("searchValue");
-  if(!userValueChecking){
+  // var userValueChecking = localStorage.getItem("searchValue");
+  // if(!userValueChecking){
     value = searchInput.value;
-  }
-  else{
-    value = userValueChecking;
-  }
+  // }
+  // else{
+  //   value = userValueChecking;
+  // }
 // const value = searchInput.value;
+// value = userValueChecking;
 const QUERY1 = value.toString();
 const query = QUERY1.toLowerCase();
 
@@ -680,13 +653,17 @@ console.log(dataValue);
 
 // Clear the results container
 resultsContainer.innerHTML = '';
+if(matches == -1){
+  resultsContainer.innerHTML = "Item does not exist";
+
+}
 
 // Loop through the results and add them to the page
-matchData.forEach(item => {
-  const resultElement = document.createElement('div');
-  resultElement.textContent = `${item.year} ${item.make} ${item.model} ${item.trim}`;
-  resultsContainer.appendChild(resultElement);
-});
+// matchData.forEach(item => {
+//   const resultElement = document.createElement('div');
+//   resultElement.textContent = `${item.year} ${item.make} ${item.model} ${item.trim}`;
+//   resultsContainer.appendChild(resultElement);
+// });
 }
 
 
@@ -710,8 +687,134 @@ search();
 
 
 
-// this is for the carsview page 
+// function storeSearch() {
+//   var searchInput = document.getElementById("search-input").value;
+//   localStorage.setItem("searchValue", searchValue);
 
+//   var value = searchInput;
+//   // var userValueChecking = localStorage.getItem("searchValue");
+//   // if(!userValueChecking){
+//   //   value = searchInput.value;
+//   // }
+//   // else{
+//   //   value = userValueChecking;
+//   // }
+// // const value = searchInput.value;
+// const QUERY1 = value.toString();
+// const query = QUERY1.toLowerCase();
+
+
+
+
+// //The words array extraces the words from the user's query
+// let words = [];
+// let currentWord = "";
+// for (let j = 0; j < query.length; j++) {
+// let char = query[j];
+// if (char === " ") {
+//     words.push(currentWord);
+//     currentWord = "";
+// } else {
+//     currentWord += char;
+//   }
+// }
+// words.push(currentWord); 
+
+
+// let Make = [];
+// let Model = [];
+// let Trim = [];
+// let Year = [];
+
+// let indexValue = [];
+// let holder = words[0];
+// for(var i = 0; i < 4; i++){ for(var k = 0; k < data.length; k++){ if(data[k].make === holder){ Make.push(k); }}
+//   for(var k = 0; k < data.length; k++){ if(data[k].trim === holder){ Trim.push(k); }}
+//   for(var k = 0; k < data.length; k++){ if(data[k].model === holder){ Model.push(k); }}
+//   for(var k = 0; k < data.length; k++){ if(data[k].year === holder){ Year.push(k); }}
+//   holder = words[i];
+// }
+
+
+// //creating the match data which contains the index value of the car based on the user's query.
+// let matchData = [];
+// let matches = [];
+// if(Make.length > 0 && Model.length > 0 && Year.length > 0){
+//   matches = Make.filter(num => Model.includes(num) && Year.includes(num));
+// }
+// else if(Make.length === 0 && Model.length === 0 && Year.length > 0){  matches = Year;  }
+// else if(Make.length > 0 && Model.length === 0 && Year.length === 0){  matches = Make;  }
+// else if(Make.length === 0 && Model.length > 0 && Year.length === 0){  matches = Model;  }
+// else if(Make.length > 0 && Model.length > 0 && Year.length === 0){  matches = Make.filter(num => Model.includes(num));  }
+// else if(Make.length === 0 && Model.length > 0 && Year.length > 0){  matches = Year.filter(num => Model.includes(num));  }
+// else if(Make.length > 0 && Model.length === 0 && Year.length > 0){  matches = Make.filter(num => Year.includes(num));  }
+// else{  matches = -1;  }
+
+
+
+// //pushing the right data into the matches array.
+// if(matches != -1){
+//   for(var i = 0; i < matches.length; i++){
+//     matchData.push(data[matches[i]]);
+//   }
+// }
+
+// console.log(matches);
+
+
+// //This makes an array that has the right name of all the grid values. 
+// var properdiv = [];
+// for(var i = 0; i < data.length; i++){
+//   var placeholder = "item" + i;
+//   properdiv.push(placeholder);
+//   // divNumber(placeholder);
+// }
+
+
+  
+
+//   if(matches != -1){
+//     for(var i = 0; i < matches.length; i++){
+//       matchData.push(data[matches[i]]);
+//     }
+//   }
+
+//   console.log(matches);
+
+//   for(var i = 0; i < data.length; i++){
+//     for(var j = 0; j < matches.length; j++){
+//       if(i != matches[j]){
+//         document.getElementById('item' + i).style.display = "none";
+//       }
+//     }
+//   }
+
+//   // console.log("Matches: " + matches);
+//   // console.log(matchData);
+
+
+// //this pushes the car information on the data array to the dataValue array.
+// var dataValue = [];
+// for(var i = 0; i < matches.length; i++){ for(var j = 0; j < data.length; j++){ if(matches[i] == j){ dataValue.push(data[j]); }}}
+
+// //This makes the right grid values to be visible to the user. 
+// for(var i = 0; i < data.length; i++){
+//   for(var j = 0; j < dataValue.length; j++){ if(dataValue[j] == data[i]){ document.getElementById(properdiv[i]).style.display = "block"; }}
+// }
+// console.log(dataValue);
+
+
+// // Clear the results container
+// resultsContainer.innerHTML = '';
+
+// // Loop through the results and add them to the page
+// matchData.forEach(item => {
+//   const resultElement = document.createElement('div');
+//   resultElement.textContent = `${item.year} ${item.make} ${item.model} ${item.trim}`;
+//   resultsContainer.appendChild(resultElement);
+// });
+  
+// }
 
 
 
