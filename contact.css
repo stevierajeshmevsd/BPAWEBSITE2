@@ -166,3 +166,7 @@ html{
     margin-top: 2%;
     font-family: 'Play', sans-serif;
   }
+  .card img{
+    margin-top: 2%;
+    width: 20%;
+  }

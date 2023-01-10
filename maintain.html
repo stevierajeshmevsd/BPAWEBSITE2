@@ -77,7 +77,7 @@
     <br>
     <br>
     <br>
-    <h1 class="text-center" id="begin">-Enter your details so we can help you-</h1>
+    <h1 class="text-center" id="begin">-Maintenance Timing-</h1>
     <div class="box">
       <br>
       <!-- <form class="branding"> -->
@@ -90,10 +90,9 @@
         </select>
       </form> -->
       <div class="container">
-        <br>
         <div class="row">
           <div class="col">
-            <p class="brand">Brand:</p>
+            <p class="brand">Enter Date:</p>
           </div>
           <div class="col">
             <input id="searchbar" class="searchbar1" type="text"
@@ -104,40 +103,18 @@
       <div class="container">
         <div class="row">
           <div class="col-6">
-            <p class="brand">Model:</p>
+            <p class="brand">Enter Time</p>
           </div>
           <div class="col">
             <input id="searchbar" type="text"
-        name="search" placeholder="Model">
+        name="search" placeholder="0:00">
           </div>
         </div>
       </div>
       <div class="container">
         <div class="row">
           <div class="col-6">
-            <p class="brand">Year:</p>
-          </div>
-          <div class="col">
-            <input id="searchbar" type="text"
-            name="search" placeholder="Year">
-          </div>
-        </div>
-      </div>
-      <div class="container">
-        <div class="row">
-          <div class="col-6">
-            <p class="brand">Miles Ridden:</p>
-          </div>
-          <div class="col">
-            <input id="searchbar" type="text"
-            name="search" placeholder="Miles">
-          </div>
-        </div>
-      </div>
-      <div class="container">
-        <div class="row">
-          <div class="col-6 ">
-            <p class="brand">Email:</p>
+            <p class="brand">Enter Email or Phone Number</p>
           </div>
           <div class="col">
             <input id="searchbar" type="text"
@@ -145,15 +122,39 @@
           </div>
         </div>
       </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-6">
+            <p class="brand">Enter Car Brand and Model</p>
+          </div>
+          <div class="col">
+            <input id="searchbar" type="text"
+            name="search" placeholder="Car">
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-6 ">
+            <p class="brand">State Nature of Maintenance</p>
+          </div>
+          <div class="col">
+            <input id="searchbar" type="text"
+            name="search" placeholder="..">
+          </div>
+        </div>
+      </div>
+      <div class="submitbuttom">
+        <input type="submit" value="Send Vehicle Details" style="width: 100%;" onclick="moveUser()">
+      </div>
+      <script>
+        function moveUser(){
+          window.location.replace('maintainPlaced.html');
+        }
+      </script>
     </div>
-    <div class="submitbuttom">
-      <input type="submit" value="Send Vehicle Details" style="width: 100%;" onclick="moveUser()">
-    </div>
-    <script>
-      function moveUser(){
-        window.location.replace('placed.html');
-      }
-    </script>
+
+   
     <br>
     <br>
     <br>

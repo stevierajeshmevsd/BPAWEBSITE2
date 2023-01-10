@@ -8,12 +8,9 @@ function calculateMonthlyPayment(principle, interestRate, term) {
 function sliderChange(val){
   var vehicleCost = localStorage.getItem("price");
   var carPrice =  parseInt(vehicleCost.replace(/[^0-9]/g, ''), 10);
-  console.log(carPrice);
   var slider = document.getElementById('sliderStatus');
   slider.innerHTML = val; 
-  slider.min = 1000;
-  document.getElementById('sliderStatus').max = carPrice;
-  
+  document.getElementById('divRange').max = carPrice
 }
 
 
@@ -25,9 +22,9 @@ function myFunction(){
   event.preventDefault();
   const interest = [5.57, 6.34, 8.62, 9.37, 10.48, 12.38, 14.54, 18.87]
   var price = document.getElementById("sliderStatus").innerHTML;
-  var vehiclecost = document.getElementById('price').innerHTML;
-  var vehiclePrice = parseInt(vehiclecost.match(/\d+/), 10);
-  var downPayment = localStorage.getItem("price") - price;
+  var vehicleCost = localStorage.getItem("price");
+  var carPrice =  parseInt(vehicleCost.replace(/[^0-9]/g, ''), 10);
+  var downPayment = carPrice - price;
   var interestRate;
   var newinterest;
   var roundedinterest;
@@ -74,7 +71,7 @@ const data = [
   trim: 'le',
   miles: '89345',
   description: 'The Toyota Camry SE is a reliable daily normal sedan. It comes with Heated seats, ventilation, 4 seats, 2 keys, and a whole lotta storage. The best use for this car is hauling around your family and it will last for 300,000 miles.',
-  price: '34,000',
+  price: '$34,000',
   luxuryScore: '4',
   Engine: ' hybrid',
   driveTrain: 'FWD',
@@ -228,8 +225,8 @@ const data = [
   luxury: '4'
 },
 {
-  make:'Hyundai', 
-  model: 'Sonata', 
+  make:'hyundai', 
+  model: 'sonata', 
   year: '2018',
   trim: 'SEL',
   Miles: '37,981 miles',
@@ -260,8 +257,8 @@ const data = [
   luxury: '4'
 },
 {
-  make:'Nissan', 
-  model: 'Versa', 
+  make:'nissan', 
+  model: 'versa', 
   year: '2019',
   trim: 'SV',
   Miles: ' ',
@@ -276,8 +273,8 @@ const data = [
   luxury: '4'
 },
 {
-  make:'Acura', 
-  model: 'RDX', 
+  make:'acura', 
+  model: 'rDX', 
   year: '2019',
   trim: 'SH',
   Miles: ' ',
@@ -292,8 +289,8 @@ const data = [
   luxury: '0'
 },
 {
-  make:'Kia', 
-  model: 'Sportage', 
+  make:'kia', 
+  model: 'sportage', 
   year: '2020',
   trim: 'LX',
   Miles: ' ',
@@ -308,8 +305,8 @@ const data = [
   luxury: '4'
 },
 {
-  make:'Honda', 
-  model: 'Odyssey', 
+  make:'honda', 
+  model: 'odyssey', 
   year: '2014',
   trim: 'EX-L',
   Miles: ' ',
@@ -324,8 +321,8 @@ const data = [
   luxury: '4'
 },
 {
-  make:'Jeep', 
-  model: 'Compass', 
+  make:'jeep', 
+  model: 'compass', 
   year: '2017',
   trim: 'Latitude',
   Miles: ' ',
@@ -540,6 +537,7 @@ function createDivElement(varItemId){
   idNumber = divNumber(divItem);
   console.log(idNumber);
   var dataObj = data[idNumber];
+  localStorage.setItem("idNumber", idNumber);
   localStorage.setItem("description", dataObj.description);
   localStorage.setItem("engine", dataObj.Engine);
   localStorage.setItem("drive", dataObj.driveTrain);
@@ -566,14 +564,15 @@ event.preventDefault();
 
   // window.location.replace('cars.html');
   var value;
-  var userValueChecking = localStorage.getItem("searchValue");
-  if(!userValueChecking){
+  // var userValueChecking = localStorage.getItem("searchValue");
+  // if(!userValueChecking){
     value = searchInput.value;
-  }
-  else{
-    value = userValueChecking;
-  }
+  // }
+  // else{
+  //   value = userValueChecking;
+  // }
 // const value = searchInput.value;
+// value = userValueChecking;
 const QUERY1 = value.toString();
 const query = QUERY1.toLowerCase();
 
@@ -680,13 +679,17 @@ console.log(dataValue);
 
 // Clear the results container
 resultsContainer.innerHTML = '';
+if(matches == -1){
+  resultsContainer.innerHTML = "Item does not exist";
+
+}
 
 // Loop through the results and add them to the page
-matchData.forEach(item => {
-  const resultElement = document.createElement('div');
-  resultElement.textContent = `${item.year} ${item.make} ${item.model} ${item.trim}`;
-  resultsContainer.appendChild(resultElement);
-});
+// matchData.forEach(item => {
+//   const resultElement = document.createElement('div');
+//   resultElement.textContent = `${item.year} ${item.make} ${item.model} ${item.trim}`;
+//   resultsContainer.appendChild(resultElement);
+// });
 }
 
 
@@ -710,8 +713,21 @@ search();
 
 
 
-// this is for the carsview page 
+// function storeSearch() {
+//   var searchInput = document.getElementById("search-input").value;
+//   localStorage.setItem("searchValue", searchValue);
 
+//   var value = searchInput;
+//   // var userValueChecking = localStorage.getItem("searchValue");
+//   // if(!userValueChecking){
+//   //   value = searchInput.value;
+//   // }
+//   // else{
+//   //   value = userValueChecking;
+//   // }
+// // const value = searchInput.value;
+// const QUERY1 = value.toString();
+// const query = QUERY1.toLowerCase();
 
 
 
