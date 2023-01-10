@@ -1,9 +1,3 @@
-const varname = 'varname';
-
-
-
-export varname;
-
 function calculateMonthlyPayment(principle, interestRate, term) {
   const monthlyInterestRate = interestRate / 12;
   const monthlyPayment = (principle * monthlyInterestRate) / (1 - Math.pow(1 + monthlyInterestRate, -term));
@@ -12,9 +6,14 @@ function calculateMonthlyPayment(principle, interestRate, term) {
 
 // Updated the slider value of the downpayment slider.
 function sliderChange(val){
+  var vehicleCost = localStorage.getItem("price");
+  var carPrice =  parseInt(vehicleCost.replace(/[^0-9]/g, ''), 10);
+  console.log(carPrice);
+  var slider = document.getElementById('sliderStatus');
+  slider.innerHTML = val; 
+  slider.min = 1000;
+  document.getElementById('sliderStatus').max = carPrice;
   
-  document.getElementById('sliderStatus').innerHTML = val;
-  // return val;
 }
 
 
@@ -26,7 +25,9 @@ function myFunction(){
   event.preventDefault();
   const interest = [5.57, 6.34, 8.62, 9.37, 10.48, 12.38, 14.54, 18.87]
   var price = document.getElementById("sliderStatus").innerHTML;
-  var downPayment = 40000 - price;
+  var vehiclecost = document.getElementById('price').innerHTML;
+  var vehiclePrice = parseInt(vehiclecost.match(/\d+/), 10);
+  var downPayment = localStorage.getItem("price") - price;
   var interestRate;
   var newinterest;
   var roundedinterest;
@@ -68,54 +69,57 @@ const resultsContainer = document.getElementById('results');
 const data = [
 {
   make:'toyota', 
-  model: 'camry', 
+  model: 'Camry', 
   year: '2012',
   trim: 'le',
   miles: '89345',
-  description: 'This works good',
+  description: 'The Toyota Camry SE is a reliable daily normal sedan. It comes with Heated seats, ventilation, 4 seats, 2 keys, and a whole lotta storage. The best use for this car is hauling around your family and it will last for 300,000 miles.',
   price: '34,000',
   luxuryScore: '4',
   Engine: ' hybrid',
   driveTrain: 'FWD',
   transmission: 'CVT',
-  color: 'blue',
-  mpg: '40mpg'
+  color: 'Red',
+  mpg: '40mpg', 
+  luxury: '3'
 },
 {
   make:'lexus', 
-  model: 'ls', 
+  model: 'LS', 
   year: '2010',
-  trim: 'base',
-  Miles: ' 23432',
-  description: '',
-  price: '3,000',
+  trim: 'Base',
+  Miles: '23,432 miles',
+  description: 'The Lexus LS is a full-size luxury sedan that offers advanced features and a comfortable, spacious interior. The base model comes equipped with a range of amenities, including a premium audio system and a power moonroof. It also offers advanced safety technologies and a refined driving experience.',
+  price: '$3,000',
   luxuryScore: '5',
-  Engine: 'v6 turbo',
+  Engine: 'V6 turbo',
   driveTrain: 'AWD',
   transmission: 'Automatic',
-  color: 'white',
-  mpg: '23mpg'
+  color: 'Sliver',
+  mpg: '20mpg',
+  luxury: '3'
 },
 {
-  make:'subaru', 
-  model: 'legacy', 
+  make:'suburu', 
+  model: 'Legacy', 
   year: '2017',
-  trim: 'base',
-  Miles: '45434',
+  trim: 'Base',
+  Miles: '45,434 miles',
   description: '',
-  price: '20,000',
+  price: '$20,000',
   luxuryScore: '2',
   Engine: 'Boxter 6-Cyl',
   driveTrain: 'Awd',
   transmission: 'Automatic',
-  color: 'Blue',
-  mpg: '20mpg'
+  color: 'Black',
+  mpg: '20 mpg',
+  luxury: '3'
 },
 {
   make:'audi', 
-  model: 'a6', 
+  model: 'A6', 
   year: '2015',
-  trim: 'premium',
+  trim: 'Premium',
   Miles: ' ',
   description: '',
   price: '',
@@ -123,8 +127,9 @@ const data = [
   Engine: '',
   driveTrain: '',
   transmission: '',
-  color: '',
-  mpg: ''
+  color: 'Blue',
+  mpg: '',
+  luxury: '4'
 },
 {
   make:'chrysler', 
@@ -138,8 +143,9 @@ const data = [
   Engine: '',
   driveTrain: '',
   transmission: '',
-  color: '',
-  mpg: ''
+  color: 'Sliver',
+  mpg: '',
+  luxury: '3'
 },
 {
   make:'chevrolet', 
@@ -153,8 +159,9 @@ const data = [
   Engine: '',
   driveTrain: '',
   transmission: '',
-  color: '',
-  mpg: ''
+  color: 'Red',
+  mpg: '',
+  luxury: '2'
 },
 {
   make:'bmw', 
@@ -168,8 +175,9 @@ const data = [
   Engine: '',
   driveTrain: '',
   transmission: '',
-  color: '',
-  mpg: ''
+  color: 'Grey',
+  mpg: '',
+  luxury: '4'
 },
 {
   make:'dodge', 
@@ -183,53 +191,57 @@ const data = [
   Engine: '',
   driveTrain: '',
   transmission: '',
-  color: '',
-  mpg: ''
+  color: 'yellow',
+  mpg: '',
+  luxury: '4'
 },
 {
   make:'toyota', 
   model: 'corolla', 
   year: '2017',
   trim: 'se',
-  Miles: ' ',
-  description: '',
-  price: '',
+  Miles: ' 65,714', 
+  description: 'The Toyota Corolla is a compact car, The 2017 model year of the Corolla features a sleek exterior design, a spacious and comfortable interior, and a reliable and fuel-efficient engine. It comes equipped with a variety of advanced safety features and is available in a range of trims to suit different driving needs and preferences.',
+  price: '16,757',
   luxuryScore: '',
-  Engine: '',
-  driveTrain: '',
-  transmission: '',
-  color: '',
-  mpg: ''
+  Engine: '132 hp 1.8L I4',
+  driveTrain: 'Fwd',
+  transmission: 'Continuously Variable Transmission',
+  color: 'white',
+  mpg: '32',
+  luxury: '4'
 },
 {
   make:'volkswagen', 
   model: 'passat', 
   year: '2014',
   trim: 'se',
-  Miles: ' ',
-  description: '',
-  price: '',
-  luxuryScore: '',
-  Engine: '',
-  driveTrain: '',
-  transmission: '',
-  color: '',
-  mpg: ''
+  Miles: '58,675 ',
+  description: 'The Volkswagen Passat is a mid-size sedan, the 2014 model year of the Passat features a spacious and stylish interior, a powerful and fuel-efficient engine, and a variety of advanced safety and technology features. It is a practical and reliable choice for families and commuters alike.',
+  price: '$11,967',
+  luxuryScore: '4',
+  Engine: '140 hp 2L I4 Diesel',
+  driveTrain: 'Fwd',
+  transmission: '6-Speed Dual Clutch',
+  color: 'white',
+  mpg: '22',
+  luxury: '4'
 },
 {
-  make:'hyundai', 
-  model: 'sonata', 
+  make:'Hyundai', 
+  model: 'Sonata', 
   year: '2018',
-  trim: 'sel',
-  Miles: ' ',
-  description: '',
-  price: '',
-  luxuryScore: '',
-  Engine: '',
-  driveTrain: '',
-  transmission: '',
-  color: '',
-  mpg: ''
+  trim: 'SEL',
+  Miles: '37,981 miles',
+  description: 'The 2018 model year of the Sonata features a sleek and modern exterior design, a spacious and well-equipped interior, and a range of advanced safety features. The SEL trim of the 2018 Sonata includes additional comfort and convenience features such as a power drivers seat and a 7-inch touchscreen display.',
+  price: '$17,999',
+  luxuryScore: '3',
+  Engine: '185 hp 2.4L I4',
+  driveTrain: 'FWD',
+  transmission: 'Automatic',
+  color: 'Sliver',
+  mpg: '30 miles',
+  luxury: '4'
 },
 {
   make:'honda', 
@@ -243,14 +255,15 @@ const data = [
   Engine: '',
   driveTrain: '',
   transmission: '',
-  color: '',
-  mpg: ''
+  color: 'Red',
+  mpg: '',
+  luxury: '4'
 },
 {
-  make:'nissan', 
-  model: 'versa', 
+  make:'Nissan', 
+  model: 'Versa', 
   year: '2019',
-  trim: 'sv',
+  trim: 'SV',
   Miles: ' ',
   description: '',
   price: '',
@@ -258,14 +271,15 @@ const data = [
   Engine: '',
   driveTrain: '',
   transmission: '',
-  color: '',
-  mpg: ''
+  color: 'Sliver',
+  mpg: '',
+  luxury: '4'
 },
 {
-  make:'acura', 
-  model: 'rdx', 
+  make:'Acura', 
+  model: 'RDX', 
   year: '2019',
-  trim: 'sh',
+  trim: 'SH',
   Miles: ' ',
   description: '',
   price: '',
@@ -273,14 +287,15 @@ const data = [
   Engine: '',
   driveTrain: '',
   transmission: '',
-  color: '',
-  mpg: ''
+  color: 'Grey',
+  mpg: '',
+  luxury: '0'
 },
 {
-  make:'kia', 
-  model: 'sportage', 
+  make:'Kia', 
+  model: 'Sportage', 
   year: '2020',
-  trim: 'lx',
+  trim: 'LX',
   Miles: ' ',
   description: '',
   price: '',
@@ -288,14 +303,15 @@ const data = [
   Engine: '',
   driveTrain: '',
   transmission: '',
-  color: '',
-  mpg: ''
+  color: 'Red',
+  mpg: '',
+  luxury: '4'
 },
 {
-  make:'honda', 
-  model: 'odyssey', 
+  make:'Honda', 
+  model: 'Odyssey', 
   year: '2014',
-  trim: 'ex-l',
+  trim: 'EX-L',
   Miles: ' ',
   description: '',
   price: '',
@@ -303,14 +319,15 @@ const data = [
   Engine: '',
   driveTrain: '',
   transmission: '',
-  color: '',
-  mpg: ''
+  color: 'Blue',
+  mpg: '',
+  luxury: '4'
 },
 {
-  make:'jeep', 
-  model: 'compass', 
+  make:'Jeep', 
+  model: 'Compass', 
   year: '2017',
-  trim: 'latitude',
+  trim: 'Latitude',
   Miles: ' ',
   description: '',
   price: '',
@@ -318,11 +335,12 @@ const data = [
   Engine: '',
   driveTrain: '',
   transmission: '',
-  color: '',
-  mpg: ''
+  color: 'Red',
+  mpg: '',
+  luxury: '4'
 },
 {
-  make:'subaru', 
+  make:'suburu', 
   model: 'brz', 
   year: '2013',
   trim: 'primium',
@@ -334,7 +352,8 @@ const data = [
   driveTrain: '',
   transmission: '',
   color: '',
-  mpg: ''
+  mpg: '',
+  luxury: '4'
 },
 {
   make:'nissan', 
@@ -349,7 +368,8 @@ const data = [
   driveTrain: '',
   transmission: '',
   color: '',
-  mpg: ''
+  mpg: '',
+  luxury: '4'
 },
 {
   make:'volkswagen', 
@@ -364,7 +384,8 @@ const data = [
   driveTrain: '',
   transmission: '',
   color: '',
-  mpg: ''
+  mpg: '',
+  luxury: '4'
 },
 {
   make:'chrysler', 
@@ -379,7 +400,8 @@ const data = [
   driveTrain: '',
   transmission: '',
   color: '',
-  mpg: ''
+  mpg: '',
+  luxury: '4'
 },
 {
   make:'ford', 
@@ -394,7 +416,8 @@ const data = [
   driveTrain: '',
   transmission: '',
   color: '',
-  mpg: ''
+  mpg: '',
+  luxury: '4'
 },
 {
   make:'cherolet', 
@@ -409,7 +432,8 @@ const data = [
   driveTrain: '',
   transmission: '',
   color: '',
-  mpg: ''
+  mpg: '',
+  luxury: '3'
 },
 {
   make:'toyota', 
@@ -424,7 +448,8 @@ const data = [
   driveTrain: '',
   transmission: '',
   color: '',
-  mpg: ''
+  mpg: '',
+  luxury: '4'
 },
 {
   make:'gmc', 
@@ -439,7 +464,8 @@ const data = [
   driveTrain: '',
   transmission: '',
   color: '',
-  mpg: ''
+  mpg: '',
+  luxury: '4'
 },
 {
   make:'honda', 
@@ -454,7 +480,8 @@ const data = [
   driveTrain: '',
   transmission: '',
   color: '',
-  mpg: ''
+  mpg: '',
+  luxury: '4'
 },
 {
   make:'toyota', 
@@ -469,7 +496,8 @@ const data = [
   driveTrain: '',
   transmission: '',
   color: '',
-  mpg: ''
+  mpg: '',
+  luxury: '4'
 }
 ]
 
@@ -482,43 +510,70 @@ const data = [
 //I am still working on this please don't change it.
 
 
-// function divNumber(divName){
-//   var contaienrNumber;
-//   const letters = divName.split('').filter((char) => !isNaN(char));
-//   contaienrNumber = parseInt(letters.join(''), 10);
-//   console.log(contaienrNumber);
-//   return contaienrNumber;
-// }
+function divNumber(divName){
+  var contaienrNumber;
+  const letters = divName.split('').filter((char) => !isNaN(char));
+  contaienrNumber = parseInt(letters.join(''), 10);
+  console.log(contaienrNumber);
+  return contaienrNumber;
+}
 
 
-// function descChange(divIndexValue){
-//   document.getElementById('desc').innerHTML = data[divIndexValue].description;
-//   // console.log(data)
-// }
+function descChange(){
+  var fileName = location.pathname.split("/").pop();
 
-// //This var contains the div's name.
-// var divItem;
-// var idNumber;
-// function createDivElement(varItemId){
-//   divItem = varItemId;
-//   console.log(divItem);
-//   idNumber = divNumber(divItem);
-//   console.log(idNumber);
-//   // window.location.replace('carview.html');
-//   // document.getElementById('desc').innerHTML = "HI there this is Raghav/";
+  if(fileName == "carview.html"){
+    document.getElementById('desc').innerHTML = "This is stevie!"
+  }
+}
 
-// }
 
-// if (window.location.pathname.endsWith('carsview.html')) {
-// }
 
-// descChange(idNumber);
+
+var divItem;
+var idNumber;
+
+
+function createDivElement(varItemId){
+  divItem = varItemId;
+  console.log(divItem);
+  idNumber = divNumber(divItem);
+  console.log(idNumber);
+  var dataObj = data[idNumber];
+  localStorage.setItem("description", dataObj.description);
+  localStorage.setItem("engine", dataObj.Engine);
+  localStorage.setItem("drive", dataObj.driveTrain);
+  localStorage.setItem("transmission", dataObj.transmission);
+  localStorage.setItem("color", dataObj.color);
+  localStorage.setItem("mpg", dataObj.mpg);
+  localStorage.setItem("miles", dataObj.Miles);
+  localStorage.setItem("price", dataObj.price);
+  localStorage.setItem("make", dataObj.make);
+  localStorage.setItem("model", dataObj.model);
+  localStorage.setItem("luxury", dataObj.luxury);
+  window.location.replace("carview.html");
+  return false;
+}
+
+
+
+
 
 
 
 function search() {
 event.preventDefault();
-const value = searchInput.value;
+
+  // window.location.replace('cars.html');
+  var value;
+  var userValueChecking = localStorage.getItem("searchValue");
+  if(!userValueChecking){
+    value = searchInput.value;
+  }
+  else{
+    value = userValueChecking;
+  }
+// const value = searchInput.value;
 const QUERY1 = value.toString();
 const query = QUERY1.toLowerCase();
 
@@ -586,7 +641,7 @@ var properdiv = [];
 for(var i = 0; i < data.length; i++){
   var placeholder = "item" + i;
   properdiv.push(placeholder);
-  divNumber(placeholder);
+  // divNumber(placeholder);
 }
 
 
@@ -643,6 +698,9 @@ searchForm.addEventListener('submit', event => {
 // event.preventDefault();
 search();
 });
+
+
+
 
 
 

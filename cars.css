@@ -11,6 +11,17 @@ html{
   color:white;
 }
 
+.name{
+  font-family: 'Play', sans-serif;
+  font-size: medium;
+  margin-left: 62%;
+  margin-top: 41%;
+}
+.banner{
+  width: 100%;
+  background-color: rgba(0, 52, 119, 0.486);;
+  height: 14%;
+}
 /* ----------------------------Search Bar------------------------------------ */
 .formContainer {
   /* width: fit-content; */
@@ -79,11 +90,126 @@ input[type="search"]:focus {
     margin-left: 23%;
     font-size: large;
   }
+  .name{
+    font-family: 'Play', sans-serif;
+    font-size: medium;
+    margin-left: 50%;
+    margin-top: 41%;
+  }
 }
+/* _-------------------------CARS--------------------------------------------------- */
+#toyotacamry{
+  background: url(Images/CARSHOW/Toyota_Camry1.png);
+  background-size: cover;
+}
+#lexusls{
+  background: url(Images/CARSHOW/lexusls.jpg);
+  background-size: cover;
+}
+#suburulegacy{
+  background: url(Images/CARSHOW/suburulegacy.jpg);
+  background-size: cover;
+}
+#AudiA6{
+  background: url(Images/CARSHOW/audia6.jpg);
+  background-size: cover;
+}
+#Chrysler300{
+  background: url(Images/CARSHOW/chrystler300.jpg);
+  background-size: cover;
+}
+#ChevroletSonic{
+  background: url(Images/CARSHOW/ChevySonic.jpg);
+  background-size: cover;
+}
+#BMW3Series{
+  background: url(Images/CARSHOW/BMW3SERIES.jpg);
+  background-size: cover;
+}
+#DodgeCharger{
+  background: url(Images/CARSHOW/DodgeCharger.jpg);
+  background-size: cover;
+}
+#ToyotaCorolla{
+  background: url(Images/CARSHOW/toyotacorolla.jpg);
+  background-size: cover;
+}
+#VolkswagenPassat{
+  background: url(Images/CARSHOW/VolkswagenPassat.jpg);
+  background-size: cover;
+}
+#HyundaiSonata{
+  background: url(Images/CARSHOW/HyundaiSonata.jpg);
+  background-size: cover;
+}
+#HondaCrv{
+  background: url(Images/CARSHOW/HONDACRV.jpg);
+  background-size: cover;
+}
+#NissanVersa{
+  background: url(Images/CARSHOW/NissanVersa.jpg);
+  background-size: cover;
+}
+#AcuraRDX{
+  background: url(Images/CARSHOW/ACURARDX.jpg);
+  background-size: cover;
+}
+#KiaSportage{
+  background: url(Images/CARSHOW/KiaSportage.jpg);
+  background-size: cover;
+}
+#HondaOdyssey{
+  background: url(Images/CARSHOW/HondaOdyssey.jpg);
+  background-size: cover;
+}
+#JeepCompass{
+  background: url(Images/CARSHOW/JeepCompas.jpg);
+  background-size: cover;
+}
+#SuburuBRZ{
+  background: url(Images/CARSHOW/SUBURUBRZ.jpg);
+  background-size: cover;
+}
+#NissanRogue{
+  background: url(Images/CARSHOW/Rogue-2021.jpg);
+  background-size: cover;
 
+}
+#VolkswagenJetta{
+  background: url(Images/CARSHOW/VOLKSWAGENJETTA.jpg);
+  background-size: cover;
 
+}
+#ChryslerPacifica{
+  background: url(Images/CARSHOW/ChrystlerPacifica.png);
+  background-size: cover;
 
+}
+#FordEscape{
+  background: url(Images/CARSHOW/FordEscape.jpg);
+  background-size: cover;
 
+}
+#ChevroletMalibu{
+  background: url(Images/CARSHOW/ChevyMalibu.webp);
+  background-size: cover;
+}
+#ToyotaHighlander{
+  background: url(Images/CARSHOW/ToyotaHyland.jpg);
+  background-size: cover;
+}
+#GMCAcadia{
+  background: url(Images/CARSHOW/GMC.jpg);
+  background-size: cover;
+}
+#HondaAccord{
+  background: url(Images/CARSHOW/Hondaaccord.jpg);
+  background-size: cover;
+}
+#ToyotaRav{
+  background: url(Images/CARSHOW/ToyotRav.jpg);
+  background-size: cover;
+}
 /* This is for the grid setup */
 .grid {
         display: grid;
@@ -92,17 +218,18 @@ input[type="search"]:focus {
       .grid-item{
         /* border: solid white 3px; */
         padding: 15px;
+        transition: all 300ms;
         /* display: none; */
       }
+      .grid-item:hover{
+        opacity: 0.8;
+        transform: scale(1.10);
+      }
       .grid-content{
-        border: 3px solid red;
-        background-color: rgba(119, 0, 0, 0.24);
+        border: 3px solid rgb(65, 65, 67);;
         aspect-ratio: 2;
         color: white;
         border-radius: 10px;
-      }
-      #item1{
-        /* display: none; */
       }
 
       .new-div{
@@ -120,6 +247,7 @@ input[type="search"]:focus {
             padding: 30px;
         }
       }
+      
 
 
 

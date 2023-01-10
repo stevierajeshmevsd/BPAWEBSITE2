@@ -91,15 +91,13 @@
         sloganEl.textContent = slogans[Math.floor(Math.random() * slogans.length)];
       </script>
       <div class="formContainer">
-        <form class="sampleFrom">
+        <form class="sampleFrom" action="cars.html">
           <input type="search" placeholder="Start Your Search..." id = "search-input" autocomplete="off">
-          <button type="submit" onclick="storeSearch()">Search</button>
+          <button type="submit" onclick="search()">Search</button>
           <script>
             function storeSearch() {
               var searchInput = document.getElementById("search-input").value;
-
-              console.log(searchInput);
-              // fetch("serverside/query.php");
+              localStorage.setItem("searchValue", searchValue);
             }
           </script>
       </form>
@@ -131,17 +129,17 @@
       <h1 class="text-center" id="services">Our Services</h1>
     </div>
     <div class="cont">
-      <div class="sq1">
+      <div class="sq1"  onclick="location.href='cars.html'">
         <div class="sqtext">BROWSE</div>
       </div>
-      <div class="sq2">
+      <div class="sq2"   onclick="location.href='sell.html'">
         <div class="sqtext">SELL</div>
       </div>
-      <div class="sq3">
+      <div class="sq3"  onclick="location.href='contact.html'">
         <div class="sqtext">CONTACT US</div>
       </div>
-      <div class="sq4">
-        <div class="sqtext">MAINTENANCE</div>
+      <div class="sq4" onclick="location.href='maintain.html'">
+        <div class="sqtext">Maintain</div>
       </div>
     </div>
     <br>
@@ -220,6 +218,8 @@
         loader.style.display = "none";
       })
     </script>
+    <script src="js/homepage.js"></script>
+    <script src="js/cars.js"></script>
   </body>
   <footer>
     <div class="container pt-5 border-bottom">
