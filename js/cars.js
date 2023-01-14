@@ -654,7 +654,8 @@ console.log(dataValue);
 // Clear the results container
 resultsContainer.innerHTML = '';
 if(matches == -1){
-  resultsContainer.innerHTML = "Item does not exist";
+  resultsContainer.innerHTML = "We couldn't find that car for you :(";
+  
 
 }
 
