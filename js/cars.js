@@ -1,3 +1,4 @@
+
 function calculateMonthlyPayment(principle, interestRate, term) {
   const monthlyInterestRate = interestRate / 12;
   const monthlyPayment = (principle * monthlyInterestRate) / (1 - Math.pow(1 + monthlyInterestRate, -term));
@@ -275,7 +276,7 @@ function createDivElement(varItemId){
   localStorage.setItem("color", dataObj.color);
   localStorage.setItem("mpg", dataObj.mpg);
   localStorage.setItem("miles", dataObj.Miles);
-  localStorage.setItem("price", dataObj.price);
+  // localStorage.setItem("price", dataObj.price);
   localStorage.setItem("make", dataObj.make);
   localStorage.setItem("model", dataObj.model);
   localStorage.setItem("luxury", dataObj.luxury);
