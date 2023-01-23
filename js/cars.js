@@ -276,7 +276,6 @@ function createDivElement(varItemId){
   localStorage.setItem("color", dataObj.color);
   localStorage.setItem("mpg", dataObj.mpg);
   localStorage.setItem("miles", dataObj.Miles);
-  // localStorage.setItem("price", dataObj.price);
   localStorage.setItem("make", dataObj.make);
   localStorage.setItem("model", dataObj.model);
   localStorage.setItem("luxury", dataObj.luxury);
@@ -291,87 +290,74 @@ function createDivElement(varItemId){
 
 
 function search() {
-event.preventDefault();
+  event.preventDefault();
 
   var value;
   value = searchInput.value;
-const QUERY1 = value.toString();
-const query = QUERY1.toLowerCase();
+  const QUERY1 = value.toString();
+  const query = QUERY1.toLowerCase();
 
 
 
 
-//The words array extraces the words from the user's query
-let words = [];
-let currentWord = "";
-for (let j = 0; j < query.length; j++) {
-let char = query[j];
-if (char === " ") {
-    words.push(currentWord);
-    currentWord = "";
-} else {
-    currentWord += char;
-  }
-}
-words.push(currentWord); 
-
-
-let Make = [];
-let Model = [];
-let Trim = [];
-let Year = [];
-
-let indexValue = [];
-let holder = words[0];
-for(var i = 0; i < 4; i++){ for(var k = 0; k < data.length; k++){ if(data[k].make === holder){ Make.push(k); }}
-  for(var k = 0; k < data.length; k++){ if(data[k].trim === holder){ Trim.push(k); }}
-  for(var k = 0; k < data.length; k++){ if(data[k].model === holder){ Model.push(k); }}
-  for(var k = 0; k < data.length; k++){ if(data[k].year === holder){ Year.push(k); }}
-  holder = words[i];
-}
-
-
-//creating the match data which contains the index value of the car based on the user's query.
-let matchData = [];
-let matches = [];
-if(Make.length > 0 && Model.length > 0 && Year.length > 0){
-  matches = Make.filter(num => Model.includes(num) && Year.includes(num));
-}
-else if(Make.length === 0 && Model.length === 0 && Year.length > 0){  matches = Year;  }
-else if(Make.length > 0 && Model.length === 0 && Year.length === 0){  matches = Make;  }
-else if(Make.length === 0 && Model.length > 0 && Year.length === 0){  matches = Model;  }
-else if(Make.length > 0 && Model.length > 0 && Year.length === 0){  matches = Make.filter(num => Model.includes(num));  }
-else if(Make.length === 0 && Model.length > 0 && Year.length > 0){  matches = Year.filter(num => Model.includes(num));  }
-else if(Make.length > 0 && Model.length === 0 && Year.length > 0){  matches = Make.filter(num => Year.includes(num));  }
-else{  matches = -1;  }
-
-
-
-//pushing the right data into the matches array.
-if(matches != -1){
-  for(var i = 0; i < matches.length; i++){
-    matchData.push(data[matches[i]]);
-  }
-}
-
-console.log(matches);
-
-
-//This makes an array that has the right name of all the grid values. 
-var properdiv = [];
-for(var i = 0; i < data.length; i++){
-  var placeholder = "item" + i;
-  properdiv.push(placeholder);
-}
-
-
-  
-
-  if(matches != -1){
-    for(var i = 0; i < matches.length; i++){
-      matchData.push(data[matches[i]]);
+  //The words array extraces the words from the user's query
+  let words = [];
+  let currentWord = "";
+  for (let j = 0; j < query.length; j++) {
+  let char = query[j];
+  if (char === " ") {
+      words.push(currentWord);
+      currentWord = "";
+  } else {
+      currentWord += char;
     }
   }
+  words.push(currentWord); 
+
+
+  let Make = [];
+  let Model = [];
+  let Trim = [];
+  let Year = [];
+
+  let indexValue = [];
+  let holder = words[0];
+  for(var i = 0; i < 4; i++){ for(var k = 0; k < data.length; k++){ if(data[k].make === holder){ Make.push(k); }}
+    for(var k = 0; k < data.length; k++){ if(data[k].trim === holder){ Trim.push(k); }}
+    for(var k = 0; k < data.length; k++){ if(data[k].model === holder){ Model.push(k); }}
+    for(var k = 0; k < data.length; k++){ if(data[k].year === holder){ Year.push(k); }}
+    holder = words[i];
+  }
+
+
+  //creating the match data which contains the index value of the car based on the user's query.
+  let matches = [];
+  if(Make.length > 0 && Model.length > 0 && Year.length > 0){
+    matches = Make.filter(num => Model.includes(num) && Year.includes(num));
+  }
+  else if(Make.length === 0 && Model.length === 0 && Year.length > 0){  matches = Year;  }
+  else if(Make.length > 0 && Model.length === 0 && Year.length === 0){  matches = Make;  }
+  else if(Make.length === 0 && Model.length > 0 && Year.length === 0){  matches = Model;  }
+  else if(Make.length > 0 && Model.length > 0 && Year.length === 0){  matches = Make.filter(num => Model.includes(num));  }
+  else if(Make.length === 0 && Model.length > 0 && Year.length > 0){  matches = Year.filter(num => Model.includes(num));  }
+  else if(Make.length > 0 && Model.length === 0 && Year.length > 0){  matches = Make.filter(num => Year.includes(num));  }
+  else{  matches = -1;  }
+
+
+
+
+
+
+
+  //This makes an array that has the right name of all the grid values. 
+  var properdiv = [];
+  for(var i = 0; i < data.length; i++){
+    var placeholder = "item" + i;
+    properdiv.push(placeholder);
+  }
+
+
+
 
   console.log(matches);
 
@@ -384,25 +370,22 @@ for(var i = 0; i < data.length; i++){
   }
 
 
-//this pushes the car information on the data array to the dataValue array.
-var dataValue = [];
-for(var i = 0; i < matches.length; i++){ for(var j = 0; j < data.length; j++){ if(matches[i] == j){ dataValue.push(data[j]); }}}
+  //this pushes the car information on the data array to the dataValue array.
+  var dataValue = [];
+  for(var i = 0; i < matches.length; i++){ for(var j = 0; j < data.length; j++){ if(matches[i] == j){ dataValue.push(data[j]); }}}
 
-//This makes the right grid values to be visible to the user. 
-for(var i = 0; i < data.length; i++){
-  for(var j = 0; j < dataValue.length; j++){ if(dataValue[j] == data[i]){ document.getElementById(properdiv[i]).style.display = "block"; }}
-}
-console.log(dataValue);
+  //This makes the right grid values to be visible to the user. 
+  for(var i = 0; i < data.length; i++){
+    for(var j = 0; j < dataValue.length; j++){ if(dataValue[j] == data[i]){ document.getElementById(properdiv[i]).style.display = "block"; }}
+  }
 
 
-// Clear the results container
-resultsContainer.innerHTML = '';
-if(matches == -1){
-  resultsContainer.innerHTML = "We couldn't find that car for you :(";
-  
 
-}
-
+  // Clear the results container
+  resultsContainer.innerHTML = '';
+  if(matches == -1){
+    resultsContainer.innerHTML = "We couldn't find that car for you :(";
+  }
 }
 
 

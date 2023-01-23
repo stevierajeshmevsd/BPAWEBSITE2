@@ -78,83 +78,183 @@
     <br>
     <br>
     <h1 class="text-center" id="begin">-Enter your details so we can help you-</h1>
-    <div class="box">
-      <br>
-      <!-- <form class="branding"> -->
-        <!-- <p class="brand">Brand:</p>
-        <select id="branding1">
-          <option>Acura</option>
-          <option>Alfa Romeo</option>
-          <option>Aston Martin</option>
-          <option>Audi</option>
-        </select>
-      </form> -->
-      <div class="container">
-        <br>
-        <div class="row">
-          <div class="col">
-            <p class="brand">Brand:</p>
-          </div>
-          <div class="col">
-            <input id="searchbar" class="searchbar1" type="text"
-        name="search" placeholder="Brand">
-          </div>
-        </div>
-      </div>
-      <div class="container">
-        <div class="row">
-          <div class="col-6">
-            <p class="brand">Model:</p>
-          </div>
-          <div class="col">
-            <input id="searchbar" type="text"
-        name="search" placeholder="Model">
-          </div>
-        </div>
-      </div>
-      <div class="container">
-        <div class="row">
-          <div class="col-6">
-            <p class="brand">Year:</p>
-          </div>
-          <div class="col">
-            <input id="searchbar" type="text"
-            name="search" placeholder="Year">
-          </div>
-        </div>
-      </div>
-      <div class="container">
-        <div class="row">
-          <div class="col-6">
-            <p class="brand">Miles Ridden:</p>
-          </div>
-          <div class="col">
-            <input id="searchbar" type="text"
-            name="search" placeholder="Miles">
-          </div>
-        </div>
-      </div>
-      <div class="container">
-        <div class="row">
-          <div class="col-6 ">
-            <p class="brand">Email:</p>
-          </div>
-          <div class="col">
-            <input id="searchbar" type="text"
-            name="search" placeholder="abc@xyzmail.com...">
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="submitbuttom">
-      <input type="submit" value="Send Vehicle Details" style="width: 100%;" onclick="moveUser()">
-    </div>
-    <script>
-      function moveUser(){
-        window.location.replace('placed.html');
+    <form class="branding" autocomplete="off">
+      <style>input#license {
+        text-align: center;
       }
-    </script>
+      </style>
+    <div class="box" id="info1">
+      <br>
+      <p id="error" style="display: none;">The display is currently none for this!</p>
+      <p class="Details">Vehicle Details</p>
+      <div class="carinfo">
+        
+        <div class="row">
+          <p class="brand">Make:</p>
+          <select id="options">
+            <option>Select Make</option>
+            <option>Acura</option>
+            <option>Alfa Romeo</option>
+            <option>Aston Martin</option>
+            <option>Audi</option>
+            <option>Bentley</option>
+            <option>BMW</option>
+            <option>Buick</option>
+            <option>Cadillac</option>
+            <option>Chevrolet</option>
+            <option>Chrysler</option>
+            <option>Dodge</option>
+            <option>Ferrari</option>
+            <option>Ford</option>
+            <option>Genesis</option>
+            <option>GMC</option>
+            <option>Honda</option>
+            <option>Hyundai</option>
+            <option>Infiniti</option>
+            <option>Jaguar</option>
+            <option>Jeep</option>
+            <option>Kia</option>
+            <option>Lamborghini</option>
+            <option>Land Rover</option>
+            <option>Lexus</option>
+            <option>Lincoln</option>
+            <option>Lotus</option>
+            <option>Maserati</option>
+            <option>Mazda</option>
+            <option>McLaren</option>
+            <option>Mercedes-Benz</option>
+            <option>Mini</option>
+            <option>Mitsubishi</option>
+            <option>Nissan</option>
+            <option>Porsche</option>
+            <option>Ram</option>
+            <option>Rolls-Royce</option>
+            <option>Subaru</option>
+            <option>Tesla</option>
+            <option>Toyota</option>
+            <option>Volkswagen</option>
+            <option>Volvo</option>
+          </select>
+        </div>
+        <div class="row">
+          <span class="modelsel">Model: </span>
+          <input type="text" placeholder="Select Model" id ="model" style="outline:none;">
+        </div>
+        <div class="row" id="col">
+          <span class="modelsel">Color: </span>
+          <input type="text" placeholder="Select Color" id ="Color" style="outline:none;">
+        </div>
+        <div class="row" id="col">
+          <span class="ODO">Odometer:</span>
+          <input type="text" placeholder="XXX,XXX" id ="ODO" style="outline:none;">
+        </div>
+        <div class="row" id="col">
+          <span class="yearsel">Year: </span>
+          <span id="year">1930</span>
+        </div>
+      <input type="range" min="1930" max="2023" value="50" oninput="updateValue(this.value)" class="slider" id="yearSlider">
+
+    </div>
+      <div class="moreinfo">
+        <p class="text-center" id="Legal">Legal Details</p>
+        <div class="row">
+          <span class="LicenseS">License: </span>
+          <input type="text" placeholder="-Input License Plate-" id ="license" style="outline:none;" maxlength="7">
+          <span>
+            <select id="state">
+            <option>AL</option>
+            <option>AK</option>
+            <option>AZ</option>
+            <option>AR</option>
+            <option>CA</option>
+            <option>CO</option>
+            <option>CT</option>
+            <option>DE</option>
+            <option>FL</option>
+            <option>GA</option>
+            <option>HI</option>
+            <option>ID</option>
+            <option>IL</option>
+            <option>IN</option>
+            <option>IA</option>
+            <option>KS</option>
+            <option>KY</option>
+            <option>LA</option>
+            <option>ME</option>
+            <option>MD</option>
+            <option>MA</option>
+            <option>MI</option>
+            <option>MN</option>
+            <option>MS</option>
+            <option>MO</option>
+            <option>MT</option>
+            <option>NE</option>
+            <option>NV</option>
+            <option>NH</option>
+            <option>NJ</option>
+            <option>NM</option>
+            <option>NY</option>
+            <option>NC</option>
+            <option>ND</option>
+            <option>OH</option>
+            <option>OK</option>
+            <option>OR</option>
+            <option>PA</option>
+            <option>RI</option>
+            <option>SC</option>
+            <option>SD</option>
+            <option>TN</option>
+            <option>TX</option>
+            <option>UT</option>
+            <option>VT</option>
+            <option>VA</option>
+            <option>WA</option>
+            <option>WV</option>
+            <option>WI</option>
+            <option>WY</option>
+          </select> </span>
+        </div>
+      </div>
+      <script>
+        function updateValue(val) {
+          document.getElementById("year").innerHTML = val;
+        }
+      </script>
+    </div>
+
+    <!-- <br><br> -->
+    <div class="box" id="info2" style="display: block;">
+      <div class="row" id="col">
+        <span class="modelsel">Full Name: </span>
+        <input type="text" placeholder="Select Color" id ="Color" style="outline:none;">
+      </div>
+      <div class="row" id="col">
+        <span class="modelsel">Email: </span>
+        <input type="text" placeholder="Select Color" id ="Color" style="outline:none;">
+      </div>
+      <div class="row" id="col">
+        <span class="modelsel">Phone Number: </span>
+        <input type="text" placeholder="Select Color" id ="Color" style="outline:none;">
+      </div>
+    </div>
+    
+
+    </form>
+    <div class="submitbuttom">
+      <input type="submit" id="button1" value="Submit Vehicle Details" style="width: 100%; display: none;" onclick="moveUserNext()">
+      <input type="submit" id="button2" value="Next" style="width: 100%;" onclick="moveUser()">
+    </div>
     <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <!-- <br>
     <br>
     <br>
     <br>
@@ -175,54 +275,44 @@
     <br>
 
     <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-
-    <br>
-    <br>
+    <br> -->
 <!-- Messenger Chat Plugin Code -->
-<div id="fb-root"></div>
+    <div id="fb-root"></div>
 
-<!-- Your Chat Plugin code -->
-<div id="fb-customer-chat" class="fb-customerchat">
-</div>
+    <!-- Your Chat Plugin code -->
+    <div id="fb-customer-chat" class="fb-customerchat">
+    </div>
 
-<script>
-  var chatbox = document.getElementById('fb-customer-chat');
-  chatbox.setAttribute("page_id", "110823124905032");
-  chatbox.setAttribute("attribution", "biz_inbox");
-</script>
 
-<!-- Your SDK code -->
-<script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      xfbml            : true,
-      version          : 'v15.0'
-    });
-  };
 
-  (function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
-    fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));
-</script>
+
+
+
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          xfbml            : true,
+          version          : 'v15.0'
+        });
+      };
+
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    </script>
     <script>
       var loader = document.getElementById("preloader");
-      
+          
       window.addEventListener("load", function(){
         loader.style.display = "none";
       })
-    </script>
+    </script> -->
+    <script src="js/sell.js"></script>
+        
   </body>
   <footer>
     <div class="container pt-5 border-bottom">
