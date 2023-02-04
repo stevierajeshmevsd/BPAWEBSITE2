@@ -111,7 +111,7 @@ html{
     margin-right: 5%;
     width: 60%;
 }
-#Legal{
+#Legal {
     margin-left: 2%;
     color: white;
     font-size: 1.5vw;
@@ -136,6 +136,37 @@ html{
     height: 4vh;
 }
 
+#Name{
+    margin-top: 0.5%;
+    margin-left: 1.5%;
+    height: 3vh;
+    width: 74.5%;
+    background-color: rgb(73, 71, 71);
+    color: white;
+}
+#Email{
+    margin-top: 0.5%;
+    margin-left: 1.5%;
+    height: 3vh;
+    width: 80.5%;
+    background-color: rgb(73, 71, 71);
+}
+#Number{
+    margin-top: 0.5%;
+    margin-left: 1.5%;
+    height: 3vh;
+    width: 68.5%;
+    background-color: rgb(73, 71, 71);
+}
+input#Name {
+    text-align: center;
+}
+input#Email {
+    text-align: center;
+}
+input#Number {
+    text-align: center;
+}
 @media only screen and (max-width: 600px) {
     .box{
         width: 90%;
@@ -154,7 +185,7 @@ html{
     .brand{
         color: white;
         margin-left: 4%;
-        font-size: 4vw;
+        font-size: 6vw;
         font-family: 'Play', sans-serif;
         margin-top: 2%;
         
@@ -169,5 +200,103 @@ html{
         align-items: center;
         border-radius: 20px;
         
+    }
+    .Details{
+        margin-left: 29%;
+        font-size: 4vw;
+        font-family: 'Play', sans-serif;
+        letter-spacing: 3px;
+    }
+    #options{
+        margin-left: 1%;
+        margin-top: 3.5%;
+        height: 3.5vh;
+        width: 70.9%;
+    }
+    .modelsel{
+        color: white;
+        margin-left: 3.8%;
+        font-size: 6vw;
+        font-family: 'Play', sans-serif;
+    }
+    #model{
+        margin-top: 0.7%;
+        margin-left: 0.5%;
+        height: 3vh;
+        width: 70%;
+    }
+    .moreinfo{
+        float: right;
+        margin-top: 13%;
+        margin-right: 23%;
+        width: 60%;
+    }
+    .LicenseS {
+        color: white;
+        font-size: 5vw;
+        font-family: 'Play', sans-serif;
+        margin-left: -12%;
+        margin-top: 5%;
+    }
+    #license{
+        margin-left: 18%;
+        margin-top: -11%;
+        height: 4vh;
+        width: 30vh;
+    }
+    #state {
+        width: 29vh;
+        height: 4vh;
+        margin-left: 21%;
+        margin-top: 3%;
+    }
+    .ODO {
+        color: white;
+        margin-left: 3.8%;
+        font-size: 5vw;
+        font-family: 'Play', sans-serif;
+    }
+    #Color {
+        margin-top: 1.5%;
+        margin-left: 2.0%;
+        height: 3vh;
+        width: 72.5%;
+    }
+    .yearsel {
+        margin-left: 3.8%;
+        font-size: 5vw;
+        font-family: 'Play', sans-serif;
+        margin-top: 0%;
+    }
+    #year {
+        color: white;
+        margin-left: 1%;
+        font-size: 5vw;
+        font-family: 'Play', sans-serif;
+    }
+    #Legal {
+        margin-left: 2%;
+        color: white;
+        font-size: 5vw;
+        font-family: 'Play', sans-serif;
+        letter-spacing: 5px;
+    }
+    #Name{
+        margin-top: 1.5%;
+        margin-left: 2.0%;
+        height: 3vh;
+        width: 72.5%;
+    }
+    #Email{
+        margin-top: 1.5%;
+        margin-left: 2.0%;
+        height: 3vh;
+        width: 72.5%;
+    }
+    #Number{
+        margin-top: 1.5%;
+        margin-left: 2.0%;
+        height: 3vh;
+        width: 72.5%;
     }
 }

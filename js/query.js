@@ -36,3 +36,6 @@ var firebaseConfig = {
 
   })
 
+  // var firebaseUpadate = firebase.database.ref("/sellRequest");
+  // ref.set
+

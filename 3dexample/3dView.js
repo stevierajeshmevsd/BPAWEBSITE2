@@ -3,6 +3,9 @@
 var currentAngleX = Math.PI / 4;
 var currentAngleY = Math.PI / 4;
 
+var texture;
+var material;
+
 const axisX = new THREE.Vector3(1, 0, 0);
 const axisY = new THREE.Vector3(0, 1, 0);
 
@@ -27,7 +30,7 @@ container.appendChild(renderer.domElement);
 // Create a canvas surface
 
 const canvas = document.createElement('canvas');
-canvas.width = 512;
+canvas.width = 1024;
 canvas.height = canvas.width;
 
 ctx = canvas.getContext('2d');
@@ -41,18 +44,23 @@ ctx.fillStyle = gradient;
 ctx.fillRect(0, 0, canvas.width, canvas.height)
 
 var image = new Image();
-image.src = 'img/Untitled.png';
+image.src = 'img/camryxse.png';
+
+
+material = new THREE.MeshLambertMaterial({ color: 0xff0000 });
 
 image.onload = function() {
   ctx.drawImage(image, 0, 0);
+  texture = new THREE.CanvasTexture(canvas);
+  material = new THREE.MeshLambertMaterial({ map: texture });
+  cube.material = material;
 }
 
 // Create a white cube
 const size = 1; // size of the cube
-const texture = new THREE.CanvasTexture(canvas);
+
 
 const geometry = new THREE.BoxGeometry(size, size, size);
-const material = new THREE.MeshLambertMaterial({ map: texture });
 const cube = new THREE.Mesh(geometry, material);
 
 //create a light that casts a shadow on the opposite side
@@ -126,8 +134,8 @@ render();
 
 window.addEventListener("mousemove", function(event) {
     // Get the mouse position in document coordinates
-    var mouseX = event.pageX;
-    var mouseY = event.pageY;
+    var mouseX = event.offsetX;
+    var mouseY = event.offsetY;
 
     // Get the position of the canvas element
     const canvasRect = container.getBoundingClientRect();
@@ -135,8 +143,8 @@ window.addEventListener("mousemove", function(event) {
     // Calculate the mouse position relative to the canvas element
     const mouse = new THREE.Vector2(); 
     
-        mouse.x = ((mouseX - canvasRect.left) / canvasRect.width) * 2 - 1;
-        mouse.y = -((mouseY - canvasRect.top) / canvasRect.height) * 2 + 1;
+        mouse.x = (mouseX / canvasRect.width) * 2 - 1;
+        mouse.y = -(mouseY / canvasRect.height) * 2 + 1;
 
     raycaster.setFromCamera(mouse, camera);
 
@@ -163,17 +171,17 @@ window.addEventListener("mousemove", function(event) {
 
 window.addEventListener("mousedown", function(event) {
   // Get the mouse position in document coordinates
-  var mouseX = event.pageX;
-  var mouseY = event.pageY;
+  var mouseX = event.offsetX;
+    var mouseY = event.offsetY;
 
-  // Get the position of the canvas element
-  const canvasRect = container.getBoundingClientRect();
+    // Get the position of the canvas element
+    const canvasRect = container.getBoundingClientRect();
 
-  // Calculate the mouse position relative to the canvas element
-  const mouse = new THREE.Vector2(); 
-  
-      mouse.x = ((mouseX - canvasRect.left) / canvasRect.width) * 2 - 1;
-      mouse.y = -((mouseY - canvasRect.top) / canvasRect.height) * 2 + 1;
+    // Calculate the mouse position relative to the canvas element
+    const mouse = new THREE.Vector2(); 
+    
+        mouse.x = (mouseX / canvasRect.width) * 2 - 1;
+        mouse.y = -(mouseY / canvasRect.height) * 2 + 1;
 
   raycaster.setFromCamera(mouse, camera);
 
@@ -214,4 +222,3 @@ window.addEventListener("mousedown", function(event) {
 
 
 };
-
