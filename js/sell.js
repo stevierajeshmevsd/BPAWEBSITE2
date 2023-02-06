@@ -28,7 +28,13 @@ function moveUserNext(){
     document.getElementById('error').style.color = "white";
     allInfo = false
   }
-  else{ allInfo = true; }
+  else{ 
+    allInfo = true; 
+    document.getElementById('info2').style.display = "block";
+    document.getElementById('error').style.display = "none";
+    document.getElementById('button1').style.display = "none";
+    document.getElementById('button2').style.display = "block";
+  }
 
   if(allInfo){
     document.getElementById('button2').style.display = 'none';

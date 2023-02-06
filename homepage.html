@@ -397,26 +397,19 @@
     </script>
     <!-- -------------------------Script for changing images------------------------- -->
     <script>
-       // Declare an array of image URLs to use as the background
-       const images = ['Images/tesla.gif', 'Images/rolly.gif', 'Images/electric.gif', 'Images/road.gif', 'Images/AC.gif'];
+      const images = ['Images/homepage/electric.gif', 'Images/homepage/AC.gif', 'Images/homepage/vroom.gif', 'Images/homepage/ferrari.gif', 'Images/homepage/mech.gif'];
+      
+      let imageIndex = 0;
 
-// Declare a counter to keep track of the current image
-    let imageIndex = 0;
+      function updateDivImage() {
+        const div = document.getElementById('vidCont');
 
-// Declare a function to update the background image of the div
-    function updateDivImage() {
-      // Get the div element
-      const div = document.getElementById('vidCont');
+        div.style.backgroundImage = `url(${images[imageIndex]})`;
 
-      // Update the div's background image
-      div.style.backgroundImage = `url(${images[imageIndex]})`;
-
-      // Increment the counter
-      imageIndex = (imageIndex + 1) % images.length;
+        imageIndex = (imageIndex + 1) % images.length;
     }
-
-    // Call the updateDivImage function every 1000 milliseconds (one second)
     setInterval(updateDivImage, 4000); //change the interval back to 4000
+      
     </script>
     <!-- ---------------------------------------------------------------------------- -->
   
