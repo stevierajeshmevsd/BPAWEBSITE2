@@ -70,6 +70,13 @@ html{
     font-size: 1.5vw;
     font-family: 'Play', sans-serif;
 }
+.namesel{
+    color: white;
+    margin-left: 37.8%;
+    font-size: 1.5vw;
+    font-family: 'Play', sans-serif;
+    margin-top: 5%;
+}
 .carinfo{
     margin-left: 5%;
 }
@@ -103,7 +110,7 @@ html{
     width: 9.5%;
 }
 #info2{
-    margin-top: -1%;
+    margin-top: -0.5%;
 }
 .moreinfo{
     float: right;
@@ -140,7 +147,7 @@ html{
     margin-top: 0.5%;
     margin-left: 1.5%;
     height: 3vh;
-    width: 74.5%;
+    width: 96.5%;
     background-color: rgb(73, 71, 71);
     color: white;
 }
@@ -148,15 +155,18 @@ html{
     margin-top: 0.5%;
     margin-left: 1.5%;
     height: 3vh;
-    width: 80.5%;
+    width: 96.5%;
     background-color: rgb(73, 71, 71);
+    color: white;
 }
 #Number{
     margin-top: 0.5%;
     margin-left: 1.5%;
     height: 3vh;
-    width: 68.5%;
+    width: 96.5%;
     background-color: rgb(73, 71, 71);
+    color: white;
+    margin-bottom: 2%;
 }
 input#Name {
     text-align: center;

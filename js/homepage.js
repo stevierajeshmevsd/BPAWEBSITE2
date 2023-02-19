@@ -10,13 +10,11 @@ var firebaseConfig = {
   };
   
   firebase.initializeApp(firebaseConfig);
-  
+  var database = firebase.database();
+  var dataRef = database.ref("/sellRequest");
 
-  
 
-var database = firebase.database();
-var dataRef = database.ref("/sellRequest");
-
+//Moves the user inforamtion to the database. 
 document.getElementById("submit-button").addEventListener("click", function() {
   var name = document.getElementById("name").value;
   var age = document.getElementById("age").value;
@@ -26,58 +24,57 @@ document.getElementById("submit-button").addEventListener("click", function() {
 
 
 
-// dataRef.on("value", function(snapshot) {
-//   var data = snapshot.val();
-//   console.log(data.Raghav);
-//   document.getElementById('information').innerHTML = JSON.stringify(data);
-// });
-
-
-// dataRef.on("value", function(snapshot) {
-//   snapshot.forEach(function(childSnapshot) {
-//     var key = childSnapshot.key;
-//     console.log(key);
-//     document.getElementById('information').innerHTML = JSON.stringify(key);
-//   });
-// });
-
-
-
-
-
-
-
+//This chuck makes a new div container with all the relevent information that is in the database.
 dataRef.on("value", function(snapshot) {
-  var keyList = "";
   snapshot.forEach(function(childSnapshot) {
+
     var key = childSnapshot.key;
-    keyList += "<a href='#' onclick='displayData(\"" + key + "\")'>" + key + "</a><br>";
+    var value = childSnapshot.val();
+
+    var container = document.getElementById("box");
+    var div = document.createElement("div");
+    div.className = "selection";
+    div.innerHTML = "Key: " + value.age + "<br>" + "Age: " + value.age + ", City: " + value.city;
+    // JSON.stringify(value)
+
+    var button = document.createElement("button");
+    button.className = "mail-button";
+    button.innerHTML = "Send email";
+    button.onclick = function() {
+      window.location.href = "mailto:example@email.com";
+    };
+    container.appendChild(div);
+    div.appendChild(button);
+
+
   });
-  document.getElementById("keyContainer").innerHTML = keyList;
 });
 
-function displayData(key) {
-  var dataRef = database.ref("data/" + key);
-  dataRef.once("value", function(snapshot) {
-    var data = snapshot.val();
-    var dataString = "";
-    console.log(data.name);
-    document.getElementById("dataContainer").innerHTML = dataString;
-  });
-}
 
+
+
+
+
+
+// //Prints the values that are in the database in the website as a link.
 // dataRef.on("value", function(snapshot) {
 //   var keyList = "";
 //   snapshot.forEach(function(childSnapshot) {
 //     var key = childSnapshot.key;
-//     keyList += key + "<br>";
+//     keyList += "<a href='#' onclick='displayData(\"" + key + "\")'>" + key + "</a><br>";
 //   });
-//   document.getElementById("information").innerHTML = keyList;
+
+//   document.getElementById("keyContainer").innerHTML = keyList;
 // });
 
 
-
-
-
-
-
+// //This function is being used on the chunk above this one. 
+// function displayData(key) {
+//   var dataRef = database.ref("data/" + key);
+//   dataRef.once("value", function(snapshot) {
+//     var data = snapshot.val();
+//     var dataString = "";
+//     console.log(data.name);
+//     document.getElementById("dataContainer").innerHTML = dataString;
+//   });
+// }
