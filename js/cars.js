@@ -268,19 +268,19 @@ function createDivElement(varItemId){
   idNumber = divNumber(divItem);
   console.log(idNumber);
   var dataObj = data[idNumber];
-  localStorage.setItem("idNumber", idNumber);
-  localStorage.setItem("description", dataObj.description);
-  localStorage.setItem("engine", dataObj.Engine);
-  localStorage.setItem("drive", dataObj.driveTrain);
-  localStorage.setItem("transmission", dataObj.transmission);
-  localStorage.setItem("color", dataObj.color);
-  localStorage.setItem("mpg", dataObj.mpg);
-  localStorage.setItem("miles", dataObj.Miles);
-  localStorage.setItem("make", dataObj.make);
-  localStorage.setItem("model", dataObj.model);
-  localStorage.setItem("luxury", dataObj.luxury);
-  window.location.replace("carview.html");
-  return false;
+  // localStorage.setItem("idNumber", idNumber);
+  // localStorage.setItem("description", dataObj.description);
+  // localStorage.setItem("engine", dataObj.Engine);
+  // localStorage.setItem("drive", dataObj.driveTrain);
+  // localStorage.setItem("transmission", dataObj.transmission);
+  // localStorage.setItem("color", dataObj.color);
+  // localStorage.setItem("mpg", dataObj.mpg);
+  // localStorage.setItem("miles", dataObj.Miles);
+  // localStorage.setItem("make", dataObj.make);
+  // localStorage.setItem("model", dataObj.model);
+  // localStorage.setItem("luxury", dataObj.luxury);
+  // window.location.replace("carview.html");
+  // return false;
 }
 
 
@@ -391,12 +391,12 @@ function search() {
 
 
 
-// Add an event listener to the search form that calls the search function when the form is submitted
-const searchForm = document.getElementById('search-form');
-searchForm.addEventListener('submit', event => {
-// event.preventDefault();
-search();
-});
+// // Add an event listener to the search form that calls the search function when the form is submitted
+// const searchForm = document.getElementById('search-form');
+// searchForm.addEventListener('submit', event => {
+// // event.preventDefault();
+// search();
+// });
 
 
 

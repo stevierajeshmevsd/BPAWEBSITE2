@@ -12,6 +12,8 @@ var firebaseConfig = {
 
   firebase.initializeApp(firebaseConfig);
   var firebaseRef = firebase.database().ref("/Cars/" + localStorage.getItem("idNumber"));
+
+
   firebaseRef.on("value", function(snapshot){
     var data = snapshot.val();
     console.log(data);

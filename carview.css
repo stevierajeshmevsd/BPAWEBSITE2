@@ -26,18 +26,18 @@ html{
 .info{
     float: right;
     margin-right: 0.5%;
-    margin-top: 1.6%;
+    margin-top: 15.9%;
     width:  58%;
     aspect-ratio: 5.85/2;
 }
 
-#CarName{
-    margin-top: -1%;
+#CarName {
+    margin-top: -26%;
     color: white;
     font-family: 'Play', sans-serif;
     letter-spacing: 3px;
     font-size: 3vw;
-    text-transform:capitalize;
+    text-transform: capitalize;
 }
 
 #price{
@@ -256,6 +256,14 @@ html{
 
 
 @media only screen and (max-width: 600px) {
+    #CarName {
+        margin-top: 16%;
+        color: white;
+        font-family: 'Play', sans-serif;
+        letter-spacing: 3px;
+        font-size: 3vw;
+        text-transform: capitalize;
+    }
     .carimg {
         width: 80%;
         height: auto;
@@ -264,11 +272,11 @@ html{
         margin-top: 5%;
         margin-left: 10%;
     }
-    .info{
+    .info {
         float: left;
         margin-left: 10%;
-        margin-top: 1.6%;
-        width:  80%;
+        margin-top: -8.4%;
+        width: 80%;
         aspect-ratio: 5.85/2;
     }
     #lux {

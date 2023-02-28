@@ -13,6 +13,37 @@ p {
 }
 
 #container {
-    height: 50vw;
-    width: 50vw;
+    align-self: center;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100vh;
+    width: 100vh;
+    z-index:-1;
+}
+
+#containerSearch {
+    align-self: center;
+    margin-left: auto;
+    margin-right: auto;
+    left:0px;
+    top:0px;
+    height: 100vh;
+    width: 100vh;
+    z-index:-1;
+}
+
+#containerCar {
+    align-self: center;
+    margin-left: auto;
+    margin-right: auto;
+    left:0px;
+    top:0px;
+    height: 100vh;
+    width: 100vh;
+    z-index:-1;
+    cursor:grab;
+}
+
+#containerCar:active {
+    cursor:grabbing;
 }

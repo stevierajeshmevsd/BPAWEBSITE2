@@ -1,19 +1,19 @@
 <!doctype html>
 <html lang="en" id = "mainpage">
   <head>
-    <link rel="stylesheet" href="sell.css">
+    <link rel="stylesheet" href="contact.css">
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-    <!-- Firebase linking -->
-    <script src="https://www.gstatic.com/firebasejs/7.22.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.22.0/firebase-database.js"></script>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="icon" href="Images/wheelpng.png">
+    <!-- Firebase Configuratoin -->
+    <script src="https://www.gstatic.com/firebasejs/7.22.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.22.0/firebase-database.js"></script>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- Bootstrap CSS () -->
@@ -28,12 +28,13 @@
         font-family: 'Michroma', sans-serif;
         background-color: rgb(16, 16, 17);
         font-size: medium;
-      }
+      } 
 
       #navbarMenu{
         transition: height 0.5s ease;
         background-color: rgb(16, 16, 17);
       }
+      
 
     </style>
     <!-- Optional JavaScript -->
@@ -80,73 +81,120 @@
     <br>
     <br>
     <br>
-    <h1 class="text-center" id="begin">-Maintenance Timing-</h1>
-    <div class="box">
-      <br>
-      
-      <div class="container">
-        <p style="color: white; display: none;" id="message">Please fill in all the fields to proceed!</p>
-        <div class="row">
-          <div class="col">
-            <p class="brand">Enter Date:</p>
-          </div>
-          <div class="col">
-            <input id="date" class="searchbar1" type="date"
-        name="search" placeholder="Date" autocomplete="off">
-          </div>
-        </div>
-      </div>
-      <div class="container">
-        <div class="row">
-          <div class="col-6">
-            <p class="brand">Enter Time</p>
-          </div>
-          <div class="col">
-            <input id="time" type="time"
-        name="search" placeholder="0:00" autocomplete="off">
-          </div>
-        </div>
-      </div>
-      <div class="container">
-        <div class="row">
-          <div class="col-6">
-            <p class="brand">Enter Email or Phone Number</p>
-          </div>
-          <div class="col">
-            <input id="email" type="text"
-            name="search" placeholder="abc@xyzmail.com..." autocomplete="off">
-          </div>
-        </div>
-      </div>
-      <div class="container">
-        <div class="row">
-          <div class="col-6">
-            <p class="brand">Enter Car Brand and Model</p>
-          </div>
-          <div class="col">
-            <input id="brand" type="text"
-            name="search" placeholder="Car" autocomplete="off">
-          </div>
-        </div>
-      </div>
-      <div class="container">
-        <div class="row">
-          <div class="col-6 ">
-            <p class="brand">State Nature of Maintenance</p>
-          </div>
-          <div class="col">
-            <input id="state" type="text"
-            name="search" placeholder=".." autocomplete="off">
-          </div>
-        </div>
-      </div>
-      <div class="submitbuttom">
-        <input type="submit" value="Send Vehicle Data" style="width: 100%;" onclick="moveUser()"id="sbmt">
-      </div>
-      
-    </div>
+    <h1 class="text-center" style="color: white; margin-left: 0%; margin-top: -5%;">Personal Information</h1>
+    <div class="console"><br>
+        <div class="userInfo">
+            <br>
+            <p class="text-center" id="headlol">User Given Information</p>
+            <br>
+            <br>
+            <table class="info2">
+              <tr>
+                <td class="named">Email: </td>
+                <td class="result"id="email"></td>
+              </tr>
+              <tr>
+                <td class="named">Name: </td>
+                <td class="result"id="name"></td>
+              </tr>
+              <tr>
+                <td class="named">Phone: </td>
+                <td class="result"id="number"></td>
+              </tr>
+              <tr>
+                <td class="named">Make: </td>
+                <td class="result"id="make"></td>
+              </tr>
+              <tr>
+                <td class="named">Model: </td>
+                <td class="result"id="model"></td>
+              </tr>
+              <tr>
+                <td class="named">Color: </td>
+                <td class="result"id="color"></td>
+              </tr>
+              <tr>
+                <td class="named">Odometer: </td>
+                <td class="result"id="odo"></td>
+              </tr>
+              <tr>
+                <td class="named">Year </td>
+                <td class="result"id="year"></td>
+              </tr>
+              <tr>
+                <td class="named">Plate: </td>
+                <td class="result"id="license"></td>
+              </tr>
+            </table>
+            <table class="info1">
+              <tr>
+                <td class="named">Date:  </td>
+                <td class="result"id="date"></td>
+              </tr>
+              <tr>
+                <td class="named">Maintain Details:   </td>
+                <td class="result"id="state"></td>
+              </tr>
+              <td class="named">Maintain Time:   </td>
+              <td class="result"id="time"></td>
+            </tr>
+              
+            </table>
 
-   
+
+
+            
+        </div>
+
+
+        <div id="status" onclick="scrollDown()">
+          <br>
+          <p id="status1">null</p>
+        </div>
+
+        <div id="backbutton" onclick="location.replace('console.html')">
+          Return to console
+        </div>
+
+
+    </div>
+    
+    <form>
+      <div class="console1">
+        <br>
+        <div class="boxl" id="boxl">
+          <p class="text-center" id="headlol"><b>-----SELL REQUEST DATA ONLY-----</b></p>
+          <br>
+          <p class="text-center" id="plol">DO NOT ENTER FORM INFORMATION IF IT IS NOT A SELL REQUEST</p>
+          <br>
+          <br>
+          <p class="text-center" id="p1lol">Image Source:</p>
+          <input type="text" id="img1">
+          <p class="text-center" id="p1lol">Suggested Price:</p>
+          <input type="text" id="price1">
+          <p class="text-center"id="p1lol">Luxury Score: </p>
+          <input type="text" id="lux1">
+          <p class="text-center"id="p1lol">MPG: </p>
+          <input type="text" id="MPG1">
+          <p class="text-center"id="p1lol">Engine Type:</p>
+          <input type="text" id="engine1">
+          <p class="text-center"id="p1lol">Drive-train:</p>
+          <input type="text" id="DT1">
+          <p class="text-center"id="p1lol">Transmission:</p>
+          <input type="text" id="transmission1">
+          <p class="text-center"id="p1lol">Vehicle Type:</p>
+          <input type="text" id="VT1">
+          <p class="text-center"id="p1lol">Trim:</p>
+          <input type="text" id="trim1">
+          <p class="text-center"id="p1lol">Description:</p>
+          <textarea type="text" rows="2" id="desc1"></textarea>
+
+        </div>
+      </div>
+      <div class="text-center" id="send">Push Car</div>
+    </form>
+
+
     <br>
     <br>
     <br>
@@ -185,7 +233,14 @@
 <!-- Your Chat Plugin code -->
 <div id="fb-customer-chat" class="fb-customerchat">
 </div>
-
+<script>
+  function scrollDown() {
+    window.scrollTo({
+      top: 600,
+      behavior: 'smooth'
+    });
+  }
+</script>
 <script>
   var chatbox = document.getElementById('fb-customer-chat');
   chatbox.setAttribute("page_id", "110823124905032");
@@ -216,7 +271,8 @@
         loader.style.display = "none";
       })
     </script>
-    <script src="js/maintain.js"></script>
+    <script src="js/personview.js"></script>
+    <!-- I made changes -->
   </body>
   <footer>
     <div class="container pt-5 border-bottom">

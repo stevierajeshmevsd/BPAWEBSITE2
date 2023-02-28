@@ -214,12 +214,13 @@ input[type="search"]:focus {
 .grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        border: blue 3px solid;
+        /* border: blue 3px solid; */
       }
       .grid-item{
         /* border: solid white 3px; */
         padding: 15px;
         transition: all 300ms;
+        /* border: red solid 3px; */
         /* display: none; */
       }
       .grid-item:hover{

@@ -138,8 +138,8 @@ html{
     margin-left: 15%;
 }
 
-#state{
-    width: 5vh;
+#state {
+    width: 30vh;
     height: 4vh;
 }
 
@@ -178,6 +178,9 @@ input#Number {
     text-align: center;
 }
 @media only screen and (max-width: 600px) {
+    #sbmt{
+        width: 105%;
+    }
     .box{
         width: 90%;
         aspect-ratio: 4/6;
@@ -192,24 +195,39 @@ input#Number {
         font-size: 2vh;
         margin-top: -21%;
     }
-    .brand{
+    .brand {
         color: white;
         margin-left: 4%;
-        font-size: 6vw;
+        font-size: 5vw;
         font-family: 'Play', sans-serif;
         margin-top: 2%;
-        
     }
 
     .submitbuttom{
-        width: 40%;;
+        width: 50%;;
         /* margin-top: 90px; */
-        margin-left: 27%;
+        margin-left: 25%;
         margin-top: 1%;
         background-color: red;
         align-items: center;
         border-radius: 20px;
         
+    }
+    #time{
+        width: 100%;
+        margin-left: -2%;
+    }
+    #email{
+        width:100%;
+        margin-left: -2%;
+    }
+    #brand{
+        width:100%;
+        margin-left: -2%;
+    }
+    input#state{
+        width:100%;
+        margin-left: -2%;
     }
     .Details{
         margin-left: 29%;
@@ -257,7 +275,7 @@ input#Number {
     #state {
         width: 29vh;
         height: 4vh;
-        margin-left: 21%;
+        margin-left: -1%;
         margin-top: 3%;
     }
     .ODO {

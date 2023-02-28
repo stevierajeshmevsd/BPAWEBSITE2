@@ -60,11 +60,6 @@ function moveUserNext(){
     document.getElementById('button2').style.display = "block";
   }
   
-  // if(allInfo){
-  //   document.getElementById('button2').style.display = 'none';
-  //   document.getElementById('button1').style.display = 'block';
-  // }
-  
 }
 
 // dataRef.on("value", function(snapshot) {
