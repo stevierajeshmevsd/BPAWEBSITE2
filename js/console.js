@@ -173,7 +173,7 @@ var firebaseConfig = {
             localStorage.removeItem("ODO");
             localStorage.removeItem("year");
             localStorage.removeItem("license");
-            window.location.replace("personView.html");
+            window.location.replace("personview.html");
           }
           
           container.appendChild(div); 
