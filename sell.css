@@ -25,6 +25,18 @@ html{
     margin-top: 0%;
     
 }
+#brand{
+    width: 30vh;
+}
+#email{
+    width: 30vh;
+}
+#time{
+    width: 30vh;
+}
+#date{
+    width: 30vh;
+}
 .yearsel{
     color: white;
     margin-left: 3.8%;
@@ -138,8 +150,11 @@ html{
     margin-left: 15%;
 }
 
-#state {
+#state1 {
     width: 30vh;
+    height: 4vh;
+}
+#state{
     height: 4vh;
 }
 
@@ -155,7 +170,7 @@ html{
     margin-top: 0.5%;
     margin-left: 1.5%;
     height: 3vh;
-    width: 96.5%;
+    width: 30vh;
     background-color: rgb(73, 71, 71);
     color: white;
 }
@@ -178,6 +193,15 @@ input#Number {
     text-align: center;
 }
 @media only screen and (max-width: 600px) {
+    #state1 {
+        width: 46vh;
+        height: 4vh;
+    }
+    
+    #brandlol{
+        width: 75vw;
+        margin-left: 25%;
+    }
     #sbmt{
         width: 105%;
     }
@@ -225,10 +249,10 @@ input#Number {
         width:100%;
         margin-left: -2%;
     }
-    input#state{
+    /* input#state{
         width:100%;
         margin-left: -2%;
-    }
+    } */
     .Details{
         margin-left: 29%;
         font-size: 4vw;
@@ -273,9 +297,9 @@ input#Number {
         width: 30vh;
     }
     #state {
-        width: 29vh;
+        width: 23.5vh;
         height: 4vh;
-        margin-left: -1%;
+        margin-left: 22%;
         margin-top: 3%;
     }
     .ODO {

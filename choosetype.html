@@ -2,6 +2,7 @@
 <html lang="en" id = "mainpage">
   <head>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="choose.css"> 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
@@ -86,11 +87,15 @@
     <br>
     <br>
     <br>
-    <div id="sedan" onclick="typeChange(this.id)">Sedan</div>
-    <div id="coupe" onclick="typeChange(this.id)">Coupe</div>
-    <div id="suv" onclick="typeChange(this.id)">SUV</div>
-    <div id="minivan" onclick="typeChange(this.id)">Minivan</div>
-    <div id="all" onclick="typeChange(this.id)">All</div>
+    <div class="boxes1">
+      <div id="sedan" onclick="typeChange(this.id)" style="color: white" class="renders">Sedan</div>
+      <div id="coupe" onclick="typeChange(this.id)"style="color: white" class="renders">Coupe</div>
+      <div id="suv" onclick="typeChange(this.id)"style="color: white" class="renders">SUV</div>
+      <div id="minivan" onclick="typeChange(this.id)"style="color: white" class="renders">Minivan</div>
+      <div id="all" onclick="typeChange(this.id)"style="color: white"class="renders">All</div>
+   </div>
+
+   <br>
 
     <script>
       function typeChange(id){
@@ -114,7 +119,14 @@
     <br>
     <br>
     <br>
-
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
     <br>
     <br>
     <br>
@@ -209,6 +221,9 @@
             </li>
             <li class="list-group-item bg-transparent border-0 p-0 mb-2">
               <a href="https://docs.google.com/document/d/18Kg-OlYQx4n9niRa5weRcWKiVonnzjpZcPlCq0eRttI/edit?usp=sharing" target="_blank"><i class="fa fa-linkedin mr-1"></i>Documentation</a>
+            </li>
+            <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+              <a href="login.html" target="_blank"><i class="fa fa-linkedin mr-1"></i>ADMIN</a>
             </li>
           </ul>
           

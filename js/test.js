@@ -64,13 +64,7 @@ var x = [];
         }
 
 
-        //This is the initial that works with all the car values. 
-        /*
-        if(counter > 11){
-          div.style.display = "none";
-        }
-        counter++;
-        */
+
        counter++;
         
         var innerdiv = document.createElement("div");
@@ -82,44 +76,19 @@ var x = [];
         innerdiv.style.backgroundSize = 'cover';
         innerdiv.ontouchstart = function(key){
           localStorage.setItem("idNumber", key);
-          localStorage.setItem("description", value.description);
-          localStorage.setItem("engine", value.engine);
-          localStorage.setItem("drive", value.driveTrain);
-          localStorage.setItem("transmission", value.transmission);
-          localStorage.setItem("color", value.color);
-          localStorage.setItem("mpg", value.mpg);
-          localStorage.setItem("miles", value.miles);
-          localStorage.setItem("make", value.make);
-          localStorage.setItem("model", value.model);
-          localStorage.setItem("luxury", value.luxury);
           window.location.replace("carview.html");
           return false;
         }
         innerdiv.onclick = function(key){
           localStorage.setItem("idNumber", value.IDVal);
-          localStorage.setItem("description", value.description);
-          localStorage.setItem("engine", value.engine);
-          localStorage.setItem("drive", value.driveTrain);
-          localStorage.setItem("transmission", value.transmission);
-          localStorage.setItem("color", value.color);
-          localStorage.setItem("mpg", value.mpg);
-          localStorage.setItem("miles", value.miles);
-          localStorage.setItem("make", value.make);
-          localStorage.setItem("model", value.model);
-          localStorage.setItem("luxury", value.luxury);
           window.location.replace("carview.html");
           return false;
         }
-        // JSON.stringify(value)
     
       
         var button1 = document.createElement("button");
         div.appendChild(innerdiv)
         container.appendChild(div);
-
-
-        
-    
       });
 
 

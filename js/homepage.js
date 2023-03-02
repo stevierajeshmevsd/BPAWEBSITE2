@@ -1,3 +1,6 @@
+
+
+
 var firebaseConfig = {
   apiKey: "AIzaSyARcy-CcpHXynmS1HBAiBwH_uZcpJvNfMY",
   authDomain: "jarson-motors.firebaseapp.com",
@@ -11,70 +14,147 @@ var firebaseConfig = {
   
   firebase.initializeApp(firebaseConfig);
   var database = firebase.database();
-  var dataRef = database.ref("/sellRequest");
-
-
-//Moves the user inforamtion to the database. 
-document.getElementById("submit-button").addEventListener("click", function() {
-  var name = document.getElementById("name").value;
-  var age = document.getElementById("age").value;
-  var city = document.getElementById("city").value;
-  dataRef.child(name).set({ name: name, age: age, city: city });
-});
-
-
-
-//This chuck makes a new div container with all the relevent information that is in the database.
-dataRef.on("value", function(snapshot) {
-  snapshot.forEach(function(childSnapshot) {
-
-    var key = childSnapshot.key;
-    var value = childSnapshot.val();
-
-    var container = document.getElementById("box");
-    var div = document.createElement("div");
-    div.className = "selection";
-    div.innerHTML = "Key: " + value.age + "<br>" + "Age: " + value.age + ", City: " + value.city;
-    // JSON.stringify(value)
-
-    var button = document.createElement("button");
-    button.className = "mail-button";
-    button.innerHTML = "Send email";
-    button.onclick = function() {
-      window.location.href = "mailto:example@email.com";
-    };
-    container.appendChild(div);
-    div.appendChild(button);
-
-
-  });
-});
+  var dataRef = database.ref("/Cars");
 
 
 
 
+var x = [];
+  dataRef.on("value", function(snapshot) {
+      snapshot.forEach(function(childSnapshot) {
+
+        var key = childSnapshot.key;
+        var value = childSnapshot.val();
+        // var str1 = value.make[0];
+        // var makeString = str1;
+        // for(let i = 0; i < value.make.length; i++){
+        //   makeString+=value.make[i];
+        // }
+        // console.log(makeString);
+
+        var container = document.getElementById('tab');
+
+        var text = document.createElement('li');
+        text.className = 'query2';
+        text.style.color = 'black';
+        text.innerHTML = value.year + "   " + value.make + "   " + value.model; 
+        text.style.display = 'none'; 
+
+        text.ontouchstart = function(key){
+          localStorage.setItem("idNumber", key);
+          window.location.replace("carview.html");
+          return false;
+        }
+        text.onclick = function(key){
+          localStorage.setItem("idNumber", value.IDVal);
+          window.location.replace("carview.html");
+          return false;
+        }
+        container.appendChild(text);
+      });
+       
+    });
 
 
 
-// //Prints the values that are in the database in the website as a link.
-// dataRef.on("value", function(snapshot) {
-//   var keyList = "";
-//   snapshot.forEach(function(childSnapshot) {
-//     var key = childSnapshot.key;
-//     keyList += "<a href='#' onclick='displayData(\"" + key + "\")'>" + key + "</a><br>";
-//   });
-
-//   document.getElementById("keyContainer").innerHTML = keyList;
-// });
 
 
-// //This function is being used on the chunk above this one. 
-// function displayData(key) {
-//   var dataRef = database.ref("data/" + key);
-//   dataRef.once("value", function(snapshot) {
-//     var data = snapshot.val();
-//     var dataString = "";
-//     console.log(data.name);
-//     document.getElementById("dataContainer").innerHTML = dataString;
-//   });
-// }
+
+
+    function search() {
+      event.preventDefault();
+      var userValue = document.getElementById("search-input").value;
+      const QUERY1 = userValue.toString();
+      const query = QUERY1.toLowerCase();
+      
+
+      if(query.length == 0){
+        window.location.reload();
+      }
+
+      var words = [];
+      let currentWord = "";
+      for (let j = 0; j < query.length; j++) {
+      let char = query[j];
+      if (char === " ") {
+          words.push(currentWord);
+          currentWord = "";
+      } else {
+          currentWord += char;
+        }
+      }
+      words.push(currentWord); 
+
+      var make = [];
+      var model = [];
+      var year = [];
+      var matches = [];
+
+      dataRef.on("value", function(snapshot) {
+        snapshot.forEach(function(childSnapshot) {
+          
+          var key = childSnapshot.key;
+          var value = childSnapshot.val();
+
+          for(var i = 0; i < words.length; i++){
+            if(words[i] == value.make.toLowerCase()){
+              make.push(parseInt(key));
+            }
+            else if(words[i] == value.model.toLowerCase()){
+              model.push(parseInt(key));
+            }
+            else if(words[i] == value.year){
+              year.push(parseInt(key));
+            }
+          }
+        });
+      })
+
+      if(make.length > 0 && model.length > 0 && year.length > 0){
+        matches = make.filter(num => model.includes(num) && year.includes(num));
+      }
+      else if(make.length === 0 && model.length === 0 && year.length > 0){  matches = year;  }
+      else if(make.length > 0 && model.length === 0 && year.length === 0){  matches = make;  }
+      else if(make.length === 0 && model.length > 0 && year.length === 0){  matches = model;  }
+      else if(make.length > 0 && model.length > 0 && year.length === 0){  matches = make.filter(num => model.includes(num));  }
+      else if(make.length === 0 && model.length > 0 && year.length > 0){  matches = year.filter(num => model.includes(num));  }
+      else if(make.length > 0 && model.length === 0 && year.length > 0){  matches = make.filter(num => year.includes(num));  }
+      else{  matches = -1;  }
+
+      const divs = document.querySelectorAll('.query2')
+      
+
+      
+      if(matches != -1){
+        // if(matches.length <= 12){
+        //   document.getElementById('buttonHolder').style.display = 'none';
+        // }
+        for(let i = 0; i < divs.length; i++){
+          divs[i].style.display = 'none';
+        }
+        for(let i = 0; i < matches.length; i++){
+          divs[matches[i]].style.display = 'block';
+        }
+        document.getElementById('test').style.display = 'none';
+      } else {
+        document.getElementById('test').style.display = 'block';
+        document.getElementById('test').innerHTML = "Car Not Available";
+        for(let i = 0; i < divs.length; i++){
+          divs[i].style.display = 'none';
+        }
+      }
+      
+      console.log("Maches: " + matches);
+
+      
+      
+      
+      
+    }
+
+
+    
+    
+    
+ 
+    

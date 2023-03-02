@@ -1,0 +1,50 @@
+body {
+    background-color: rgb(8, 6, 17);
+}
+
+h1 {
+    color: aliceblue;
+    font-family: 'sono', sans-serif;
+}
+
+p {
+    color: aliceblue;
+    font-family: 'Roboto', sans-serif;
+}
+
+#container {
+    align-self: center;
+    margin-left: auto;
+    margin-right: auto;
+    height: vh;
+    width: 100vh;
+    z-index:-1;
+}
+
+#containerSearch {
+    align-self: center;
+    margin-left: auto;
+    margin-right: auto;
+    left:0px;
+    top:0px;
+    height: 100vh;
+    width: 100vh;
+    z-index:-1;
+}
+
+#containerCar {
+    align-self: center;
+    margin-left: auto;
+    margin-right: auto;
+    left:0px;
+    top:0px;
+    aspect-ratio: 4 / 2;
+    width: 70%;
+    z-index:-1;
+    cursor:grab;
+
+}
+
+#containerCar:active {
+    cursor:grabbing;
+}

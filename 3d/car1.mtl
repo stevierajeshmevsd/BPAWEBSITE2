@@ -1,0 +1,25 @@
+# Blender MTL File: 'car1.blend'
+# Material Count: 2
+
+newmtl Body
+Ns 622.729356
+Ka 0.940909 0.940909 0.940909
+Kd 0.800000 0.800000 0.800000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 1
+map_Kd C:\\Users\\jayde\\Downloads\\low-poly-stylized-cars-pack\\textures\\ColorAtlas_Update.jpg
+
+newmtl Lights
+Ns 875.621924
+Ka 1.000000 1.000000 1.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.227273 0.227273 0.227273
+Ke 1.000000 1.000000 1.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd tex\\ColorAtlas.jpg
+map_Ke tex\\ColorAtlas.jpg

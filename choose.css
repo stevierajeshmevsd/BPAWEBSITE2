@@ -1,0 +1,146 @@
+html{
+    background-color: black;
+}
+
+
+/* .boxes1{
+    align-content: center;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    height: 100%;
+    padding: 40vw;
+} */
+
+/* 
+.boxes1{
+    margin-left: 50%;
+    display: flex;
+    gap: 3vw;
+
+    flex-direction: column;
+} */
+
+
+.renders{
+    margin-top: -15%;
+}
+#sedan{
+    background-color: red;
+    background-size: cover;
+    border-radius: 10px;
+    border: solid 3px black;
+    width: 29%;
+    aspect-ratio: 4 / 2;
+    float: left;
+    margin-left: 20%;
+    transition: all 300ms;
+}
+#coupe{
+    background-color: red;
+    background-size: cover;
+    border-radius: 10px;
+    border: solid 3px black;
+    width: 29%;
+    float: right;
+    margin-right: 20%;
+    /* margin-top: 2%; */
+    aspect-ratio: 4 / 2;
+    transition: all 300ms;
+}
+#minivan{
+    background-color: red;
+    background-size: cover;
+    border-radius: 10px;
+    border: solid 3px black;
+    width: 29%;
+    float: left;
+    margin-left: 20%;
+    margin-top: 2%;
+    aspect-ratio: 4 / 2;
+    transition: all 300ms;
+
+}
+#suv{
+    background-color: red;
+    background-size: cover;
+    border-radius: 10px;
+    border: solid 3px black;
+    width: 29%;
+    float: right;
+    margin-right: 20%;
+    margin-top: 2%;
+    height: 40%;
+    aspect-ratio: 4 / 2;
+    transition: all 300ms;
+}
+#all{
+    background-color: red;
+    background-size: cover;
+    border-radius: 10px;
+    border: solid 3px black;
+    width: 29%;
+    aspect-ratio: 4 / 2;
+    float: left;
+    margin-left: 36%;
+    transition: all 300ms;
+    margin-top: 1%;
+} 
+
+@media only screen and (max-width: 600px) {
+
+    #sedan {
+        background-color: red;
+        border-radius: 10px;
+        border: solid 3px black;
+        width: 70%;
+        aspect-ratio: 4 / 2;
+        float: left;
+        margin-left: 15%;
+        margin-top: -76%;
+    }
+    #coupe {
+        background-color: red;
+        border-radius: 10px;
+        border: solid 3px black;
+        width: 70%;
+        float: left;
+        /* margin-top: 2%; */
+        aspect-ratio: 4 / 2;
+        margin-left: 15%;
+        margin-top: -39%;
+    }
+        #minivan{
+        background-color: red;
+        border-radius: 10px;
+        border: solid 3px black;
+        width:70%;
+        float: left;
+        margin-top: 2%;
+        aspect-ratio: 4 / 2;
+        margin-left: 15%;
+
+        }
+        #suv {
+            background-color: red;
+            border-radius: 10px;
+            border: solid 3px black;
+            width: 70%;
+            float: left;
+            margin-top: -3%;
+            aspect-ratio: 4 / 2;
+            margin-left: 15%;
+        }
+        #all {
+            background-color: red;
+            background-size: cover;
+            border-radius: 10px;
+            border: solid 3px black;
+            width: 70%;
+            aspect-ratio: 4 / 2;
+            float: left;
+            margin-left: 15%;
+            transition: all 300ms;
+            margin-top: 1%;
+        }
+}
