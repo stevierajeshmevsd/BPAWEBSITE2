@@ -74,11 +74,11 @@ var x = [];
         innerdiv.innerHTML = "Name: " + value.make + " Model: " + value.model;
         innerdiv.style.backgroundImage = value.image;
         innerdiv.style.backgroundSize = 'cover';
-        innerdiv.ontouchstart = function(key){
-          localStorage.setItem("idNumber", key);
-          window.location.replace("carview.html");
-          return false;
-        }
+//         innerdiv.onc = function(key){
+//           localStorage.setItem("idNumber", key);
+//           window.location.replace("carview.html");
+//           return false;
+//         }
         innerdiv.onclick = function(key){
           localStorage.setItem("idNumber", value.IDVal);
           window.location.replace("carview.html");
