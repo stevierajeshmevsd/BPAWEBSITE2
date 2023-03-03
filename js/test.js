@@ -1,4 +1,4 @@
-
+var isInit = false; 
 
 
 var firebaseConfig = {
@@ -22,6 +22,11 @@ var firebaseConfig = {
 var x = [];
   // let divCounter = 0
   dataRef.on("value", function(snapshot) {
+
+    if(isInit) {
+      window.location.reload();
+    };
+
     var counter = 0;
     var typeCount = 0
       snapshot.forEach(function(childSnapshot) {
@@ -71,25 +76,35 @@ var x = [];
         innerdiv.className = "grid-content";
         innerdiv.id = "grid-content"; 
         innerdiv.style.backgroundImage = "url("+value.image+")";
-        innerdiv.innerHTML = "Name: " + value.make + " Model: " + value.model;
+        // innerdiv.innerHTML = "Name: " + value.make + " Model: " + value.model;
         innerdiv.style.backgroundImage = value.image;
         innerdiv.style.backgroundSize = 'cover';
-        innerdiv.ontouchstart = function(key){
-          localStorage.setItem("idNumber", key);
-          window.location.replace("carview.html");
-          return false;
-        }
         innerdiv.onclick = function(key){
           localStorage.setItem("idNumber", value.IDVal);
           window.location.replace("carview.html");
           return false;
         }
+
+        var nameBanner = document.createElement('div');
+        nameBanner.className = 'banner'
+        // nameBanner.innerHTML = value.year + " " + value.make + " " + value.model;
+
+
+        var headingELem = document.createElement('div');
+        headingELem.className = 'name';
+        headingELem.innerHTML = value.year + " " + value.make + " " + value.model;
+        headingELem.style.marginLeft = '50%';
+        headingELem.style.marginTop = '36%';
     
       
         var button1 = document.createElement("button");
+        nameBanner.appendChild(headingELem);
+        innerdiv.appendChild(nameBanner);
         div.appendChild(innerdiv)
         container.appendChild(div);
       });
+
+      isInit = !isInit
 
 
       let counter1 = 12;
@@ -149,7 +164,7 @@ var x = [];
       
       //Page number
       var pgNumber = document.createElement("div");
-      pgNumber.className = "pageNumber";
+      pgNumber.className = "pageNumber text-center";
       pgNumber.innerHTML = iteration; 
 
       //next button

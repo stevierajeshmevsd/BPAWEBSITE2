@@ -83,7 +83,7 @@ var firebaseConfig = {
           
           button.onclick = function() {
             
-            window.location.replace("personView.html");
+            window.location.replace("personview.html");
             localStorage.setItem("name", value.name);
             localStorage.setItem("number", value.Number);
             localStorage.setItem("sellEmail", value.Email);
@@ -173,7 +173,7 @@ var firebaseConfig = {
             localStorage.removeItem("ODO");
             localStorage.removeItem("year");
             localStorage.removeItem("license");
-            window.location.replace("personView.html");
+            window.location.replace("personview.html");
           }
           
           container.appendChild(div); 

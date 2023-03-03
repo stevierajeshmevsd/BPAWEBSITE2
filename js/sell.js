@@ -48,9 +48,20 @@ function moveUserNext(){
   if(!model || !color || !odometer || !license){
     console.log("The if statement works good!")
     document.getElementById('error').style.display = 'block';
-    document.getElementById('error').innerHTML = "Please enter all the values before going to the next page por favor."
-    document.getElementById('error').style.color = "white";
+    document.getElementById('error').innerHTML = "Please enter all information before continuing."
+    document.getElementById('error').style.color = "red";
     allInfo = false
+    let startTime = null;
+function hideError(timestamp) {
+  if (!startTime) startTime = timestamp;
+  const elapsed = timestamp - startTime;
+  if (elapsed < 5000) {
+    window.requestAnimationFrame(hideError);
+  } else {
+    document.getElementById('error').style.display = 'none';
+  }
+}
+window.requestAnimationFrame(hideError);
   }
   else{ 
     allInfo = true; 

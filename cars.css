@@ -241,6 +241,19 @@ input[type="search"]:focus {
         height: 100px;
       }
 
+      /* This is for the next and previous bottons */
+      .buttonHolder{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 10%;
+      }
+      .next, .previous, .pageNumber{
+        /* display: table-row; */
+        border: 3px white solid;
+        border-radius: 10px;
+      }
+     
+
       @media (max-width: 768px) {
         .grid {
           grid-template-columns: repeat(1, 1fr);

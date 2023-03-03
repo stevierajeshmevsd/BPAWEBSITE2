@@ -3,6 +3,7 @@
   <head>
     <link rel="stylesheet" href="contact.css">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="console.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
@@ -135,11 +136,15 @@
                 <td class="named">Maintain Details:   </td>
                 <td class="result"id="state"></td>
               </tr>
-              <td class="named">Maintain Time:   </td>
-              <td class="result"id="time"></td>
-            </tr>
-              
+              <tr>
+                <td class="named">Maintain Time:   </td>
+                <td class="result"id="time"></td>
+              </tr>
+              <tr>
+                <div id="userEmail" ></div>
+              </tr>
             </table>
+
 
 
 
@@ -152,9 +157,11 @@
           <p id="status1">null</p>
         </div>
 
-        <div id="backbutton" onclick="location.replace('console.html')">
+        <div id="backbutton" onclick="location.replace('KTNHK27Mn8.html')">
           Return to console
         </div>
+        <div id="userEmail" ></div>
+        <!-- <p><a href="mailto:someone@example.com">Send email</a></p> -->
 
 
     </div>
@@ -169,23 +176,28 @@
           <br>
           <br>
           <p class="text-center" id="p1lol">Image Source:</p>
-          <input type="text" id="img1">
+          <input type="text" id="img1" autocomplete = "off">
           <p class="text-center" id="p1lol">Suggested Price:</p>
-          <input type="text" id="price1">
+          <input type="text" id="price1"autocomplete = "off">
           <p class="text-center"id="p1lol">Luxury Score: </p>
-          <input type="text" id="lux1">
+          <input type="text" id="lux1"autocomplete = "off">
           <p class="text-center"id="p1lol">MPG: </p>
-          <input type="text" id="MPG1">
+          <input type="text" id="MPG1"autocomplete = "off">
           <p class="text-center"id="p1lol">Engine Type:</p>
-          <input type="text" id="engine1">
+          <input type="text" id="engine1"autocomplete = "off">
           <p class="text-center"id="p1lol">Drive-train:</p>
-          <input type="text" id="DT1">
+          <input type="text" id="DT1"autocomplete = "off">
           <p class="text-center"id="p1lol">Transmission:</p>
-          <input type="text" id="transmission1">
+          <input type="text" id="transmission1"autocomplete = "off">
           <p class="text-center"id="p1lol">Vehicle Type:</p>
-          <input type="text" id="VT1">
+          <select id="VT1">
+            <option>SEDAN</option>
+            <option>COUPE</option>
+            <option>MINIVAN</option>
+            <option>SUV</option>
+          </select>
           <p class="text-center"id="p1lol">Trim:</p>
-          <input type="text" id="trim1">
+          <input type="text" id="trim1"autocomplete = "off">
           <p class="text-center"id="p1lol">Description:</p>
           <textarea type="text" rows="2" id="desc1"></textarea>
 

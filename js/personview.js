@@ -58,7 +58,17 @@ if(localStorage.getItem("brand") == null){
                 year: localStorage.getItem("year")
             });
             firebase.database().ref('/sellRequest/'+localStorage.getItem("name")).remove();
+            window.location.replace('KTNHK27Mn8.html');
         });
+        var mailButton = document.createElement('button');
+        mailButton.className = "mailbutton";
+        mailButton.id = 'mailButton';
+        mailButton.innerHTML = "Email User"
+        mailButton.onclick = function(){
+            window.location.replace("mailto:" + localStorage.getItem('sellEmail'))
+        }
+        var reference = document.getElementById('userEmail');
+        reference.appendChild(mailButton);
 
     });
 

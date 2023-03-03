@@ -188,16 +188,32 @@ input#Name {
 }
 input#Email {
     text-align: center;
+    width: 96.5%;
 }
 input#Number {
     text-align: center;
 }
 @media only screen and (max-width: 600px) {
+    #info2{
+        margin-top: -0.5%;
+    }
+    input#Email {
+        text-align: center;
+        width: 95.5%;
+    }
+    input#button2{
+        margin-top: -177%;
+    }
     #state1 {
-        width: 46vh;
+        width: 38vh;
         height: 4vh;
     }
-    
+    #ODO {
+        margin-top: 0.5%;
+        margin-left: 2.0%;
+        height: 3vh;
+        width: 61.7%;
+    }  
     #brandlol{
         width: 75vw;
         margin-left: 25%;
@@ -259,11 +275,11 @@ input#Number {
         font-family: 'Play', sans-serif;
         letter-spacing: 3px;
     }
-    #options{
-        margin-left: 1%;
+    #options {
+        margin-left: 5.5%;
         margin-top: 3.5%;
         height: 3.5vh;
-        width: 70.9%;
+        width: 69.9%;
     }
     .modelsel{
         color: white;
@@ -271,7 +287,7 @@ input#Number {
         font-size: 6vw;
         font-family: 'Play', sans-serif;
     }
-    #model{
+    #model {
         margin-top: 0.7%;
         margin-left: 0.5%;
         height: 3vh;
@@ -310,9 +326,9 @@ input#Number {
     }
     #Color {
         margin-top: 1.5%;
-        margin-left: 2.0%;
+        margin-left: 4%;
         height: 3vh;
-        width: 72.5%;
+        width: 69.5%;
     }
     .yearsel {
         margin-left: 3.8%;
@@ -333,11 +349,11 @@ input#Number {
         font-family: 'Play', sans-serif;
         letter-spacing: 5px;
     }
-    #Name{
+    #Name {
         margin-top: 1.5%;
         margin-left: 2.0%;
         height: 3vh;
-        width: 72.5%;
+        width: 95.5%;
     }
     #Email{
         margin-top: 1.5%;
@@ -345,10 +361,10 @@ input#Number {
         height: 3vh;
         width: 72.5%;
     }
-    #Number{
+    #Number {
         margin-top: 1.5%;
         margin-left: 2.0%;
         height: 3vh;
-        width: 72.5%;
+        width: 95.5%;
     }
 }

@@ -178,7 +178,7 @@ window.onload = function() {
 
     const controls = new OrbitControls( camera, renderer.domElement);
 
-    const rotateAuto = 2.5
+    const rotateAuto = 4.5
     const rotateAutoSlow = rotateAuto / 2
 
     controls.enableDamping = true;

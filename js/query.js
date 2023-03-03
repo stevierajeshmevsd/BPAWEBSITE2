@@ -28,7 +28,7 @@ var firebaseConfig = {
     document.getElementById('Transmission').innerHTML = data.transmission;
     document.getElementById('Color').innerHTML = data.color;
     document.getElementById('AvgMPG').innerHTML = data.mpg;
-    document.getElementById('miles').innerHTML = data.miles;
+    document.getElementById('miles').innerHTML = data.miles.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     // var x = data.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     document.getElementById('price').innerHTML = "$" + data.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     document.getElementById('CarName').innerHTML = data.make + " " + data.model;

@@ -1,0 +1,189 @@
+.console{
+    background-color: white;
+    width: 50%;
+    aspect-ratio: 5/4;
+    margin-left: 25%;
+  
+    background-color: #1d1a1b;
+  }
+  
+  .userInfo {
+    background-color: red;
+    width: 98%;
+    aspect-ratio: 5/3;
+    margin-left: 1%;
+    margin-top: -2%;
+    height: 67%;
+    padding-top: 0px;
+    background-color: rgba(0, 52, 119, 0.486);
+    border-radius: 6px;
+  
+  }
+  
+  .sellInfo{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+  
+    margin-left: 15%;
+    margin-top: -2%;
+    
+  }
+  .named{
+    color: white;
+    font-family: 'Play', sans-serif;
+  }
+  
+  .result{
+    color: white;
+    text-transform:uppercase;
+    font-family: 'Play', sans-serif;
+  
+    font-weight: bold;
+  }
+  
+  .info2 {
+    margin-left: 2%;
+    width: 60%;
+    height: 87%;
+    margin-top: -7%;
+    border-right: red;
+  
+  }
+  
+  .info1 {
+    margin-right: -14%;
+    float: right;
+    width: 60%;
+    height: 61%;
+    margin-top: -51%;
+  }
+  
+  #status {
+    width: 30%;
+    aspect-ratio: 7/2;
+    background-color: blue;
+    border-radius: 8px;
+    margin-left: 35%;
+    margin-top: 2%;
+  }
+  #status1{
+    color: white;
+    font-family: 'Play', sans-serif;
+    font-size: 2vw;
+    text-align: center;
+    margin-top: -5.5%;
+  }
+  
+  #backbutton{
+    color: white;
+    background-color: blue;
+    width: 15%;
+    text-align: center;
+    margin-left: 42.5%;
+    margin-top: 0.5%;
+    font-size: 0.9vw;
+    border: 3px solid white;
+  }
+  
+  #headlol{
+    color: white;
+    margin-top: -3%;
+  }
+  
+  .console1{
+    background-color: white;
+    width: 50%;
+    aspect-ratio: 5/4;
+    margin-left: 25%;
+  
+    background-color: #1d1a1b;
+  }
+  
+  #plol{
+    color: red;
+    font-size: 0.8vw;
+  }
+  
+  .boxl{
+    width: 90%;
+    aspect-ratio: 2.9/2;
+    background-color:#101011;
+    margin-left: 5%;
+    border: 5px solid rgb(32, 32, 32);
+    margin-top: -5%;
+    /* border-radius: 10px; */
+  }
+  /* #img1 #lux1 #MPG1 #engine1 #DT1{
+    margin-left:30%;
+  } */
+  #img1 {
+    margin-left:2%;
+    background-color: rgb(73, 71, 71);
+    width: 96%;
+  }
+  #price1{
+    margin-left:2%;
+    background-color: rgb(73, 71, 71);
+    width: 96%;
+  }
+  #transmission1{
+    margin-left:2%;
+    background-color: rgb(73, 71, 71);
+    width: 96%;
+  }
+  #trim1{
+    margin-left:2%;
+    background-color: rgb(73, 71, 71);
+    width: 96%;
+  }
+  #lux1{
+    margin-left:2%;
+    background-color: rgb(73, 71, 71);
+    width: 96%;
+  }
+  #MPG1{
+    margin-left:2%;
+    background-color: rgb(73, 71, 71);
+    width: 96%;
+  }
+  #engine1{
+    margin-left:2%;
+    background-color: rgb(73, 71, 71);
+    width: 96%;
+  }
+  #DT1{
+    margin-left:2%;
+    background-color: rgb(73, 71, 71);
+    width: 96%;
+  }
+  #desc1{
+    margin-left:2%;
+    background-color: rgb(73, 71, 71);
+    width: 96%;
+    height: 12%;
+  }
+  #VT1{
+    margin-left:2%;
+    background-color: rgb(73, 71, 71);
+    width: 96%;
+    color: white;
+  }
+  #p1lol{
+    color: white;
+    font-family: 'Play', sans-serif;
+  }
+  #send{
+    background-color: lightgreen;
+    color: #101011;
+    width: 45%;
+    margin-left: 27%;
+    margin-top: 1%;
+    border-radius: 7px;
+  
+    
+  }
+
+  #userEmail{
+    margin-left: 86%;
+    margin-top: -4%;
+  }

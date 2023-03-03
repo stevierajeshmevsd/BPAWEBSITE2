@@ -21,7 +21,7 @@ const jsonSearch = (obj, value) => {
 
 window.onload = function() {
 
-    const container = document.getElementById('containerCar');
+    const container = document.getElementById('suv');
 
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
@@ -55,7 +55,7 @@ window.onload = function() {
             "url": "../3d/sedan.gltf"
         },
         {
-            "trim": "coupe",
+            "trim": "type1",
             "url": "../3d/carReg.gltf"
         },
         {
@@ -178,7 +178,7 @@ window.onload = function() {
 
     const controls = new OrbitControls( camera, renderer.domElement);
 
-    const rotateAuto = 2.5
+    const rotateAuto = 4.5
     const rotateAutoSlow = rotateAuto / 2
 
     controls.enableDamping = true;
@@ -194,7 +194,7 @@ window.onload = function() {
     controls.minPolarAngle = Math.PI *.2;
 
     var carModel;
-    DefineCar("coupe", 0xffffff).then(carObj => {
+    DefineCar("jeep", 0xffffff).then(carObj => {
         carModel = carObj;
         scene.add(carModel)
         render();

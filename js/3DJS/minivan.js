@@ -55,7 +55,7 @@ window.onload = function() {
             "url": "../3d/sedan.gltf"
         },
         {
-            "trim": "coupe",
+            "trim": "type1",
             "url": "../3d/carReg.gltf"
         },
         {
@@ -194,7 +194,7 @@ window.onload = function() {
     controls.minPolarAngle = Math.PI *.2;
 
     var carModel;
-    DefineCar("coupe", 0xffffff).then(carObj => {
+    DefineCar("minivan", 0xffffff).then(carObj => {
         carModel = carObj;
         scene.add(carModel)
         render();
