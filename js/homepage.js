@@ -1,6 +1,4 @@
 
-
-
 var firebaseConfig = {
   apiKey: "AIzaSyARcy-CcpHXynmS1HBAiBwH_uZcpJvNfMY",
   authDomain: "jarson-motors.firebaseapp.com",
@@ -25,23 +23,18 @@ var x = [];
 
         var key = childSnapshot.key;
         var value = childSnapshot.val();
-        // var str1 = value.make[0];
-        // var makeString = str1;
-        // for(let i = 0; i < value.make.length; i++){
-        //   makeString+=value.make[i];
-        // }
-        // console.log(makeString);
+        
 
         var container = document.getElementById('tab');
 
-        var text = document.createElement('li');
+        var text = document.createElement('div');
         text.className = 'query2';
         text.style.color = 'black';
         text.innerHTML = value.year + "   " + value.make + "   " + value.model; 
         text.style.display = 'none'; 
 
         text.ontouchstart = function(key){
-          localStorage.setItem("idNumber", key);
+          localStorage.setItem("idNumber", value.IDVal);
           window.location.replace("carview.html");
           return false;
         }

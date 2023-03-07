@@ -257,7 +257,7 @@ html{
 
 @media only screen and (max-width: 600px) {
     #CarName {
-        margin-top: 16%;
+        margin-top: 12%;
         color: white;
         font-family: 'Play', sans-serif;
         letter-spacing: 3px;
@@ -285,7 +285,7 @@ html{
         aspect-ratio: 3/2;
         border-radius: 7px;
         margin-left: 5%;
-        margin-top: 61%;
+        margin-top: 59%;
         float: left;
     }
     #specs {
