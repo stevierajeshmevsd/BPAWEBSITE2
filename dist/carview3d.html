@@ -1,0 +1,732 @@
+<!doctype html>
+<html lang="en" id = "mainpage">
+  <head>
+    <link rel="stylesheet" href="carview.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-database.js"></script>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="Images/wheelpng.png">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Bootstrap CSS () -->
+    <!-- jQuery -->
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <title>Jarson Motors</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
+      .navhead{
+        /* font-family: 'Inconsolata', monospace; */
+        font-family: 'Michroma', sans-serif;
+        background-color: rgb(16, 16, 17);
+        font-size: medium;
+      }
+
+      #navbarMenu{
+        transition: height 0.5s ease;
+        background-color: rgb(16, 16, 17);
+      }
+
+    </style>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <nav class="navbar navbar-expand-sm navbar-dark fixed-top" style="background-color:  rgb(16, 16, 17);">
+      <a class="navbar-brand" href="index.html">
+        <img src="Images/clipart-car-shape-4.png" width="90" height="30" class="d-inline-block align-top" alt="HighFive Logo">
+        <span class="navhead">Jarson Motors</span>
+      </a> 
+      <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarMenu">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarMenu">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+              <a class="nav-link" href="sell.html">
+                Sell
+              </a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="choosetype.html">
+                Cars
+              </a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="contact.html">
+                Contact
+              </a>
+          </li>
+      </ul>
+      </div>
+
+  </nav>
+  </head>
+  <script>
+    
+  </script>
+  <body class="bg-transparent">
+    <div id ="preloader"></div>
+    <br>
+    <br>
+    <div class="carinfo">
+      <div class="carimg1" id="carimg"style="cursor: grab; cursor: -moz-grab; cursor: -webkit-grab;
+      &:hover {
+        cursor: grabbing; cursor: -moz-grabbing; cursor: -webkit-grabbing;
+      }">
+        <!-- <img src="Images/Showroom/imgnotavaliable.png" id="carimg1" alt="Carimage"> -->
+      </div>
+      <div class="info">
+        <h1 id="CarName" class="text-center">Ferarri FF</h1>
+        <p id="price" class="text-center">$538,010</p>
+        <div class="tab">
+          <div id="lux">
+            <h1 class="text-center" id="luxh">--LUXURY SCORE--</h1>
+            <img src="Images/Showroom/4.png" class ="imglux" id="luxid" alt="Stocklux">
+          </div>
+          <div id="specs">
+            <h1 class="text-center" id="luxh">--Specifications--</h1>
+            <div class="Engine">
+              <p class="items">Engine:</p>
+              <p class="items1" id="Enginetype">V12</p>
+            </div>
+            <div class="DT">
+              <p class="items">Drive Train:</p>
+              <p class="items1" id="Drivetrain">AWD</p>
+            </div>
+            <div class="Trans">
+              <p class="items">Transmission:</p>
+              <p class="items1" id="Transmission">Automatic</p>
+            </div>
+            <div class="Color">
+              <p class="items">Color:</p>
+              <p class="items1" id="Color">Red</p>
+            </div>
+            <div class="MPG">
+              <p class="items">Avg MPG:</p>
+              <p class="items1" id="AvgMPG">12 mpg</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="moreinfo">
+      <!-- <h1 class="text-center" id="descri">Description</h1> -->
+      <p id="miles" class="text-center">2,000 miles</p>
+      <p id="desc">The Ferrari FF is a four-seater grand tourer powered by a 6.3-liter V12 engine producing 660 horsepower and 503 lb-ft of torque. It features a unique shooting brake design, all-wheel drive system, and a top speed of 208 mph.</p>
+    </div>
+    <div class="finance">
+      <h1 class="text-center" id="descrip">Finance</h1>
+      <div class="part1">
+        
+        <div class="row" style="margin-left: .1%;">
+          <p class="downpay"> Downpayment: </p>
+          <p class="downpaydol"> $ </p>
+          <span id="sliderStatus" style="color: white">1000</span>    
+          <input type="range" class="pay" id="divRange" min="0" max="2000" value="1000" step="100" onchange="sliderChange(this.value)">
+        </div>
+        <form class="credit">
+          <p class="prompt">Please select your credit score </p>
+          <select id="ddlViewBy">
+            <option value="0">Excellent Credit: (720-850)</option>
+            <option value="1">Great: (690-719)</option>
+            <option value="2">Very good: (670-689)</option>
+            <option value="3">Good: (650-669)</option>
+            <option value="4">Average: (630-649)</option>
+            <option value="5">Below Average: (620-629)</option>
+            <option value="6">Poor: (580-609)</option>
+            <option value="7">Very Poor: (580 less)</option>
+          </select>
+          <button onclick="myFunction()" id="btn">Submit</button>
+        </form>
+        <p class="prompt1">Your Interest rate is </p>
+        <p id="myText">0%</p>
+      </div>
+      <div class="part2">
+        <div class="row" id="interest1">
+          <p>&ensp;&ensp;Monthly interest rate for <strong>36</strong> months:&ensp; </p>
+          <span id="36month" class="imonth">$0.00</span>
+        </div>
+        <div class="row" id="interest2">
+          <p style="color: white">&ensp;&ensp;Monthly interest rate for <strong>48</strong> months:&ensp; </p>
+          <span id="48month" class="imonth">$0.00</span>
+        </div>
+        <div class="row" id="interest3">
+          <p style="color: white">&ensp;&ensp;Monthly interest rate for <strong>60</strong> months:&ensp; </p>
+          <span id="60month" class="imonth">$0.00</span>
+        </div>
+      </div>
+    </div>
+
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>  
+    <br>
+    <br>
+    <br>
+<!-- Messenger Chat Plugin Code -->
+<div id="fb-root"></div>
+
+<!-- Your Chat Plugin code -->
+<div id="fb-customer-chat" class="fb-customerchat">
+</div>
+
+<script>
+  var chatbox = document.getElementById('fb-customer-chat');
+  chatbox.setAttribute("page_id", "110823124905032");
+  chatbox.setAttribute("attribution", "biz_inbox");
+</script>
+
+<!-- Your SDK code -->
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      xfbml            : true,
+      version          : 'v15.0'
+    });
+  };
+
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+    
+    <script>
+      var loader = document.getElementById("preloader");
+      
+      window.addEventListener("load", function(){
+        loader.style.display = "none";
+      })
+    </script>
+    <!-- <script src="js/cars.js"></script> -->
+    <!-- <script type="module" src="js/query.js"></script> -->
+    <script src="js/cars.js"></script>
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "./node_modules/three/build/three.module.js",
+                "three/addons/": "./node_modules/three/examples/jsm/"
+            }
+        }
+    </script>
+
+   <br>
+
+    <script>
+      function typeChange(id){
+        localStorage.setItem("typeName", id);
+        window.location.replace('cars.html');
+      }
+    </script>
+
+
+
+    <!-- <div id="sedan" onclick="console.log(this.id)">Sedan</div>
+    <div id="coupe" onclick="console.log(this.id)">Coupe</div>
+    <div id="suv" onclick="console.log(this.id)">SUV</div>
+    <div id="minivan" onclick="console.log(this.id)">Minivan</div> -->
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <br>
+    <br>
+<!-- Messenger Chat Plugin Code -->
+<div id="fb-root"></div>
+
+<!-- Your Chat Plugin code -->
+<div id="fb-customer-chat" class="fb-customerchat">
+</div>
+
+<script>
+  var chatbox = document.getElementById('fb-customer-chat');
+  chatbox.setAttribute("page_id", "110823124905032");
+  chatbox.setAttribute("attribution", "biz_inbox");
+</script>
+
+<!-- Your SDK code -->
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      xfbml            : true,
+      version          : 'v15.0'
+    });
+  };
+
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+    <script>
+      var loader = document.getElementById("preloader");
+      
+      window.addEventListener("load", function(){
+        loader.style.display = "none";
+      })
+    </script>
+
+    <script type="module">
+      
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js'
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js'
+
+var selectFeature;
+
+const jsonSearch = (obj, value) => {
+    const found = []
+    for (let key in obj) {
+        
+        if (obj[key].name === value) {
+            found.push(obj[key])
+            
+        }
+        
+
+    }
+    return found;
+}
+
+
+window.onload = function() {
+
+    const container = document.getElementById('carimg');
+
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer({ alpha: true });
+
+    renderer.setSize(container.clientWidth, container.clientHeight);
+    container.appendChild(renderer.domElement)
+
+    var gltfLoader = new GLTFLoader();
+
+    const openAng = Math.PI * 1.77
+
+    const carInteractions = [
+        {
+            "property": "rDoor",
+            "rotation": new THREE.Euler(0, 0, -openAng)
+        },
+        {
+            "property": "lDoor",
+            "rotation": new THREE.Euler(0, 0, openAng)
+        },
+        {
+            "property": "hood",
+            "rotation": new THREE.Euler(openAng, 0, 0)
+        }
+    ]
+
+    const cars = [
+        {
+            "trim": "sedan",
+            "url": "3d/sedan.gltf"
+        },
+        {
+            "trim": "coupe",
+            "url": "3d/carReg.gltf"
+        },
+        {
+            "trim": "all",
+            "url": "3d/pickup.gltf"
+        },
+        {
+            "trim": "suv",
+            "url": "3d/jeep.gltf"
+        },
+        {
+            "trim": "minivan",
+            "url": "3d/minivan.gltf"
+        }
+    ]
+    
+    var carInteractables = [];
+
+    async function DefineCar(trim, color) {
+
+        let car = cars.find(obj => obj.trim === trim);
+        console.log(car)
+        return new Promise((resolve) => {
+
+            gltfLoader.load(car.url, function (object) {
+            
+                let carObj = object.scene;
+                
+                carObj.interactables = [];
+
+                carObj.name = trim;
+
+                const carChildren = carObj.children[0].children
+
+
+
+                carInteractions.forEach( interaction => {
+                    let query = jsonSearch(carChildren, interaction.property)
+                    
+                    if(!query) {return;}
+                    
+                    
+
+                    query[0].openRot = new THREE.Quaternion().setFromEuler(interaction.rotation);
+                    query[0].tarRot = new THREE.Quaternion().setFromEuler(query[0].rotation.clone());
+
+                    
+                    
+                })
+                
+
+                carChildren.filter(child => child.name in carInteractions).forEach( element => {
+                    let child = carChildren[element.id]
+                    car.interactive.pop(child)
+                    
+                    child.openRot = new THREE.Quaternion().setFromEuler(element.angle);
+                    child.tarRot = child.rotation.clone();
+                })
+
+                carInteractables.push(...carObj.children[0].children.filter(child => Boolean(child.tarRot)))
+                
+                
+
+                resolve(carObj);
+            })
+        })
+
+        
+
+    }
+
+    
+
+    
+
+    
+
+
+    /*
+    mtlLoader.load("3d/carObj.mtl", function(materials) {
+
+        materials.getAsArray()[0] = new THREE.MeshBasicMaterial({color:0xffffff})
+
+
+        materials.preload();
+        console.log(materials.getAsArray()[0])
+        objLoader.setMaterials(materials);
+        objLoader.load("3d/car1.obj", function(object) {
+
+
+            carObj = object;
+            carObj.rotation.x = Math.PI * 2.05
+            carObj.children.forEach(child => {
+                console.log(child)
+                child.tarRot = new THREE.Euler().copy(child.rotation);
+            })
+            scene.add(carObj);
+
+            render()
+
+        });
+
+    });
+    */
+
+    async function playAnimation(object, properties) {
+        
+        object.interactables
+
+    }
+
+    //const carObj = new THREE.Mesh(geometry, material);
+    const ambience = new THREE.AmbientLight(0x7B56FF, .75);
+    const light = new THREE.PointLight(0xffffff, 1, 500);
+
+    const raycaster = new THREE.Raycaster();
+
+    light.position.set(2, 30, 4);
+    
+    camera.position.set(0,3,20);
+    camera.rotation.set(0, 9*Math.PI/4, 0);
+    scene.add(ambience);
+    scene.add(light);
+    scene.add(camera);
+
+    const controls = new OrbitControls( camera, renderer.domElement);
+
+    const rotateAuto = 4
+    const rotateAutoSlow = rotateAuto / 2
+
+    controls.enableDamping = true;
+    controls.dampingFactor = .04
+
+    controls.autoRotate = true;
+    controls.autoRotateSpeed = rotateAuto;
+
+    controls.enablePan = false;
+    controls.enableZoom = false;
+
+    controls.maxPolarAngle = Math.PI *.5;
+    controls.minPolarAngle = Math.PI *.2;
+
+    const carModel = [];
+    
+    console.log("here")
+
+    const carAngles = []
+
+    async function loadCars(carLoad) {
+        for(let i = 0; i <= carLoad.length-1; i++) {
+
+            let trim = carLoad[i];
+
+            let carObj = await DefineCar(trim, 0xffffff);
+
+            carModel.push(carObj);
+
+            const angle = ((Math.PI * 2)/carLoad.length)*i
+
+            carAngles.push(angle);
+
+            
+
+            const nCar = carModel[i]
+            
+
+            let positionX = Math.cos(angle)*25
+            let positionY = Math.sin(angle)*25
+
+            // nCar.rotation.y = angle
+            // nCar.position.z = positionX,
+            // nCar.position.x = positionY
+
+            scene.add(nCar)
+        }
+        render();
+    }
+
+    const toLoad = ["coupe"]
+
+    loadCars(toLoad)
+
+    
+    
+
+
+    function render() {
+        requestAnimationFrame(render);
+        //carObj.rotation.y += .001
+        //console.log(carObj)
+        //carObj.children.forEach(child => {
+        //    console.log(new THREE.Vector3(child.tarRot))
+        //    child.rotation.set(tweenLinear3D(child.tarRot, child.rotation.clone(), 15))
+        //})
+       
+        carInteractables.forEach( child => {
+            child.quaternion.slerp(child.tarRot, 0.01)
+        })
+
+        controls.update();
+
+        renderer.render(scene, camera);
+    }
+
+
+window.addEventListener("resize", function() {
+    renderer.setSize(container.clientWidth, container.clientHeight);
+    
+});
+
+var intersects = [];
+
+// window.addEventListener("mousedown", function(event) {
+//     // Get the mouse position in document coordinates
+//     var mouseX = event.offsetX;
+//     var mouseY = event.offsetY;
+
+//     // Get the position of the canvas element
+//     const canvasRect = container.getBoundingClientRect();
+
+//     // Calculate the mouse position relative to the canvas element
+//     const mouse = new THREE.Vector2(); 
+    
+//         mouse.x = ((mouseX) / canvasRect.width) * 2 - 1;
+//         mouse.y = -((mouseY) / canvasRect.height) * 2 + 1;
+
+//     raycaster.setFromCamera(mouse, camera);
+
+//     if(!carModel) {return;}
+
+//     const intersectedCars = raycaster.intersectObjects(carModel);
+
+//     if(!intersectedCars[0]) {return;}
+
+//     const selectedTrim = intersectedCars[0].object.parent.parent.name
+//     console.log(selectedTrim)
+//     //HERE
+//     typeChange(selectedTrim)
+
+// })
+
+window.addEventListener("mousemove", function(event) {
+    // Get the mouse position in document coordinates
+    var mouseX = event.offsetX;
+    var mouseY = event.offsetY;
+
+    // Get the position of the canvas element
+    const canvasRect = container.getBoundingClientRect();
+
+    // Calculate the mouse position relative to the canvas element
+    const mouse = new THREE.Vector2(); 
+    
+        mouse.x = ((mouseX) / canvasRect.width) * 2 - 1;
+        mouse.y = -((mouseY) / canvasRect.height) * 2 + 1;
+
+    raycaster.setFromCamera(mouse, camera);
+
+    if(!carModel) {return;}
+
+    if(Boolean(intersects[0])) {
+        intersects[0].object.tarRot = new THREE.Quaternion().setFromEuler(new THREE.Euler(0, 0, 0))
+    }
+
+    intersects = raycaster.intersectObjects(carInteractables);
+
+    
+
+    if(!intersects[0]) {return;}
+
+    intersects[0].object.tarRot = intersects[0].object.openRot.clone();
+
+
+    /*
+    const intersects = raycaster.intersectObjects(carObj.children[0].children);
+    console.log(intersects)
+
+    intersects[0].object.tarRot = new THREE.Euler(0, 0, 0);
+
+    if(!intersects[0] in carInteractive) {selectFeature.tarRot = new THREE.Quaternion(); return;}
+
+    //if (selectFeature != intersects[0] && selectFeature) { selectFeature.tarRot = new THREE.Quaternion(); controls.autoRotateSpeed = rotateAuto}
+
+    controls.autoRotateSpeed = rotateAutoSlow
+    selectFeature = intersects[0].object
+    selectFeature.tarRot = selectFeature.openRot
+    */
+
+    //const intersects = raycaster.intersectObjects(carModel.children[0].children)
+    //const interactables = intersects.filter(obj => obj.tarRot == null)
+    //console.log(interactables)
+
+})
+
+}
+    </script>
+    
+  </body>
+  <footer>
+    <div class="container pt-5 border-bottom">
+      <div class="row">
+        <div class="col-md-4 col-sm-12 mb-3 text-center">
+          <a class="footerbar-brand" href="index.html">
+            <img src="Images/wheelpng.png" class="d-inline-block align-top"
+              alt="HighFive Logo">
+            <span style="color: white;">Jarson</span>
+          </a>
+        </div>
+        <div class="col-md-8 col-sm-12">
+  
+          <div class="col-md-3 col-sm-6 col-6 p-0 float-left mb-3">
+            <h5 class="mb-4 font-weight-bold text-uppercase"style="color: white;">Pages</h5>
+          <ul class="list-group">
+            <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="index.html">Home</a></li>
+            <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="sell.html">Sell</a></li>
+            <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="cars.html">Inventory</a></li>
+            <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="contact.html">Contact Us!</a></li>
+          </ul>
+          </div>
+          <div class="col-md-3 col-sm-6 col-6 p-0 mb-3 float-left">
+            <h5 class="mb-4 font-weight-bold text-uppercase" style="color: white;" >Money</h5>
+          <ul class="list-group">
+            <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="https://www.moneyunder30.com/car-affordability-calculator" target="_blank">Income Calculator</a></li>
+            <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="https://www.edmunds.com/car-buying/10-steps-to-buying-a-used-car.html" target="_blank" >Car Guide</a></li>
+          </ul>
+          </div>
+  
+          <div class="col-md-3 col-sm-6 col-6 mb-3 p-0 float-left">
+            <h5 class="mb-4 font-weight-bold text-uppercase"style="color: white;">What we are</h5>
+          <ul class="list-group">
+            <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="https://www.facebook.com/TestingForRed" target="_blank"></i>Facebook</a></li>
+          </ul>
+          </div>
+          <div class="col-md-3 col-sm-6 col-6 mb-3 p-0 float-left">
+            <h5 class="mb-4 font-weight-bold text-uppercase"style="color: white;">Connect</h5>
+          <ul class="list-group">
+            <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+              <a href="https://github.com/stevierajeshmevsd/BPAWEBSITE2"target="_blank" ><i class="fa fa-linkedin mr-1"></i>Github</a>
+            </li>
+            <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+              <a href="https://docs.google.com/document/d/18Kg-OlYQx4n9niRa5weRcWKiVonnzjpZcPlCq0eRttI/edit?usp=sharing" target="_blank"><i class="fa fa-linkedin mr-1"></i>Documentation</a>
+            </li>
+            <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+              <a href="login.html" target="_blank"><i class="fa fa-linkedin mr-1"></i>ADMIN</a>
+            </li>
+          </ul>
+          </div>
+        </div>
+          <div class="col-md-12">
+            <div class="py-4 d-flex justify-content-center align-items-center">
+              <a class="mr-4" href="index.html"> © Jarson Motors</a>
+            </div>
+          </div>
+      </div>
+    </div>
+  </footer>
+</html>
